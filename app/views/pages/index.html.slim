@@ -1,0 +1,328 @@
+.main-page-wrapper
+	.main-banner-wrapper
+		ul.bxslider-main-banner
+			li
+				.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+			li
+				.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+			li
+				.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+			li
+				.img-container style="background-image: url(#{asset_path('photos/main-banner-4.jpg')})"
+			li
+				.img-container style="background-image: url(#{asset_path('photos/main-banner-5.jpg')})"
+		.info-on-banner
+			ul#bx-pager
+				li.active data-slide-index="0" 1
+				li data-slide-index="1" 2
+				li data-slide-index="2" 3
+				li data-slide-index="3" 4
+				li data-slide-index="4" 5
+			.info-container
+				.text1.visible
+					p.special-offer спецпропозиція
+					p.header
+						| пропозиція для молодят
+						span.line
+						span.red-square
+					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+					p.details детальніше
+				/ .text2
+				/ 	p.special-offer спецпропозиція
+				/ 	p.header
+				/ 		| пропозиція для дітей
+				/ 		span.line
+				/ 		span.red-square
+				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+				/ 	p.details детальніше
+				/ .text3
+				/ 	p.special-offer спецпропозиція
+				/ 	p.header
+				/ 		| пропозиція для студентів
+				/ 		span.line
+				/ 		span.red-square
+				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+				/ 	p.details детальніше
+				/ .text4
+				/ 	p.special-offer спецпропозиція
+				/ 	p.header
+				/ 		| пропозиція для пенсіонерів
+				/ 		span.line
+				/ 		span.red-square
+				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+				/ 	p.details детальніше
+				/ .text5
+				/ 	p.special-offer спецпропозиція
+				/ 	p.header
+				/ 		| пропозиція для всіх
+				/ 		span.line
+				/ 		span.red-square
+				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+				/ 	p.details детальніше
+				.slider-prev
+					.svg = inline_svg "icons/arrow-left.svg"
+				.slider-next
+					.svg = inline_svg "icons/arrow-right.svg"
+	.about-us-info
+		.row
+			.large-10.large-centered.medium-12.small-12.columns
+				.row
+					.large-11.large-centered.medium-10.medium-centered.small-12.columns
+						.reserve-container
+							.top
+								p.reserve-header бронювання
+								p.under-header номеру у готелі
+								= inline_svg "icons/cross.svg"
+							.main-field
+								.row
+									.large-4.medium-4.small-12.columns
+										p.uppear-date Дата заїзду
+										form
+											input#datepicker-1
+											.icon = inline_svg "icons/choose-date.svg"
+									.large-4.medium-4.small-12.columns
+										p.uppear-date Дата виїзду
+										form
+											input#datepicker-2
+											.icon = inline_svg "icons/choose-date.svg"
+									.large-4.medium-4.small-12.columns
+										.button-find-room
+											p знайти номер
+								hr
+								span.temperature +24&deg;
+								span.sun = inline_svg "icons/sun.svg" 
+								span.after-sun &mdash; Прогноз погоди на 28 березня
+				.row
+					.large-7.medium-12.small-12.columns
+						.chapter-container
+							p.subtitle Готель
+							p.title цісар
+							span.line
+							span.red-square
+							span.crown = inline_svg "icons/crown.svg"
+						p.bigger-italic Львів - одне з найдавніших міст України, в якому легенди і історії настільки тісно вплелися в життя міста, що вже давно стали його невід'ємною частиною.
+						p.regular Ніде в Україні ви не знайдете стільки пам'яток архітектури, що зберігають історії різних епох. Все місто, від дахів старовинних будинків до вікової бруківки наскрізь просякнутий таємницями своїх минулих жителів і гостей. опалення.
+						.hotem-room-wrapper
+							.hotel-room-container
+								p.rooms-quantity 4
+								p.rooms-type Одномісні
+							.hotel-room-container
+								p.rooms-quantity 6
+								p.rooms-type Двомісних
+							.hotel-room-container
+								p.rooms-quantity 5
+								p.rooms-type Трьохмісних
+						p.details
+							| детальніше
+							span = inline_svg "icons/arrow-down.svg"
+					.large-5.medium-12.small-12.columns
+						.slider-container
+							ul.bxslider-2
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+							.slider-selectors
+								.slider-prev
+									.svg = inline_svg "icons/arrow-left.svg"
+								.slider-next 
+									.svg = inline_svg "icons/arrow-right.svg"
+						p.under-slider Фасад готелю
+	.our-services
+		.row
+			.large-10.large-centered.medium-12.small-12.columns
+				.chapter-container
+					p.title послуги
+					p.subtitle які ми надаємо
+					span.line
+					span.red-square
+				.services-container
+					.row
+						.large-4.medium-12.small-12.columns
+							.service-container
+								.red-icon
+									.svg = inline_svg "icons/booking.svg"
+								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.description
+									.short-description Швидка реєстрація
+									.extended-description Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами.
+						.large-4.medium-12.small-12.columns
+							.service-container
+								.red-icon
+									.svg = inline_svg "icons/connection.svg"
+								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.description
+									.short-description Безкоштовний Wi-Fi
+									.extended-description Безкоштовне покриття Wi-fi швидкого достопу до мережі інтернет по всій території готелю.
+						.large-4.medium-12.small-12.columns
+							.service-container
+								.red-icon
+									.svg = inline_svg "icons/excursion.svg"
+								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.description
+									.short-description Організація екскурсій
+									.extended-description Організація цікавих екскурсій зf доступними цінами Львовом та поза його межами.
+				.services-container-small
+					.row	
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-1.svg"
+								p.text Послуги консьєржа;
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-2.svg"
+								p.text Room-service (цілодобово);
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-3.svg"
+								p.text Організація проведення прийомів, банкетів, весіль;
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-4.svg"
+								p.text Надання у номер дитячого ліжечка (колиска);
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-5.svg"
+								p.text Кабельне телебачення;
+						.large-4.medium-12.small-12.columns
+							.service-container-small
+								.svg = inline_svg "icons/services-icon-6.svg"
+								.text
+									p Трансфер (зустріч та проводи в аеропорту та на залізничному вокзалі);
+				p.underlined всі послуги
+	.cafe
+		.row
+			.large-10.large-centered.medium-12.small-12.columns
+				.chapter-container
+					p.title кафе
+					p.subtitle готелю Цісар
+					span.line
+					span.red-square
+				.row
+					.large-6.medium-12.small-12.columns
+						.slider-container
+							ul.bxslider-3
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+							.slider-selectors
+								.slider-prev
+									.svg = inline_svg "icons/arrow-left.svg"
+								.slider-next 
+									.svg = inline_svg "icons/arrow-right.svg"
+						p.under-slider Літня тераса
+						p.bigger-italic Ми раді вітати Вас в кафе готелю &#171;ЦісаR&#187;, розташованому в самому центрі Львова.
+						p.regular До Ваших послуг комфортабельні, сучасні, затишні номера, обладнані усім необхідним (в кожному номері є телевізор, безкоштовний інтернет Wi-Fi, душова кабіна, туалетна кімната). Цілодобово гаряча вода  та автономне опалення.
+						p.underlined детальніше
+					.large-6.medium-12.small-12.columns
+						p.cafe-propositions Пропозиції нашого кафе
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
+								.dish-price
+									p &#8372;10
+							.inner-block
+								.dish
+									.name
+										p Сніданок &#171;Англійський&#187;
+										span.line
+										span.red-square
+									p.description Вівсяна каша з шоколадом
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-2.jpg')})"
+								.dish-price
+									p &#8372;25
+							.inner-block
+								.dish
+									.name
+										p Сніданок &#171;Континентальний&#187;
+										span.line
+										span.red-square
+									p.description Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами.
+	.interior
+		.percent67
+			.percent100
+				.percent67.has-padding
+					a.fancybox.img-container rel="group" href=asset_path('photos/interior-1.jpg') style="background-image: url(#{asset_path('photos/interior-1.jpg')})"
+						.hover-block
+							.frame-1
+							.frame-2
+							.svg = inline_svg "icons/loop.svg"
+				.percent33.has-padding
+					a.fancybox.img-container rel="group" href=asset_path('photos/interior-2.jpg') style="background-image: url(#{asset_path('photos/interior-2.jpg')})"
+						.hover-block
+							.frame-1
+							.frame-2
+							.svg = inline_svg "icons/loop.svg"
+			.percent100
+				.percent33.has-padding
+					a.fancybox.img-container rel="group" href=asset_path('photos/interior-3.jpg') style="background-image: url(#{asset_path('photos/interior-3.jpg')})"
+						.hover-block
+							.frame-1
+							.frame-2
+							.svg = inline_svg "icons/loop.svg"
+				.percent33.has-padding
+					a.fancybox.img-container rel="group" href=asset_path('photos/interior-4.jpg') style="background-image: url(#{asset_path('photos/interior-4.jpg')})"
+						.hover-block
+							.frame-1
+							.frame-2
+							.svg = inline_svg "icons/loop.svg"
+				.percent33.has-padding
+					a.fancybox.img-container rel="group" href=asset_path('photos/interior-5.jpg') style="background-image: url(#{asset_path('photos/interior-5.jpg')})"
+						.hover-block
+							.frame-1
+							.frame-2
+							.svg = inline_svg "icons/loop.svg"
+		.percent33.has-padding
+			a.fancybox.img-container rel="group" href=asset_path('photos/interior-6.jpg') style="background-image: url(#{asset_path('photos/interior-6.jpg')})"
+				.hover-block
+					.frame-1
+					.frame-2
+					.svg = inline_svg "icons/loop.svg"
+	.news
+		.row
+			.large-10.large-centered.medium-12.small-12.columns
+				.chapter-container
+					p.title новини
+					p.subtitle та публікації
+					span.line
+					span.red-square
+				.news-block-wrapper
+					.row
+						.large-4.medium-4.small-12.columns
+							.news-block
+								.img-container
+									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.red-frame
+								.text
+									p.date 28 квітня 2016
+									p.news-title Заголовок публікації
+									p.regular Виявляючи стійкі архетипи на прикладі художньої творчості, можна сказати, що Відродження монотонно дає колір.
+									p.details детальніше
+						.large-4.medium-4.small-12.columns
+							.news-block
+								.img-container
+									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.red-frame
+								.text
+									p.date 28 квітня 2016
+									p.news-title Заголовок публікації
+									p.regular Виявляючи стійкі архетипи на прикладі художньої творчості, можна сказати, що Відродження монотонно дає колір.
+									p.details детальніше
+						.large-4.medium-4.small-12.columns
+							.news-block
+								.img-container
+									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.red-frame
+								.text
+									p.date 28 квітня 2016
+									p.news-title Заголовок публікації
+									p.regular Виявляючи стійкі архетипи на прикладі художньої творчості, можна сказати, що Відродження монотонно дає колір.
+									p.details детальніше
+				p.underlined переглянути всі
+				= render "reserve"
+	= render "map"

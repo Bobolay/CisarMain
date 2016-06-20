@@ -1,0 +1,117 @@
+.reservation-wrapper
+	position: relative
+	top: 50px
+	z-index: 5
+	.reservation-container
+		background: url(#{asset_path('png/texture-2.png')})
+		+grey-border
+		text-align: center
+		padding: 30px
+		@media #{$large-up}
+			height: 500px
+	.text
+		margin: 0 auto
+	.header
+		font-size: 2.125em
+		color: $red
+		text-transform: uppercase
+		text-align: center
+	.under-header
+		text-transform: uppercase
+		position: relative
+		top: -10px
+		margin-top: 5px
+		text-align: center
+	.square
+		position: relative
+		width: 10px
+		height: 10px
+		margin: 0 auto 30px
+		@media #{$small-only}
+			margin-bottom: 20px
+		span
+			width: 10px
+			height: 10px
+			background-color: #fff
+			border: 1px solid $red
+			+rotate(45deg)
+			display: block
+		&:before
+			content: ''
+			position: absolute
+			height: 1px
+			width: 50px
+			right: 10px
+			top: 4px
+			background-color: $red
+		&:after
+			content: ''
+			position: absolute
+			height: 1px
+			width: 50px
+			left: 10px
+			top: 4px
+			background-color: $red
+	.uppear-date
+		margin-top: 20px
+		position: relative
+		top: 5px
+	form, .uppear-date
+		max-width: 250px
+		margin: 0 auto
+		text-align: left
+	.button-find-room
+		margin: 30px auto 0
+		max-width: 250px
+	.contacts-container
+		background: url(#{asset_path('png/texture.png')})
+		+grey-border
+		padding: 30px
+		position: relative
+		left: -1px
+		@media #{$small-only}
+			left: 0
+			top: -1px
+		@media #{$medium-only}
+			left: 0
+			top: -1px
+		@media #{$large-up}
+			height: 500px
+		.contact-block
+			position: relative
+			margin-left: 30px
+			margin-bottom: 10px
+			@media #{$medium-only}
+				margin-bottom: 30px
+			@media #{$large-up}
+				margin-bottom: 50px
+		.svg
+			position: absolute
+			left: -35px
+			top: 0
+			svg
+				fill: $red
+				width: 25px
+				height: 25px
+		.contact-way
+			font-size: 1.125em
+			margin-bottom: 10px
+		.contact-info
+			color: $brown
+			opacity: 0.7
+			font-style: italic
+		.social-container
+		.social
+			width: 40px
+			height: 40px
+			+grey-border
+			text-align: center
+			display: inline-block
+			margin-right: 5px
+			svg
+				width: 20px
+				height: 20px
+				fill: $red
+				position: relative
+				top: 50%
+				+translate(0,-50%)

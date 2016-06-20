@@ -1,0 +1,57 @@
+.reservation-wrapper
+	.row
+		.large-12.medium-12.small-12.columns
+			.row.collapse
+				.large-5.medium-12.small-12.columns
+					.reservation-container
+						.text
+							p.header бронювання
+							p.under-header номеру у готелі
+							.square
+								span
+							p.uppear-date Дата заїзду
+							form
+								input#datepicker-3
+								.icon = inline_svg "icons/choose-date.svg"
+							p.uppear-date Дата виїзду
+							form
+								input#datepicker-4
+								.icon = inline_svg "icons/choose-date.svg"
+							.button-find-room
+								p знайти номер
+				.large-7.medium-12.small-12.columns
+					.contacts-container
+						.text
+							p.header контакти
+							p.under-header та адреса
+							.square
+								span
+							.row
+								.large-6.medium-6.small-12.columns
+									.contact-block
+										.svg = inline_svg "icons/contacts-geo.svg"
+										p.contact-way Адреса
+										p.contact-info Україна м. Львів, вул. Котлярська, 3
+									.contact-block
+										.svg = inline_svg "icons/contacts-phone.svg"
+										p.contact-way Телефони
+										p.contact-info 032 235 8228
+										p.contact-info 032 458 4827
+										p.contact-info 032 458 4827
+								.large-6.medium-6.small-12.columns
+									.contact-block
+										.svg = inline_svg "icons/contacts-mail.svg"
+										p.contact-way E-mail:
+										p.contact-info cisar@hotel-cisar.com
+									.contact-block
+										.svg = inline_svg "icons/contacts-planet.svg"
+										p.contact-way Соціальні мережі
+										.social-container
+											.social
+												= inline_svg "icons/social-owl.svg"
+											.social
+												= inline_svg "icons/social-fb.svg"
+											.social
+												= inline_svg "icons/social-google.svg"
+											.social
+												= inline_svg "icons/social-play.svg"

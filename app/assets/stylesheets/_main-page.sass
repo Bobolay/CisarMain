@@ -1,0 +1,627 @@
+.main-banner-wrapper
+	position: relative
+	width: 100vw
+	height: 100vh
+	max-width: 100%
+	background-size: cover
+	background-position: center
+	.bxslider-main-banner
+		position: absolute
+		width: 100%
+		height: 100%
+	.info-on-banner
+		position: absolute
+		top: 50%
+		+translate(0,-50%)
+		width: 60%
+		max-width: 700px
+		z-index: 1
+		@media #{$small-only}
+			width: 90%
+		#bx-pager
+			color: #fff
+			font-size: 1.37em
+			padding-left: 20%
+			list-style: none
+			@media #{$small-only}
+				padding-left: 20px
+			li
+				display: inline-block
+				opacity: 0.5
+				width: 30px
+				text-align: center
+				cursor: pointer
+				+transition(0.2s)
+				&:hover
+					opacity: 0.8
+				&.active
+					opacity: 1
+					border: 1px solid #fff
+					width: 40px
+					height: 40px
+					padding-top: 4px
+					margin-bottom: -2px
+		.info-container
+			background: url(#{asset_path('png/texture.png')})
+			overflow: hidden
+		.text1, .text2, .text3, .text4, .text5
+			padding: 40px 50px 40px 20%
+			display: none
+			+transition(0.3s)
+			&.visible
+				display: block
+			@media #{$small-only}
+				padding: 30px 20px
+			.special-offer
+				background-color: $brown
+				font-size: 0.9em
+				color: #fff
+				display: inline-block
+				font-style: italic
+				padding: 2px 10px
+			.header
+				color: $red
+				font-size: 2.1em
+				text-transform: uppercase
+				position: relative
+				line-height: 32px
+				margin: 15px 0
+				.line
+					bottom: -10px
+				.red-square
+					bottom: -14px
+			.regular
+				color: $brown
+				font-size: 1.1em
+				line-height: 22px
+				opacity: 0.7
+				margin-top: 20px
+				@media #{$small-only}
+					display: none
+			.details
+				cursor: pointer
+				color: $red
+				font-weight: bold
+				border-bottom: 1px solid $red
+				display: inline-block
+				text-transform: uppercase
+				padding: 3px 0
+				margin-top: 20px
+		.slider-prev, .slider-next
+			width: 65px
+			height: 65px
+			position: absolute
+			background-color: $brown
+			opacity: 0.85
+			cursor: pointer
+			+transition(0.2s)
+			&:hover
+				background-color: $red
+			@media #{$small-only}
+				width: 50px
+				height: 50px
+			.svg
+				fill: #fff
+				width: 13.5px
+				height: 25px
+				margin: 0 auto
+				position: relative
+				top: 50%
+				+translate(0,-50%)
+		.slider-prev
+			bottom: -30px
+			right: 60px
+			@media #{$small-only}
+				bottom: -20px
+				right: 50px
+		.slider-next
+			bottom: -30px
+			right: -20px
+			@media #{$small-only}
+				bottom: -20px
+				right: -10px
+.about-us-info
+	background: url(#{asset_path('png/main-background.png')})
+	padding-bottom: 70px
+	.reserve-container
+		position: relative
+		top: -82px
+		max-width: 900px
+		margin: auto
+		@media #{$small-only}
+			top: -41px
+		.top
+			background-color: $red
+			text-align: center
+			padding: 10px
+			position: relative
+			svg
+				position: absolute
+				display: none
+				fill: #fff
+				width: 15px
+				height: 15px
+				+rotate(45deg)
+				top: 25px
+				right: 25px
+				@media #{$small-only}
+					display: block
+		.reserve-header
+			font-size: 1.62em
+			color: #fff
+			text-transform: uppercase
+		.under-header
+			color: $yellow
+			font-style: italic
+		.main-field
+			background: url(#{asset_path('png/texture.png')})
+			padding: 30px 50px
+			border-left: 1px solid rgba(61,38,34,0.5)
+			border-right: 1px solid rgba(61,38,34,0.5)
+			border-bottom: 1px solid rgba(61,38,34,0.5)
+			@media #{$small-only}
+				display: none
+			@media #{$medium-only}
+				padding: 30px
+			.uppear-date
+				color: $brown
+				font-style: italic
+			.button-find-room
+				@media #{$medium-only}
+		hr
+			border-bottom: none
+			border-top: 1px solid rgba(0,0,0,0.3)
+			margin: 15px 0
+		.temperature
+			font-size: 1.5em
+			color: #000
+			opacity: 0.3
+		.sun
+			display: inline-block
+			width: 30px
+			height: 30px
+			position: relative
+			top: 5px
+			+rotate(25deg)
+			margin-left: 5px
+			svg
+				fill: #FFD500
+		.after-sun
+			font-size: 0.875em
+			font-style: italic
+			color: #000
+			opacity: 0.3
+			position: relative
+			margin-left: 10px
+			top: -5px
+	.crown
+		position: absolute
+		bottom: -6px
+		right: 120px
+		@media #{$small-only}
+			right: 50px
+		svg
+			width: 220px
+			@media #{$small-only}
+				width: 150px
+	.bigger-italic
+		margin-top: 30px
+	.regular
+		margin-top: 20px
+	.hotem-room-wrapper
+		margin: 30px 0
+	.hotel-room-container
+		display: inline-block
+		position: relative
+		+grey-border
+		width: 70px
+		height: 90px
+		margin-right: 70px
+		text-align: center
+		@media #{$small-only}
+			margin-right: 25px
+		.rooms-quantity
+			color: $brown
+			opacity: 0.8
+			text-align: center
+			margin-top: 15px
+			font-size: 2em
+			font-style: italic
+		.rooms-type
+			position: absolute
+			color: $red
+			font-size: 1.125em
+			left: 25px
+			bottom: 5px
+			font-style: italic
+			background: url(#{asset_path('png/main-background.png')})
+	.details
+		color: $red
+		text-transform: uppercase
+		cursor: pointer
+		margin-bottom: 15px
+		span
+			position: relative
+			fill: $red
+			top: 6px
+			left: 3px
+			@media #{$small-only}
+				top: 8px
+	.bxslider-2
+		width: 100%
+		height: 400px
+		margin-top: 30px
+		list-style: none
+		@media #{$small-only}
+			height: 200px
+	.under-slider
+		font-style: italic
+		color: $brown
+		opacity: 0.5
+		display: inline-block
+		margin-top: 10px
+
+.our-services
+	background: url(#{asset_path('png/dark-texture.png')})
+	padding: 70px 0
+	@media #{$small-only}
+		padding: 50px 0
+	.subtitle
+		color: #fff
+	.line
+		background-color: $red
+		opacity: 1
+	.red-square
+		background-color: #fff
+		border: 1px solid $red
+	.services-container
+		margin: 50px 0
+		+clearfix
+		@media #{$small-only}
+			margin: 30px 0
+	.service-container
+		position: relative
+		padding-top: 30px
+		@media #{$large-only}
+			padding-top: 0
+		.red-icon
+			width: 70px
+			height: 70px
+			position: absolute
+			background-color: $red
+			text-align: center
+			left: 0
+			top: 0
+			@media #{$small-only}
+				width: 50px
+				height: 50px
+				top: 5px
+			.svg
+				fill: #fff
+				width: 40px
+				position: relative
+				margin: 0 auto
+				top: 50%
+				+translate(0,-50%)
+				@media #{$small-only}
+					width: 25px
+		.background-img
+			background-position: center
+			background-size: cover
+			height: 200px
+			width: 80%
+			margin: 0 auto
+			@media #{$small-only}
+				height: 150px
+				width: 85%
+			@media #{$medium-only}
+				margin-left: 35px
+			@media #{$large-only}
+				width: 100%
+		.description
+			max-width: 300px
+			margin-top: -30px
+			color: #fff
+			position: relative
+			left: 100px
+			@media #{$small-only}
+				max-width: 200px
+				left: initial
+				float: right
+			@media #{$medium-only}
+				left: initial
+				float: right
+			@media #{$large-only}
+				left: 0
+			@media #{$xlarge-only}
+				left: 50px
+			.short-description
+				background: url(#{asset_path('png/find-room-texture.png')})
+				background-color: $brown
+				font-size: 1.375em
+				font-style: italic
+				padding: 10px
+				text-align: center
+				@media #{$large-only}
+					font-size: 1.25em
+			.extended-description
+				line-height: 20px
+				margin-top: 20px
+				opacity: 0.75
+				@media #{$small-only}
+					margin-top: 10px
+					line-height: 16px
+	.services-container-small
+		margin: 30px 0
+	.service-container-small
+		color: #fff
+		opacity: 0.5
+		margin-bottom: 30px
+		display: flex
+		+clearfix
+		@media #{$small-only}
+			margin-bottom: 15px
+		.svg
+			width: 70px
+			height: 70px
+			border: 1px solid #fff
+			margin-right: 20px
+			flex-shrink: 0
+			@media #{$small-only}
+				width: 60px
+				height: 60px
+			svg
+				fill: #fff
+				width: 30px
+				position: relative
+				left: 50%
+				top: 50%
+				+translate(-50%,-50%)
+				@media #{$small-only}
+					width: 25px
+		.text
+			line-height: 19px
+			margin: auto 0
+			@media #{$small-only}
+				line-height: 16px
+	.underlined
+		color: #fff
+		border-bottom: 1px solid #fff
+		@media #{$small-only}
+			position: relative
+			left: 50%
+			+translate(-50%,0)
+.cafe
+	background: url(#{asset_path('png/main-background.png')})
+	padding: 70px 0
+	@media #{$small-only}
+		padding: 50px 0 0 0
+	.line
+		background-color: $red
+		opacity: 1
+	.bxslider-3
+		width: 100%
+		height: 250px
+		margin-top: 30px
+		@media #{$small-only}
+			height: 180px
+	.under-slider
+		font-style: italic
+		color: $brown
+		opacity: 0.5
+		display: inline-block
+		margin-top: 10px
+	.bigger-italic
+		margin-top: 30px
+	.regular
+		margin-top: 20px
+	.underlined
+		margin-top: 50px
+		@media #{$small-only}
+			margin-top: 30px
+	.cafe-propositions
+		font-style: italic
+		color: $red
+		font-size: 1.375em
+		margin-top: 30px
+	.dish-container
+		position: relative
+		padding: 30px
+		height: 300px
+		overflow: hidden
+		@media #{$small-only}
+			padding: 0
+			height: auto
+			margin-top: 70px
+			overflow: visible
+		.dish-img
+			background-position: center
+			background-size: cover
+			position: absolute
+			width: 150px
+			height: 150px
+			left: 0
+			top: 60px
+			z-index: 1
+			@media #{$small-only}
+				left: 5px
+				top: -40px
+				width: 80%
+		.dish-price
+			position: absolute
+			width: 50%
+			height: 50%
+			right: -20px
+			top: 20px
+			background-color: $red
+			text-align: center
+			@media #{$small-only}
+				width: 50px
+				height: 50px
+			p
+				color: #fff
+				font-size: 1.5em
+				position: relative
+				top: 50%
+				+translate(0,-50%)
+		.inner-block
+			+grey-border
+			height: 100%
+			padding-right: 30px
+		.dish
+			position: relative
+			padding-left: 180px
+			display: inline-block
+			margin-top: 40px
+			@media #{$small-only}
+				margin-top: 130px
+				padding-left: 30px
+			.name
+				position: relative
+				padding-bottom: 10px
+				padding-right: 20px
+				@media #{$small-only}
+					padding-bottom: 0
+				p
+					color: $brown
+					font-size: 1.375em
+					font-style: italic
+				.line
+					background-color: rgba(0,0,0,0.3)
+					@media #{$small-only}
+						display: none
+				.red-square
+					@media #{$small-only}
+						display: none
+			.description
+				color: $brown
+				opacity: 0.75
+				margin-top: 20px
+				@media #{$small-only}
+					margin-top: 0
+					padding-bottom: 20px
+.interior
+	+clearfix
+	height: 500px
+	width: 100%
+	padding: 1px
+	margin-left: -1px
+	margin-right: -1px
+	@media #{$small-only}
+		display: none
+	.percent67
+		float: left
+		width: 66.7%
+		height: 100%
+	.percent33
+		float: left
+		width: 33.3%
+		height: 100%
+	.percent100
+		width: 100%
+		height: 50%
+	.img-container
+		display: block
+		background-size: cover
+		background-position: center
+		width: 100%
+		height: 100%
+		position: relative
+		cursor: pointer
+		&:hover
+			.hover-block
+				// display: block
+				opacity: 1
+	.has-padding
+		padding: 1px
+	.hover-block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url(#{asset_path('png/find-room-texture.png')})
+		background-color: rgba(61,38,34,0.7)
+		// display: none
+		opacity: 0
+		+transition(0.25s)
+	.frame-1
+		position: absolute
+		border: 1px solid #fff
+		top: 20px
+		left: 20px
+		right: 25px
+		bottom: 25px
+	.frame-2
+		position: absolute
+		border: 1px solid #fff
+		top: 25px
+		left: 25px
+		right: 20px
+		bottom: 20px
+	.svg
+		position: absolute
+		top: 50%
+		left: 50%
+		+translate(-50%,-50%)
+		svg
+			width: 50px
+			fill: #fff
+			fill-opacity: 0.7
+.news
+	background: url(#{asset_path('png/main-background.png')})
+	padding-top: 70px
+	.chapter-container
+		.line
+			background-color: $red
+			opacity: 1
+	.news-block-wrapper
+		padding: 50px 0 0 0
+		// @media #{$small-only}
+		// 	padding: 0
+		.news-block
+			+grey-border
+			position: relative
+			background: url(#{asset_path('png/background-2.png')})
+			@media #{$small-only}
+				margin-bottom: 30px
+		.img-container
+			height: 150px
+			position: relative
+		.img
+			background-size: cover
+			background-position: center
+			height: 100%
+			position: relative
+			z-index: 1
+		.red-frame
+			position: absolute
+			top: -5px
+			left: -5px
+			right: -5px
+			bottom: 5px
+			background-color: $red
+		.text
+			padding: 20px
+		.date
+			font-size: 0.75em
+			color: $light-brown
+			font-style: italic
+		.news-title
+			font-size: 1.25em
+			color: $brown
+		.regular
+			font-style: italic
+			color: $brown
+			margin-top: 10px
+		.details
+			text-align: right
+			font-size: 0.875em
+			text-transform: uppercase
+			font-weight: bold
+			color: $red
+			cursor: pointer
+			margin-top: 30px
+	.underlined
+		@media #{$medium-up}
+			margin: 30px 0

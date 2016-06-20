@@ -1,0 +1,45 @@
+$footer-height: 60px
+.footer
+	width: 100%
+	height: auto
+	background: url(#{asset_path('png/find-room-texture.png')})
+	background-color: $brown
+	a
+		color: #fff
+		opacity: 0.5
+		font-size: 0.75em
+		font-family: "open Sans"
+		line-height: 14.5px
+		cursor: pointer
+		+transition(0.2s)
+		&:hover
+			opacity: 1
+	.studio
+		text-align: center
+		@media #{$large-up}
+			text-align: left
+		svg
+			fill: #fff
+			fill-opacity: 0.5
+			width: 40px
+			height: 40px
+			position: relative
+			top: 10px
+			margin-right: 10px
+	.nav
+		text-align: center
+		@media #{$large-up}
+			text-align: right
+		ul
+			list-style: none
+			+clearfix
+			line-height: $footer-height
+			display: inline-block
+			@media #{$small-only}
+				margin: 10px 0
+			li
+				float: left
+				margin: 0 10px
+				@media #{$small-only}
+					line-height: 25px
+					float: none

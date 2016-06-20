@@ -1,0 +1,80 @@
+.header-container
+	.left-part
+		.main-logo = inline_svg "icons/logo.svg"
+		p.under-logo городоцька 65, львів
+	ul.right-part
+		li
+			p.temperature
+				| +24&deg;
+				span = inline_svg "icons/sun.svg"
+		li
+			p.exchange-rate
+				| 1 
+				sup usd 
+				= 26.5
+				sup  uah
+			p.exchange-rate
+				| 1 
+				sup eur 
+				= 28.2
+				sup  uah
+		li
+			p.reserve забронювати
+		li
+			.menu-button
+				.menu-button-lines
+.menu
+	.menu-button = inline_svg "icons/cross.svg"
+	.top-part
+		.text
+			.header
+				a головна
+				span.red-square
+			.header
+				a номера
+				span.red-square
+			ul.rooms
+				li
+					p Стандарт
+				li
+					p Покращений
+				li
+					p Комфорт
+				li
+					p Суперіор
+			.header
+				a послуги
+				span.red-square
+			.header
+				a кафе
+				span.red-square
+			.header
+				a корисна інформація
+				span.red-square
+			.header
+				a блог
+				span.red-square
+			.header
+				a контакти
+				span.red-square
+	.bottom-part
+		.row.collapse
+			.large-6.medium-6.small-6.columns
+				.contact-block
+					.svg = inline_svg "icons/contacts-phone.svg"
+					p.contact-way Телефони
+					p.contact-info 032 235 8228
+					p.contact-info 032 458 4827
+			.large-6.medium-6.small-6.columns
+				.contact-block
+					.svg = inline_svg "icons/contacts-planet.svg"
+					p.contact-way Соціальні мережі
+					.social-container
+						.social
+							= inline_svg "icons/social-owl.svg"
+						.social
+							= inline_svg "icons/social-fb.svg"
+						.social
+							= inline_svg "icons/social-google.svg"
+						.social
+							= inline_svg "icons/social-play.svg"
