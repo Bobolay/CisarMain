@@ -1,0 +1,169 @@
+.rooms-wrapper
+	.red-navigation
+		background-color: $red
+		ul
+			list-style: none
+			@media #{$medium-up}
+				margin-left: -20px
+		li
+			display: inline-block
+		a
+			color: #fff
+			opacity: 0.5
+			font-style: italic
+			font-size: 1.125em
+			line-height: 50px
+			display: block
+			cursor: pointer
+			padding: 0 20px
+			+transition(0.2s)
+			@media #{$small-only}
+				padding: 0 15px
+			&:hover
+				opacity: 1
+	.room-horizontal-container
+		position: relative
+		.room-container
+			padding: 30px 0.9375em
+			@media #{$medium-up}
+				padding: 50px 0.9375em
+		.above-room-type
+			font-style: italic
+			font-size: 1.25em
+			color: $brown
+		.room-type
+			text-transform: uppercase
+			font-size: 2.125em
+			padding-bottom: 10px
+			color: $red
+			position: relative
+			width: 80%
+			@media #{$large-up}
+				width: 100%
+			.line
+				width: 100%
+				@media #{$large-up}
+					left: -10px
+			.red-square
+				@media #{$large-up}
+					left: -10px
+			.room-price
+				position: absolute
+				width: 100px
+				height: 80px
+				background-color: $red
+				text-align: center
+				right: -60px
+				bottom: -40px
+				z-index: 1
+				display: none
+				@media #{$large-up}
+					display: block
+				span
+					color: #fff
+					font-size: 1.5rem
+					position: relative
+					top: 50%
+					+translate(0,-50%)
+					display: block
+					font-weight: bold
+		.icon-container
+			padding: 30px 0
+			@media #{$medium-up}
+				padding: 40px 0
+			.icon
+				width: 46px
+				height: 46px
+				+grey-border
+				text-align: center
+				display: inline-block
+				margin-right: 5px
+				margin-bottom: 5px
+				+transition(0.2s)
+				cursor: pointer
+				svg
+					width: 24px
+					height: 24px
+					fill: rgba(0,0,0,0.5)
+					position: relative
+					top: 50%
+					+translate(0,-50%)
+					+transition(0.2s)
+				&:hover
+					border: 1px solid $red
+					svg
+						fill: $red
+		.description
+			color: $brown	
+			opacity: 0.75
+			font-size: 1.125em
+			line-height: 1.375rem
+			padding-right: 30px
+		.underlined
+			margin-top: 30px
+		.details
+			color: rgba(0,0,0,0.5)
+			text-transform: uppercase
+			margin-left: 30px
+		&:nth-child(even)
+			.room-container
+				@media #{$large-up}
+					padding: 50px
+			.above-room-type
+				color: #fff
+			.description
+				color: $red
+			.room-type
+				.line
+					background-color: #fff
+			.icon-container
+				.icon
+					border: 1px solid rgba(255,255,255,0.5)
+					svg
+						fill: rgba(255,255,255,0.5)
+					&:hover
+						border: 1px solid $red
+						svg
+							fill: $red
+			.description
+				color: #fff
+				opacity: 0.75
+			.details
+				color: rgba(255,255,255,0.5)
+			.slider-container
+				left: 0
+		.slider-container
+			height: 250px
+			width: 100%
+			@media #{$medium-only}
+				height: 350px
+			@media #{$large-up}
+				height: 100%
+				width: 50%
+				position: absolute
+			.room-price
+				position: absolute
+				width: 60px
+				height: 50px
+				background-color: $red
+				text-align: center
+				bottom: -25px
+				right: 0.9375em
+				z-index: 1
+				display: block
+				@media #{$large-up}
+					display: none
+				span
+					color: #fff
+					font-size: 1.25rem
+					position: relative
+					top: 50%
+					+translate(0,-50%)
+					display: block
+		.bxslider-2
+			height: 100%
+			list-style: none
+	.reserve-container
+		padding-top: 50px
+		@media #{$small-only}
+			padding-top: 30px

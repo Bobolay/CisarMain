@@ -33,7 +33,7 @@ $(document).ready ->
 
 $(document).ready ->
     slider2 = $('.bxslider-2').bxSlider
-        pager: false
+        pagerCustom: '#bx-pager'
         controls: false
         infiniteLoop: true
         hideControlOnEnd: true

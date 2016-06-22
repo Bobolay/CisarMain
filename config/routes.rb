@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   controller :pages do
     get "about-us", action: "about_us"
-    # get "contact-us", action: "contact_us"
+    get "rooms", action: "rooms"
+    get "contacts", action: "contacts"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

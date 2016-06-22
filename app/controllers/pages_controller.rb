@@ -11,6 +11,14 @@ class PagesController < ApplicationController
 
   end
 
+  def rooms
+
+  end
+
+  def contacts
+
+  end
+
   private
 
   def set_page_instance

@@ -63,10 +63,14 @@
 			border: 1px solid #fff
 			padding: 10px 20px
 			cursor: pointer
+			+transition(0.2s)
 			@media #{$small-only}
 				display: none
 			@media #{$medium-only}
 				font-size: 0.875em
+			&:hover
+				color: $red
+				border: 1px solid $red
 		.menu-button
 			cursor: pointer
 			position: relative

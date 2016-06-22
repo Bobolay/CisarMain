@@ -1,0 +1,64 @@
+.contacts-wrapper
+	.contact-block-container
+		margin-bottom: 30px
+	.contacts-block
+		position: relative
+		background: url(#{asset_path('png/find-room-texture.png')})
+		border: 1px solid rgba(0,0,0,0.3)
+		width: 80px
+		height: 100px
+		&:before
+			content: ''
+			position: absolute
+			width: 1px
+			height: 30px
+			right: -1px
+			bottom: 10px
+			background: url(#{asset_path('png/main-background.png')})
+		.svg
+			position: absolute
+			width: 100%
+		svg
+			width: 30px
+			height: 30px
+			fill: $brown
+			position: absolute
+			top: 10px
+			left: 50%
+			+translate(-50%,0)
+		p
+			font-size: 1.375em
+			font-style: italic
+			color: $red
+			position: absolute
+			top: 55px
+			left: 40px
+			width: 200px
+	.social-container
+		padding: 20px 0 0 40px
+		.social
+			width: 40px
+			height: 40px
+			+grey-border
+			text-align: center
+			display: inline-block
+			margin-right: 5px
+			margin-bottom: 5px
+			+transition(0.2s)
+			cursor: pointer
+			svg
+				width: 20px
+				height: 20px
+				fill: $brown
+				position: relative
+				top: 50%
+				+translate(0,-50%)
+			&:hover
+				svg
+					fill: $red
+	.under-block
+		font-size: 1.125em
+		color: $brown
+		opacity: 0.75
+		line-height: 22px
+		padding: 20px 0 0 40px

@@ -1,0 +1,63 @@
+.contacts-wrapper
+	.half-banner
+		.background-img style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+		.row
+			.columns
+				.section-text
+					p.header
+						| контакти та адреса
+						span.line
+						span.red-square
+				.red-head
+					.svg
+						= inline_svg "icons/contacts-phone.svg"
+					.text
+						p
+							| +38032 
+							span 235 3565
+	.main-background
+		.row
+			.columns
+				.row
+					.large-3.medium-6.small-6.columns
+						.contact-block-container
+							.contacts-block
+								= inline_svg "icons/contacts-geo.svg"
+								p Адреса:
+							p.under-block Україна, м. Львів, вул. Городоцька, 65
+					.large-3.medium-6.small-6.columns
+						.contact-block-container
+							.contacts-block
+								= inline_svg "icons/contacts-phone.svg"
+								p Телефони:
+							p.under-block 
+								| 032 253 3565
+								br
+								| 094 993 5565
+								br
+								| 067 193 2444
+					.large-3.medium-6.small-6.columns
+						.contact-block-container
+							.contacts-block
+								= inline_svg "icons/contacts-mail.svg"
+								p E-mail:
+							p.under-block cisar.lviv@gmail.com
+					.large-3.medium-6.small-6.columns
+						.contact-block-container
+							.contacts-block
+								= inline_svg "icons/contacts-planet.svg"
+								p Соціальні мережі:
+							.social-container
+								.social
+									= inline_svg "icons/social-owl.svg"
+								.social
+									= inline_svg "icons/social-fb.svg"
+								.social
+									= inline_svg "icons/social-google.svg"
+								.social
+									= inline_svg "icons/social-play.svg"
+								.social
+									= inline_svg "icons/social-instagram.svg"
+								.social
+									= inline_svg "icons/social-vk.svg"
+	= render "map"

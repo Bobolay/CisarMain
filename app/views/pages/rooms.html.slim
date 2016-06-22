@@ -1,0 +1,145 @@
+.rooms-wrapper
+	.half-banner
+		.background-img style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+		.row
+			.columns
+				.section-text	
+					p.header
+						| номерний фонд
+						span.line
+						span.red-square
+					p.under-header Текстовий опис під категорією, невеликий опис наявних типів номерів
+	.red-navigation
+		.row
+			.large-3.medium-9.large-12.columns
+				ul
+					li
+						a Одномісні
+					li
+						a Двохмісні
+					li
+						a Трьохмісні
+	.room-horizontal-container style="background-image: url(#{asset_path('png/texture-2.png')})"
+		.row.collapse
+			.columns
+				.row.collapse
+					.large-6.medium-12.columns.go-right
+						.slider-container
+							ul.bxslider-2
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+							.squares#bx-pager
+								a data-slide-index="0" href=""
+								a data-slide-index="1" href=""
+								a data-slide-index="2" href=""
+							span.room-price
+								span &#8372;250					
+					.large-6.medium-12.columns.go-left
+						.room-container
+							p.above-room-type Тип номеру
+							p.room-type
+								| одномісний
+								span.line
+								span.red-square
+								span.room-price
+									span &#8372;250
+							.icon-container
+								.icon
+									= inline_svg "icons/services-icon-5.svg"
+								.icon
+									= inline_svg "icons/connection.svg"
+								.icon
+									= inline_svg "icons/services-icon-4.svg"
+							p.description
+								| Цей номер прекрасно підходить як для відпочинку під час туристичної подорожі, так і для тих, хто знаходиться в діловій поїздці. Гості, які цінують комфорт і практичність, та подорожують наодинці, сміло можуть обирати цей номер.
+							a.underlined бронювання
+							a.details детальніше
+	.room-horizontal-container style="background-image: url(#{asset_path('png/dark-texture.png')})"
+		.row.collapse
+			.columns
+				.row.collapse
+					.large-6.medium-12.columns
+						.slider-container
+							ul.bxslider-2
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+							.squares#bx-pager
+								a data-slide-index="0" href=""
+								a data-slide-index="1" href=""
+								a data-slide-index="2" href=""
+							span.room-price
+								span &#8372;250					
+					.large-6.medium-12.columns
+						.room-container
+							p.above-room-type Тип номеру
+							p.room-type
+								| двохмісний
+								span.line
+								span.red-square
+								span.room-price
+									span &#8372;350
+							.icon-container
+								.icon
+									= inline_svg "icons/services-icon-7.svg"								
+								.icon
+									= inline_svg "icons/services-icon-5.svg"
+								.icon
+									= inline_svg "icons/connection.svg"
+								.icon
+									= inline_svg "icons/services-icon-4.svg"
+							p.description
+								| Якщо Ви вирішили відпочити у нашому місті з близькою людиною &mdash; двомісний стандарт це те, що Вам потрібно. Якщо поряд друга половинка – кольорова гамма номеру лише додасть у Ваші стосунки ніжності та спокою.
+							a.underlined бронювання
+							a.details детальніше
+	.room-horizontal-container style="background-image: url(#{asset_path('png/texture-2.png')})"
+		.row.collapse
+			.columns
+				.row.collapse
+					.large-6.medium-12.columns.go-right
+						.slider-container
+							ul.bxslider-2
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+							.squares#bx-pager
+								a data-slide-index="0" href=""
+								a data-slide-index="1" href=""
+								a data-slide-index="2" href=""
+							span.room-price
+								span &#8372;250					
+					.large-6.medium-12.columns.go-left
+						.room-container
+							p.above-room-type Тип номеру
+							p.room-type
+								| трьохмісний
+								span.line
+								span.red-square
+								span.room-price
+									span &#8372;450
+							.icon-container
+								.icon
+									= inline_svg "icons/services-icon-7.svg"
+								.icon
+									= inline_svg "icons/services-icon-5.svg"
+								.icon
+									= inline_svg "icons/connection.svg"
+								.icon
+									= inline_svg "icons/services-icon-4.svg"
+							p.description
+								| Завітали до Львова з сім'єю або компанією? Ми можемо запропонувати просторий та затишний номер &mdash; трьохмісний стандарт.
+							a.underlined бронювання
+							a.details детальніше
+	.reserve-container style="background-image: url(#{asset_path('png/texture.png')})"
+		= render "reserve"
+	= render "map"

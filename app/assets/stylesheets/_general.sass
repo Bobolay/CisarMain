@@ -67,6 +67,10 @@ $yellow: #FFD500
 		color: $yellow
 		font-weight: bold
 
+a
+	text-decoration: none
+	color: inherit
+
 .title
 	font-size: 3.2em
 	color: $red
@@ -145,3 +149,99 @@ $yellow: #FFD500
 	width: 100%
 	height: 400px
 	border-top: 1px solid rgba(0,0,0,0.3)
+
+.half-banner
+	position: relative
+	height: 400px
+	.background-img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-position: center
+		background-size: cover
+	.section-text
+		position: absolute
+		top: 60%
+	.header
+		font-size: 2.125em
+		position: relative
+		text-transform: uppercase
+		color: #fff
+		display: inline-block
+		padding-right: 50px
+	.line
+		background-color: #fff
+		opacity: 1
+		bottom: -5px
+	.red-square
+		bottom: -10px
+	.under-header
+		font-size: 1.125em
+		color: #fff
+		opacity: 0.7
+		font-style: italic
+		margin-top: 20px
+		line-height: 20px
+		width: 70%
+	.red-head
+		+clearfix
+		position: absolute
+		bottom: -40px
+		background-color: $red
+		z-index: 1
+	.svg
+		width: 80px
+		height: 80px
+		border-right: 1px solid rgba(0,0,0,0.3)
+		float: left
+		position: relative
+		background-color: $red
+		svg
+			width: 25px
+			height: 25px
+			fill: #fff
+			position: absolute
+			top: 50%
+			left: 50%
+			+translate(-50%,-50%)
+	.text
+		text-align: center
+		float: left
+		background-color: #B02700
+		p
+			font-size: 1.375em
+			font-weight: bold
+			color: #fff
+			line-height: 80px
+			padding: 0 20px
+			span
+				font-weight: initial
+
+.main-background
+	background: url(#{asset_path('png/main-background.png')})
+	padding: 100px 0 50px
+	overflow: hidden
+
+.squares
+	position: absolute
+	left: 50%
+	+translate(-50%,0)
+	bottom: 30px
+	@media #{$small-only}
+		bottom: 20px
+	a
+		display: inline-block
+		margin: 0 8px
+		width: 10px
+		height: 10px
+		border: 1px solid #fff
+		&.active
+			background-color: $red
+			border: 1px solid $red
+
+.go-left
+	float: left !important
+.go-right
+	float: right !important
