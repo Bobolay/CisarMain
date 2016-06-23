@@ -161,16 +161,17 @@ a
 		height: 100%
 		background-position: center
 		background-size: cover
-	.section-text
+	.section-info
 		position: absolute
-		top: 60%
+		bottom: -40px
 	.header
-		font-size: 2.125em
+		font-size: 2.8em
 		position: relative
 		text-transform: uppercase
 		color: #fff
 		display: inline-block
 		padding-right: 50px
+		margin-bottom: 30px
 	.line
 		background-color: #fff
 		opacity: 1
@@ -182,16 +183,15 @@ a
 		color: #fff
 		opacity: 0.7
 		font-style: italic
-		margin-top: 20px
 		line-height: 20px
 		width: 70%
+		margin-bottom: 30px
 	.red-head
 		+clearfix
-		position: absolute
-		bottom: -40px
+		display: inline-block
 		background-color: $red
 		z-index: 1
-	.svg
+	.left-side
 		width: 80px
 		height: 80px
 		border-right: 1px solid rgba(0,0,0,0.3)
@@ -210,7 +210,7 @@ a
 		text-align: center
 		float: left
 		background-color: #B02700
-		p
+		a
 			font-size: 1.375em
 			font-weight: bold
 			color: #fff
@@ -221,6 +221,11 @@ a
 
 .main-background
 	background: url(#{asset_path('png/main-background.png')})
+	padding: 100px 0 50px
+	overflow: hidden
+
+.dark-background
+	background: url(#{asset_path('png/dark-texture.png')})
 	padding: 100px 0 50px
 	overflow: hidden
 
@@ -245,3 +250,93 @@ a
 	float: left !important
 .go-right
 	float: right !important
+
+.dish-container
+	position: relative
+	padding: 30px
+	overflow: hidden
+	max-width: 600px
+	@media #{$small-only}
+		padding: 0
+		height: auto
+		margin-top: 70px
+		overflow: visible
+	@media #{$medium-only}
+		margin: 0 auto
+	.dish-img
+		background-position: center
+		background-size: cover
+		position: absolute
+		width: 150px
+		height: 150px
+		left: 0
+		top: 60px
+		z-index: 1
+		@media #{$small-only}
+			left: 5px
+			top: -40px
+			width: 80%
+	.dish-price
+		position: absolute
+		width: 50%
+		height: 50%
+		right: -20px
+		top: 20px
+		background-color: $red
+		text-align: center
+		@media #{$small-only}
+			width: 50px
+			height: 50px
+		p
+			color: #fff
+			font-size: 1.5em
+			position: relative
+			top: 50%
+			+translate(0,-50%)
+	.inner-block
+		+grey-border
+		padding-right: 30px
+		padding-bottom: 50px
+		@media #{$small-only}
+			padding-bottom: 20px
+	.dish
+		position: relative
+		padding-left: 180px
+		display: inline-block
+		margin-top: 40px
+		@media #{$small-only}
+			margin-top: 130px
+			padding-left: 30px
+		.name
+			position: relative
+			padding-bottom: 10px
+			padding-right: 20px
+			@media #{$small-only}
+				padding-bottom: 0
+			p
+				color: $brown
+				font-size: 1.25em
+				font-style: italic
+				&:first-child
+					color: $red
+					text-transform: uppercase
+					font-style: none
+					margin-top: -20px
+			.line
+				background-color: rgba(0,0,0,0.3)
+				@media #{$small-only}
+					display: none
+			.red-square
+				@media #{$small-only}
+					display: none
+		.description
+			color: $brown
+			opacity: 0.75
+			margin-top: 20px
+			line-height: 24px
+			padding-bottom: 20px
+			@media #{$small-only}
+				margin-top: 0
+				padding-bottom: 20px
+			@media #{$large-up}
+				padding-bottom: 0

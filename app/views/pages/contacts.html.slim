@@ -3,18 +3,19 @@
 		.background-img style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
 		.row
 			.columns
-				.section-text
+				.section-info
 					p.header
 						| контакти та адреса
 						span.line
 						span.red-square
-				.red-head
-					.svg
-						= inline_svg "icons/contacts-phone.svg"
-					.text
-						p
-							| +38032 
-							span 235 3565
+					br
+					.red-head
+						.left-side
+							= inline_svg "icons/contacts-phone.svg"
+						.text
+							a
+								| +38032 
+								span 235 3565
 	.main-background
 		.row
 			.columns

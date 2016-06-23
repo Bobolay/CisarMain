@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   controller :pages do
     get "about-us", action: "about_us"
     get "rooms", action: "rooms"
+    get "room_one", action: "room_one"
     get "contacts", action: "contacts"
   end
 

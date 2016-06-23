@@ -15,6 +15,10 @@ class PagesController < ApplicationController
 
   end
 
+  def room_one
+
+  end
+
   def contacts
 
   end

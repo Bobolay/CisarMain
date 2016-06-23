@@ -1,0 +1,177 @@
+.room-one-wrapper
+	.main-background
+		padding: 50px 0
+	.first-background
+		padding: 100px 0 50px
+	.left-side
+		width: initial
+		height: initial
+		p
+			line-height: 80px
+			padding: 0 10px
+			color: #fff
+			font-size: 1.375em
+			font-weight: bold
+			sup
+				font-style: italic
+				font-size: 60%
+				font-weight: 100
+	.text
+		a
+			text-transform: uppercase
+			font-weight: initial
+	.room-title
+		font-size: 1.5em
+		color: $red
+		text-transform: uppercase
+		sub
+			color: rgba(0,0,0,0.5)
+			text-transform: none
+			font-style: italic
+			span
+				padding: 0 5px
+				font-size: 1.25em
+	.room-description
+		font-size: 1.125em
+		color: $brown
+		margin-top: 20px
+	.block-frame
+		position: relative
+		border: 1px solid rgba(0,0,0,0.3)
+		width: 80px
+		height: 100px
+		margin-top: 30px
+		&:before
+			content: ''
+			position: absolute
+			width: 1px
+			height: 30px
+			right: -1px
+			bottom: 10px
+			background: url(#{asset_path('png/main-background.png')})
+		svg
+			width: 30px
+			height: 30px
+			fill: #6C4B40
+			position: absolute
+			top: 15px
+			left: 50%
+			+translate(-50%,0)
+		p
+			font-size: 1.375em
+			font-style: italic
+			color: $red
+			position: absolute
+			top: 55px
+			left: 40px
+			width: 200px
+	.dark-background
+		padding: 30px 0
+		.room-title
+			sub
+				color: rgba(255,255,255,0.5)
+		.carousel-container
+			position: relative
+			padding: 30px 0 50px
+		.slider-selectors
+			bottom: -10px
+			right: -5px
+			.slider-prev, .slider-next
+				background-color: transparent
+				background: none
+			.slider-number
+				display: inline-block
+				color: $red
+				font-size: 1.25em
+				position: relative
+				top: -5px
+		.carousel
+			height: 200px
+			a
+				display: block
+	.room-service-list
+		list-style: none
+		margin: 30px 0
+		padding-left: 30px
+		li
+			font-size: 1.125em
+			color: $brown
+			font-style: italic
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				width: 7px
+				height: 7px
+				border-radius: 3px
+				border: 1px solid $light-brown
+				left: -20px
+				top: 10px
+	.nav-button-wrapper
+		background: url(#{asset_path('png/dark-texture.png')})
+		+clearfix
+	.left-nav-button, .right-nav-button
+		height: 130px
+		cursor: pointer
+		+clearfix
+		@media #{$small-only}
+			height: 80px
+			width: 50%
+		.img
+			position: relative
+			background-position: center
+			background-size: cover
+			height: 100%
+			width: 130px
+			float: left
+			z-index: 1
+			display: none
+			@media #{$large-up}
+				display: block
+		.button
+			background: url(#{asset_path('png/find-room-texture.png')})
+			border: 1px solid rgba(255,255,255,0.3)
+			float: left
+			position: relative
+			top: 50%
+			+translate(0,-50%)
+			padding: 0 20px
+			+transition(0.2s)
+			@media #{$small-only}
+				border: initial
+				width: 100%
+			p
+				line-height: 90px
+				color: #fff
+				text-transform: uppercase
+				font-size: 1.125em
+				+transition(0.2s)
+				@media #{$small-only}
+					line-height: 80px
+				svg
+					fill: #fff
+					width: 12px
+					height: 20px
+					position: relative
+					top: 3px
+					margin: 0 10px
+					+transition(0.2s)
+		&:hover
+			.button
+				border: 1px solid $red
+				p
+					color: $red
+					svg
+						fill: $red
+	.left-nav-button
+		float: left
+		text-align: left
+		@media #{$small-only}
+			border-right: 1px solid rgba(255,255,255,0.5)
+		.button
+			left: -1px
+	.right-nav-button
+		float: right
+		text-align: right
+		.button
+			right: -1px

@@ -1,4 +1,6 @@
 .rooms-wrapper
+	.section-info
+		bottom: 0
 	.red-navigation
 		background-color: $red
 		ul
@@ -108,7 +110,7 @@
 		&:nth-child(even)
 			.room-container
 				@media #{$large-up}
-					padding: 50px
+					padding: 50px 70px
 			.above-room-type
 				color: #fff
 			.description
@@ -116,6 +118,12 @@
 			.room-type
 				.line
 					background-color: #fff
+					left: 0
+				.red-square
+					right: 0
+					left: initial
+				.room-price
+					left: -120px
 			.icon-container
 				.icon
 					border: 1px solid rgba(255,255,255,0.5)
