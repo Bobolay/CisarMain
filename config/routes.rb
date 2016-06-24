@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "about-us", action: "about_us"
     get "rooms", action: "rooms"
     get "room_one", action: "room_one"
+    get "services", action: "services"
     get "contacts", action: "contacts"
   end
 

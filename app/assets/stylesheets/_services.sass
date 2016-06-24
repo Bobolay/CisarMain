@@ -1,0 +1,31 @@
+.services-wrapper
+	.main-background
+		.extended-description
+			color: $brown
+	.services-list-container
+		ul
+			list-style: none
+			padding-left: 100px
+			@media #{$small-only}
+				padding-left: 30px
+			li
+				position: relative
+				color: $light-brown
+				line-height: 18px
+				margin: 15px 0
+				@media #{$small-only}
+					margin: 10px 0
+				&:before
+					content: ''
+					width: 6px
+					height: 6px
+					background-color: $red
+					position: absolute
+					left: -20px
+					top: 10px
+					+rotate(45deg)
+	.dark-background
+		.services-list-container
+			li
+				color: #fff
+				opacity: 0.75

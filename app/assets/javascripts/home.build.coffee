@@ -24,3 +24,5 @@
 #= require datepick
 
 #= require fancybox
+
+#= require main

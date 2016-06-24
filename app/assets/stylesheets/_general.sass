@@ -218,6 +218,7 @@ a
 			padding: 0 20px
 			span
 				font-weight: initial
+				text-transform: uppercase
 
 .main-background
 	background: url(#{asset_path('png/main-background.png')})
@@ -313,6 +314,7 @@ a
 			padding-right: 20px
 			@media #{$small-only}
 				padding-bottom: 0
+				padding-top: 10px
 			p
 				color: $brown
 				font-size: 1.25em
@@ -340,3 +342,91 @@ a
 				padding-bottom: 20px
 			@media #{$large-up}
 				padding-bottom: 0
+.title-slash
+	font-size: 1.5em
+	color: $red
+	text-transform: uppercase
+	sub
+		color: rgba(0,0,0,0.5)
+		text-transform: none
+		font-style: italic
+		span
+			padding: 0 5px
+			font-size: 1.25em
+.services-container
+	margin: 50px 0
+	+clearfix
+	@media #{$small-only}
+		margin: 30px 0
+	.service-container
+		position: relative
+		padding-top: 30px
+		@media #{$large-only}
+			padding-top: 0
+		.red-icon
+			width: 70px
+			height: 70px
+			position: absolute
+			background-color: $red
+			text-align: center
+			left: 0
+			top: 0
+			@media #{$small-only}
+				width: 50px
+				height: 50px
+				top: 5px
+			.svg
+				fill: #fff
+				width: 40px
+				position: relative
+				margin: 0 auto
+				top: 50%
+				+translate(0,-50%)
+				@media #{$small-only}
+					width: 25px
+		.background-img
+			background-position: center
+			background-size: cover
+			height: 200px
+			width: 80%
+			margin: 0 auto
+			@media #{$small-only}
+				height: 150px
+				width: 85%
+			@media #{$medium-only}
+				margin-left: 35px
+			@media #{$large-only}
+				width: 100%
+		.description
+			max-width: 300px
+			margin-top: -30px
+			color: #fff
+			position: relative
+			left: 100px
+			@media #{$small-only}
+				max-width: 200px
+				left: initial
+				float: right
+			@media #{$medium-only}
+				left: initial
+				float: right
+			@media #{$large-only}
+				left: 0
+			@media #{$xlarge-only}
+				left: 50px
+			.short-description
+				background: url(#{asset_path('png/find-room-texture.png')})
+				background-color: $brown
+				font-size: 1.375em
+				font-style: italic
+				padding: 10px
+				text-align: center
+				@media #{$large-only}
+					font-size: 1.25em
+			.extended-description
+				line-height: 20px
+				margin-top: 20px
+				opacity: 0.75
+				@media #{$small-only}
+					margin-top: 10px
+					line-height: 16px

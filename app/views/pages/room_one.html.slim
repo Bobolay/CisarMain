@@ -1,6 +1,6 @@
 .room-one-wrapper
 	.half-banner
-		.background-img style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+		.background-img style="background-image: url(#{asset_path('photos/banner-room-one.jpg')})"
 		.row
 			.columns
 				.section-info
@@ -22,7 +22,7 @@
 			.columns
 				.row
 					.large-7.medium-12.columns
-						p.room-title
+						p.title-slash
 							| номер
 							sub
 								span &#47;
@@ -50,7 +50,7 @@
 	.dark-background
 		.row
 			.columns
-				p.room-title
+				p.title-slash
 					| галерея
 					sub
 						span &#47;
@@ -93,7 +93,7 @@
 			.columns
 				.row
 					.large-6.medium-12.columns
-						p.room-title
+						p.title-slash
 							| у номері
 							sub
 								span &#47;
@@ -110,7 +110,7 @@
 							li Банний халат, тапочки та рушники;
 							li Фен;
 							li Цілодобовий Room-service;
-						p.room-title
+						p.title-slash
 							| послуги
 							sub
 								span &#47;
@@ -120,7 +120,7 @@
 							li Масаж в номері;
 							li Послуги прання, хімчистки та прасування;
 					.large-6.medium-12.columns
-						p.room-title
+						p.title-slash
 							| пропозиції
 							sub
 								span &#47;
@@ -151,7 +151,7 @@
 									p.description ABF &mdash; більш ситний, ніж CBF + вам дадуть ще нарізку, салат, гаряче.
 	.nav-button-wrapper
 		.left-nav-button
-			.img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
+			.img style="background-image: url(#{asset_path('photos/room-1.jpg')})"
 			.button
 				p 
 					span = inline_svg "icons/arrow-left.svg"
@@ -161,7 +161,7 @@
 				p 
 					| трьохмісний
 					span = inline_svg "icons/arrow-right.svg"
-			.img style="background-image: url(#{asset_path('photos/dish-2.jpg')})"
+			.img style="background-image: url(#{asset_path('photos/room-2.jpg')})"
 	.reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
 		= render "reserve"
 	= render "map"

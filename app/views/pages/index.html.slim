@@ -27,38 +27,38 @@
 						span.red-square
 					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
 					p.details детальніше
-				/ .text2
-				/ 	p.special-offer спецпропозиція
-				/ 	p.header
-				/ 		| пропозиція для дітей
-				/ 		span.line
-				/ 		span.red-square
-				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
-				/ 	p.details детальніше
-				/ .text3
-				/ 	p.special-offer спецпропозиція
-				/ 	p.header
-				/ 		| пропозиція для студентів
-				/ 		span.line
-				/ 		span.red-square
-				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
-				/ 	p.details детальніше
-				/ .text4
-				/ 	p.special-offer спецпропозиція
-				/ 	p.header
-				/ 		| пропозиція для пенсіонерів
-				/ 		span.line
-				/ 		span.red-square
-				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
-				/ 	p.details детальніше
-				/ .text5
-				/ 	p.special-offer спецпропозиція
-				/ 	p.header
-				/ 		| пропозиція для всіх
-				/ 		span.line
-				/ 		span.red-square
-				/ 	p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
-				/ 	p.details детальніше
+				.text2
+					p.special-offer спецпропозиція
+					p.header
+						| пропозиція для дітей
+						span.line
+						span.red-square
+					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+					p.details детальніше
+				.text3
+					p.special-offer спецпропозиція
+					p.header
+						| пропозиція для студентів
+						span.line
+						span.red-square
+					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+					p.details детальніше
+				.text4
+					p.special-offer спецпропозиція
+					p.header
+						| пропозиція для вас
+						span.line
+						span.red-square
+					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+					p.details детальніше
+				.text5
+					p.special-offer спецпропозиція
+					p.header
+						| пропозиція для всіх
+						span.line
+						span.red-square
+					p.regular Бажаєте казково розпочати спільне життя? З &#171;Євроготелем&#187; немає нічого неможливого! Оберіть для першої шлюбної ночі Весільний пакет від &#171;Євроготелю&#187; і насолоджуйтеся!
+					p.details детальніше
 				.slider-prev
 					.svg = inline_svg "icons/arrow-left.svg"
 				.slider-next
@@ -72,7 +72,7 @@
 							.top
 								p.reserve-header бронювання
 								p.under-header номеру у готелі
-								= inline_svg "icons/cross.svg"
+								a href="#reserve" = inline_svg "icons/cross.svg"
 							.main-field
 								.row
 									.large-4.medium-4.small-12.columns
@@ -119,11 +119,11 @@
 						.slider-container
 							ul.bxslider-2
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/hotel-1.jpg')})"
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/hotel-2.jpg')})"
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/hotel-3.jpg')})"
 							.slider-selectors
 								.slider-prev
 									.svg = inline_svg "icons/arrow-left.svg"
@@ -140,58 +140,58 @@
 					span.red-square
 				.services-container
 					.row
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container
 								.red-icon
 									.svg = inline_svg "icons/booking.svg"
-								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.background-img style="background-image: url(#{asset_path('photos/reception.jpg')})"
 								.description
 									.short-description Швидка реєстрація
 									.extended-description Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами.
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container
 								.red-icon
 									.svg = inline_svg "icons/connection.svg"
-								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.background-img style="background-image: url(#{asset_path('photos/free-wifi.jpg')})"
 								.description
 									.short-description Безкоштовний Wi-Fi
 									.extended-description Безкоштовне покриття Wi-fi швидкого достопу до мережі інтернет по всій території готелю.
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container
 								.red-icon
 									.svg = inline_svg "icons/excursion.svg"
-								.background-img style="background-image: url(#{asset_path('photos/carousel-1.jpg')})"
+								.background-img style="background-image: url(#{asset_path('photos/tourist-map.jpg')})"
 								.description
 									.short-description Організація екскурсій
 									.extended-description Організація цікавих екскурсій зf доступними цінами Львовом та поза його межами.
 				.services-container-small
 					.row	
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-1.svg"
 								p.text Послуги консьєржа;
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-2.svg"
 								p.text Room-service (цілодобово);
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-3.svg"
 								p.text Організація проведення прийомів, банкетів, весіль;
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-4.svg"
 								p.text Надання у номер дитячого ліжечка (колиска);
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-5.svg"
 								p.text Кабельне телебачення;
-						.large-4.medium-12.small-12.columns
+						.large-4.medium-12.columns
 							.service-container-small
 								.svg = inline_svg "icons/services-icon-6.svg"
 								.text
 									p Трансфер (зустріч та проводи в аеропорту та на залізничному вокзалі);
-				p.underlined всі послуги
+				a.underlined href=services_path всі послуги
 	.cafe
 		.row
 			.columns
@@ -205,11 +205,11 @@
 						.slider-container
 							ul.bxslider-3
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-1.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/cafe-1.jpg')})"
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-2.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/cafe-2.jpg')})"
 								li
-									.img-container style="background-image: url(#{asset_path('photos/main-banner-3.jpg')})"
+									.img-container style="background-image: url(#{asset_path('photos/cafe-3.jpg')})"
 							.slider-selectors
 								.slider-prev
 									.svg = inline_svg "icons/arrow-left.svg"
@@ -296,7 +296,7 @@
 						.large-4.medium-4.small-12.columns
 							.news-block
 								.img-container
-									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.img style="background-image: url(#{asset_path('photos/interior-5.jpg')})"
 									.red-frame
 								.text
 									p.date 28 квітня 2016
@@ -306,7 +306,7 @@
 						.large-4.medium-4.small-12.columns
 							.news-block
 								.img-container
-									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.img style="background-image: url(#{asset_path('photos/interior-5.jpg')})"
 									.red-frame
 								.text
 									p.date 28 квітня 2016
@@ -316,7 +316,7 @@
 						.large-4.medium-4.small-12.columns
 							.news-block
 								.img-container
-									.img style="background-image: url(#{asset_path('photos/news.jpg')})"
+									.img style="background-image: url(#{asset_path('photos/interior-5.jpg')})"
 									.red-frame
 								.text
 									p.date 28 квітня 2016
