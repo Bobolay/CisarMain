@@ -27,10 +27,10 @@ $(document).ready ->
       change_slide(newIndex)
   $('.slider-prev').click ->
     current = slider1.getCurrentSlide()
-    slider1.goToPrevSlide(current) - 1
+    slider1.goToPrevSlide(current)
   $('.slider-next').click ->
     current = slider1.getCurrentSlide()
-    slider1.goToNextSlide(current) + 1
+    slider1.goToNextSlide(current)
 
 $(document).ready ->
   slider2 = $('.bxslider-2').bxSlider
