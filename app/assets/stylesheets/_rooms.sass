@@ -71,8 +71,6 @@
 					font-weight: bold
 		.icon-container
 			padding: 30px 0
-			@media #{$medium-up}
-				padding: 40px 0
 			.icon
 				width: 46px
 				height: 46px
@@ -117,8 +115,11 @@
 				color: $red
 			.room-type
 				.line
-					background-color: #fff
-					left: 0
+					@media #{$large-up}
+						background-color: #fff
+						left: initial
+						right: 0
+						width: 800px
 				.red-square
 					right: 0
 					left: initial

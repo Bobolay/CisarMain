@@ -1,0 +1,166 @@
+.cafe-wrapper
+	.half-banner
+		.background-img style="background-image: url(#{asset_path('photos/banner-cafe.jpg')})"
+		.row
+			.columns
+				.section-info
+					p.header
+						| кафе
+						span.line
+						span.red-square
+					p.under-header Завжди смачні страви та хороші пропозиції для наших постійних клієнтів та просто відвідувачів.
+					.red-head
+						.left-side
+							= inline_svg "icons/clock.svg"
+						.text
+							p
+								span працюємо цілодобово
+	.main-background.first-background
+		.row
+			.columns
+				.row
+					.large-6.medium-12.columns
+						p.title-slash
+							| &#171;cisar&#187; кафе
+							sub
+								span &#47;
+								| короткий опис
+						p.bigger-italic Ми раді вітати Вас в кафе готелю &#171;ЦісаR&#187;, розташованому в самому центрі Львова.
+						p.room-description Ми пропонуємо смачну та якісну європейську кухню за приємними цінами, делікатні та оригінальні страви, а також фірмові десерти за домашніми рецептами.
+						p.room-description В основному меню представлені страви української, європейської та східної кухонь. Віртуозний шеф-кухар виконає будь-яке побажання гостя, вкладаючи в кожну страву свої емоції та талант. Під вишукану їжу дуже доречним буде велике меню алкогольних і безалкогольних напоїв.
+						.pdf-container
+							.pdf-block
+								a href=asset_path('sample.pdf') Меню .pdf
+							.pdf-block
+								a href=asset_path('sample.pdf') Дієтичне меню .pdf
+							.pdf-block
+								a href=asset_path('sample.pdf') Дитяче меню .pdf
+							.pdf-block
+								a href=asset_path('sample.pdf') Сніданки .pdf
+							.pdf-block
+								a href=asset_path('sample.pdf') Карта вин та напоїв .pdf
+					.large-6.medium-12.small-12.columns
+						.slider-container
+							ul.bxslider-2
+								li
+									.img-container style="background-image: url(#{asset_path('photos/hotel-1.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/hotel-2.jpg')})"
+								li
+									.img-container style="background-image: url(#{asset_path('photos/hotel-3.jpg')})"
+							.slider-selectors
+								.slider-prev
+									.svg = inline_svg "icons/arrow-left.svg"
+								.slider-next 
+									.svg = inline_svg "icons/arrow-right.svg"
+						p.under-slider Головний зал на 50 персон
+	.dark-background
+		.row
+			.columns
+				p.title-slash
+					| пропозиції
+					sub
+						span &#47;
+						| нашого кафе
+				.row
+					.large-6.medium-12.columns
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
+								.dish-price
+									p &#8372;40
+							.inner-block
+								.dish
+									.name
+										p cbf
+										p Континентальний сніданок
+										span.line
+										span.red-square
+									p.description Той сніданок, який найменше люблять наші туристи &mdash; складається з кави &#47; чаю, соку, булочки, масла і джему.
+					.large-6.medium-12.columns
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-2.jpg')})"
+								.dish-price
+									p &#8372;50
+							.inner-block
+								.dish
+									.name
+										p ebf
+										p Англійський сніданок
+										span.line
+										span.red-square
+									p.description Повний сніданок, до якого входять фруктовий сік, вівсяна каша або яєшня з шинкою, грінки, масло, джем і кава.
+					.large-6.medium-12.columns
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-3.jpg')})"
+								.dish-price
+									p &#8372;85
+							.inner-block
+								.dish
+									.name
+										p abf
+										p Американський сніданок
+										span.line
+										span.red-square
+									p.description ABF - більш ситний, ніж CBF + вам дадуть ще нарізка, салат, гаряче.
+					.large-6.medium-12.columns
+						.dish-container
+							.dish-img style="background-image: url(#{asset_path('photos/dish-4.jpg')})"
+								.dish-price
+									p &#8372;65
+							.inner-block
+								.dish
+									.name
+										p
+										p Комплексний обід &#171;Великий&#187;
+										span.line
+										span.red-square
+									p.description Всім клієнтам надаємо послуги бронювання наших номерів, наперед за довільними вказаними датами.
+	.main-background
+		.horizontal-container
+			.row.collapse
+				.columns
+					.row.collapse
+						.large-6.medium-12.columns
+							.room-container
+								p.above-room-type Організація
+								p.room-type
+									| бенкетів та фуршетів
+									span.line
+									span.red-square
+								p.description
+									| Званий обід або вечеря в урочистих рамках, які проводяться на честь певної особи або події, наприклад ювілею, весілля.	
+						.large-6.medium-12.columns
+							.img-container style="background-image: url(#{asset_path('photos/celebration-1.jpg')})"
+		.horizontal-container
+			.row.collapse
+				.columns
+					.row.collapse			
+						.large-6.medium-12.columns.go-right
+							.room-container
+								p.above-room-type Проведення
+								p.room-type
+									| новорічних корпоративів
+									span.line
+									span.red-square
+								p.description
+									| Званий обід або вечеря в урочистих рамках, які проводяться на честь певної особи або події, наприклад ювілею, весілля.
+						.large-6.medium-12.columns.go-left
+							.img-container style="background-image: url(#{asset_path('photos/celebration-2.jpg')})"		
+		.horizontal-container
+			.row.collapse
+				.columns
+					.row.collapse
+						.large-6.medium-12.columns
+							.room-container
+								p.above-room-type Святкування
+								p.room-type
+									| дитячих свят та хрестин
+									span.line
+									span.red-square
+								p.description
+									| Званий обід або вечеря в урочистих рамках, які проводяться на честь певної особи або події, наприклад ювілею, весілля.	
+						.large-6.medium-12.columns
+							.img-container style="background-image: url(#{asset_path('photos/celebration-3.jpg')})"
+	.reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+		= render "reserve"
+	= render "map"

@@ -23,6 +23,14 @@ class PagesController < ApplicationController
 
   end
 
+  def cafe
+
+  end
+
+  def info
+
+  end
+
   def contacts
 
   end

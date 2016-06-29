@@ -1,0 +1,126 @@
+.cafe-wrapper
+	.room-description
+		font-size: 1.125em
+		color: $brown
+		margin-top: 20px
+		opacity: 0.85
+	.section-info
+		p
+			@media #{$small-only}
+				font-size: 1em
+	.bigger-italic
+		margin-top: 20px
+	.bxslider-2
+		width: 100%
+		height: 300px
+		margin-top: 50px
+		list-style: none
+		@media #{$small-only}
+			height: 250px
+			margin-top: 30px
+	.under-slider
+		font-style: italic
+		color: $brown
+		opacity: 0.5
+		display: inline-block
+		margin-top: 10px
+	.pdf-container
+		margin-top: 20px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		.pdf-block
+			border: 1px solid rgba(0,0,0,0.3)
+			text-align: center
+			margin: 0 10px 10px 0
+			width: 150px
+			height: 50px
+			@media #{$small-only}
+				width: 140px
+		a
+			color: $red
+			font-style: italic
+			display: block
+			line-height: 16px
+			position: relative
+			top: 50%
+			+translate(0,-50%)
+			width: 107px
+			margin: 0 auto
+	.dark-background
+		padding: 30px 0
+		.title-slash
+			sub
+				color: rgba(255,255,255,0.5)
+	.dish-container
+		.inner-block
+			border: 1px solid #fff
+			background: url(#{asset_path('png/find-room-texture.png')})
+		.name
+			p
+				color: #fff
+			.line
+				background-color: #fff
+		.description
+			color: #fff
+	.horizontal-container
+		position: relative
+		.room-container
+			padding: 30px 0.9375em
+			@media #{$medium-up}
+				padding: 40px 0.9375em
+		.above-room-type
+			font-style: italic
+			font-size: 1.25em
+			color: $brown
+		.room-type
+			text-transform: uppercase
+			font-size: 1.5em
+			padding-bottom: 10px
+			color: $red
+			position: relative
+			width: 90%
+			@media #{$large-up}
+				width: 100%
+			.line
+				width: 110%
+				@media #{$large-up}
+					left: -10px
+			.red-square
+				@media #{$large-up}
+					left: -10px
+		.description
+			color: $brown	
+			opacity: 0.75
+			font-size: 1.125em
+			line-height: 1.375rem
+			padding-right: 30px
+			margin-top: 20px
+		&:nth-child(even)
+			.room-container
+				@media #{$large-up}
+					padding: 40px
+			.room-type
+				.line
+					@media #{$large-up}
+						left: initial
+						right: 0
+						width: 700px
+				.red-square
+					right: 0
+					left: initial
+		.img-container
+			height: 250px
+			position: relative
+			z-index: 1
+			@media #{$small-only}
+				margin: 0 0.9375em
+				height: 200px
+	.main-background
+		@media #{$small-only}
+			padding: 30px 0
+	.first-background
+		padding-top: 70px

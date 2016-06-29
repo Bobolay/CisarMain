@@ -1,0 +1,68 @@
+.info-wrapper
+  .navigation-container
+    +clearfix
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+    .block
+      float: left
+      width: 33.3%
+      text-align: center
+      cursor: pointer
+      padding: 7px 0
+      p
+        color: $light-brown
+        text-transform: uppercase
+      &.active
+        border-bottom: 3px solid $red
+        p
+          color: $red
+          font-weight: bold
+  .news-block-wrapper
+    padding: 50px 0 0 0
+    .news-block
+      +grey-border
+      position: relative
+      background: url(#{asset_path('png/background-2.png')})
+      margin-bottom: 50px
+      @media #{$small-only}
+        margin-bottom: 30px
+    .img-container
+      height: 150px
+      position: relative
+    .img
+      background-size: cover
+      background-position: center
+      height: 100%
+      position: relative
+      z-index: 1
+    .red-frame
+      position: absolute
+      top: -5px
+      left: -5px
+      right: -5px
+      bottom: 5px
+      background-color: $red
+    .text
+      padding: 20px
+      @media #{$medium-only}
+        padding: 10px
+    .date
+      font-size: 0.75em
+      color: $light-brown
+      font-style: italic
+    .news-title
+      font-size: 1.25em
+      color: $brown
+      @media #{$small-only}
+        font-size: 1.5em
+    .regular
+      font-style: italic
+      color: $brown
+      margin-top: 10px
+    .details
+      text-align: right
+      font-size: 0.875em
+      text-transform: uppercase
+      font-weight: bold
+      color: $red
+      cursor: pointer
+      margin-top: 30px

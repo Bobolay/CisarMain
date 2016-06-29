@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get "rooms", action: "rooms"
     get "room_one", action: "room_one"
     get "services", action: "services"
+    get "cafe", action: "cafe"
+    get "info", action: "info"
     get "contacts", action: "contacts"
   end
 
