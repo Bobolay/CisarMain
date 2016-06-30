@@ -2,6 +2,7 @@
   .section-info
     .header
       font-size:  2em
+      padding-right: 30px
       @media #{$large-up}
         max-width: 80%
   .main-background
@@ -107,5 +108,75 @@
       li
         color: $light-brown
         font-style: italic
-  .publication-navigation-container
+  .nav-button-wrapper
     background: url(#{asset_path('png/main-background.png')})
+    +clearfix
+    .left-nav-button, .right-nav-button
+      height: 130px
+      cursor: pointer
+      +clearfix
+      .img
+        position: relative
+        background-position: center
+        background-size: cover
+        height: 100%
+        width: 130px
+        float: left
+        z-index: 1
+        @media #{$small-only}
+          height: 80px
+          width: 80px
+      .text
+        border-top: 1px solid rgba(0,0,0,0.3)
+        float: left
+        position: relative
+        top: 50%
+        // padding: 20px 40px
+        +translate(0,-50%)
+        +transition(0.2s)
+        width: 500px
+        @media #{$small-only}
+          width: calc(100% - 80px)
+        p
+          line-height: 25px
+          color: $brown
+          text-transform: uppercase
+          font-size: 1.125em
+          +transition(0.2s)
+          @media #{$small-only}
+            line-height: 22px
+            font-size: 1em
+        svg
+          fill: $brown
+          width: 12px
+          height: 20px
+          +transition(0.2s)
+      &:hover
+        p
+          color: $red
+        svg
+          fill: $red
+    .left-nav-button
+      float: left
+      text-align: left
+      .text
+        left: -1px
+        padding: 20px 10px 20px 40px
+        @media #{$small-only}
+          padding: 10px 10px 10px 40px
+      svg
+        position: absolute
+        left: 15px
+        top: 25px
+    .right-nav-button
+      float: right
+      text-align: right
+      .text
+        right: -1px
+        padding: 20px 40px 20px 10px
+        @media #{$small-only}
+          padding: 10px 40px 10px 10px
+      svg
+        position: absolute
+        right: 15px
+        top: 25px  

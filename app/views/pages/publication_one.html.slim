@@ -74,9 +74,17 @@
                 li У США побудують перший в світі підводний пересувний...
                 li Престижна мережа Regis відкриє розкішний...
                 li У США побудують перший в світі підводний пересувний...
-  .publication-navigation-container
-    .previous-publication
-    .next-navigation
+  .nav-button-wrapper
+    .left-nav-button
+      .img style="background-image: url(#{asset_path('photos/publication-nav-1.jpg')})"
+      .text
+        p у сша побудуються перший у світі підводний пересувний готель
+        = inline_svg "icons/arrow-left.svg"
+    .right-nav-button
+      .text
+        p престижна мережа regis відкриє розкішний готель в дубаї
+        = inline_svg "icons/arrow-right.svg"
+      .img style="background-image: url(#{asset_path('photos/publication-nav-2.png')})"
   .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
     = render "reserve"
   = render "map"
