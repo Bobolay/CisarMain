@@ -31,6 +31,14 @@ class PagesController < ApplicationController
 
   end
 
+  def publications
+
+  end
+
+  def publication_one
+
+  end
+
   def contacts
 
   end

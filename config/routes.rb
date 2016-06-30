@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get "services", action: "services"
     get "cafe", action: "cafe"
     get "info", action: "info"
+    get "publications", action: "publications"
+    get "publication_one", action: "publication_one"
     get "contacts", action: "contacts"
   end
 

@@ -164,6 +164,9 @@ a
 	.section-info
 		position: absolute
 		bottom: -40px
+		max-width: 90%
+		@media #{$large-up}
+
 	.header
 		font-size: 2.8em
 		position: relative
@@ -432,3 +435,83 @@ a
 				@media #{$small-only}
 					margin-top: 10px
 					line-height: 16px
+.news-block-wrapper
+	padding: 50px 0 0 0
+	.news-block
+		+grey-border
+		position: relative
+		background: url(#{asset_path('png/background-2.png')})
+		margin-bottom: 50px
+		@media #{$small-only}
+			margin-bottom: 30px
+		@media #{$medium-only}
+			height: 530px
+		@media #{$large-only}
+			height: 450px
+		@media #{$xlarge-up}
+			height: 400px
+	.img-container
+		height: 150px
+		position: relative
+	.img
+		background-size: cover
+		background-position: center
+		height: 100%
+		position: relative
+		z-index: 1
+	.red-frame
+		position: absolute
+		top: -5px
+		left: -5px
+		right: -5px
+		bottom: 5px
+		background-color: $red
+	.text
+		padding: 20px
+		@media #{$medium-only}
+		padding: 10px
+	.date
+		font-size: 0.75em
+		color: $light-brown
+		font-style: italic
+	.news-title
+		font-size: 1.25em
+		color: $brown
+		@media #{$small-only}
+		font-size: 1.5em
+	.regular
+		font-style: italic
+		color: $brown
+		margin-top: 10px
+		padding-bottom: 50px
+		@media #{$medium-only}
+		font-size: 1em
+	.details
+		font-size: 0.875em
+		text-transform: uppercase
+		font-weight: bold
+		color: $red
+		cursor: pointer
+		position: absolute
+		right: 20px
+		bottom: 20px
+	.underlined
+		@media #{$medium-up}
+		margin: 30px 0
+.social-container
+	.social
+		width: 40px
+		height: 40px
+		+grey-border
+		text-align: center
+		display: inline-block
+		margin-right: 5px
+		@media #{$small-only}
+			margin-right: 3px
+		svg
+			width: 20px
+			height: 20px
+			fill: $red
+			position: relative
+			top: 50%
+			+translate(0,-50%)
