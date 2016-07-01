@@ -42,10 +42,10 @@ $(document).ready ->
       pause: 8000
       auto: true
       easing: 'swing'
-  $('.slider-prev').click ->
+  $('.slider-prev-2').click ->
     current = slider2.getCurrentSlide()
     slider2.goToPrevSlide(current) - 1
-  $('.slider-next').click ->
+  $('.slider-next-2').click ->
     current = slider2.getCurrentSlide()
     slider2.goToNextSlide(current) + 1
 
@@ -59,10 +59,10 @@ $(document).ready ->
       pause: 9000
       auto: true
       easing: 'swing'
-  $('.slider-prev').click ->
+  $('.slider-prev-3').click ->
     current = slider3.getCurrentSlide()
     slider3.goToPrevSlide(current) - 1
-  $('.slider-next').click ->
+  $('.slider-next-3').click ->
     current = slider3.getCurrentSlide()
     slider3.goToNextSlide(current) + 1
 
@@ -76,10 +76,10 @@ $(document).ready ->
       pause: 10000
       auto: true
       easing: 'swing'
-  $('.slider-prev').click ->
+  $('.slider-prev-4').click ->
     current = slider4.getCurrentSlide()
     slider4.goToPrevSlide(current) - 1
-  $('.slider-next').click ->
+  $('.slider-next-4').click ->
     current = slider4.getCurrentSlide()
     slider4.goToNextSlide(current) + 1
 
