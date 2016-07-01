@@ -3,6 +3,10 @@
     svg
       width: 30px
       height: 30px
+  .text
+    p
+      @media #{$small-only}
+        font-size: 1em
   .navigation-container
     +clearfix
     border-bottom: 1px solid rgba(0,0,0,0.3)

@@ -10,8 +10,10 @@ html
     = stylesheet_link_tag    "home.build", media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = render "header"
+    - if @render_header != false
+        = render "header"
     = yield
-    = render "footer"
+    - if @render_header != false
+        = render "header"
     script src="http://maps.googleapis.com/maps/api/js"
     = javascript_include_tag "home.build", 'data-turbolinks-track' => true

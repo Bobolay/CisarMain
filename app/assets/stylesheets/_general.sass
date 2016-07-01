@@ -30,7 +30,7 @@ $yellow: #FFD500
 	height: 1px
 	background-color: #000
 	opacity: 0.15
-	width: 1000px
+	width: 1500px
 	position: absolute
 	right: 0
 	bottom: 0
@@ -472,7 +472,7 @@ a
 	.text
 		padding: 20px
 		@media #{$medium-only}
-		padding: 10px
+			padding: 10px
 	.date
 		font-size: 0.75em
 		color: $light-brown
@@ -498,6 +498,7 @@ a
 		position: absolute
 		right: 20px
 		bottom: 20px
+		display: block
 	.underlined
 		@media #{$medium-up}
 		margin: 30px 0
@@ -509,6 +510,8 @@ a
 		text-align: center
 		display: inline-block
 		margin-right: 5px
+		cursor: pointer
+		+transition(0.1s)
 		@media #{$small-only}
 			margin-right: 3px
 		svg
@@ -518,6 +521,11 @@ a
 			position: relative
 			top: 50%
 			+translate(0,-50%)
+		&:hover
+			border: 1px solid $red
+			background-color: $red
+			svg
+				fill: #fff
 .expand-field
 	height: 0
 	+transition(1s)

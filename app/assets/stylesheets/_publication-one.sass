@@ -12,11 +12,11 @@
     margin-bottom: 30px
     .block
       float: left
-      p
+      a
         font-size: 0.875em
         color: $red
       &.current
-        p
+        a
           color: $light-brown
       svg
         fill: $red
@@ -102,12 +102,15 @@
       border-top: 1px solid rgba(0,0,0,0.3)
       margin-left: 0
     .regular
-      margin: 30px 0 10px
+      margin: 50px 0 10px
     ul
       padding-left: 23px
       li
         color: $light-brown
         font-style: italic
+        +transition(0.1s)
+        &:hover
+          color: $red
   .nav-button-wrapper
     background: url(#{asset_path('png/main-background.png')})
     +clearfix
@@ -115,17 +118,29 @@
       height: 130px
       cursor: pointer
       +clearfix
-      .img
+      .img-container
         position: relative
-        background-position: center
-        background-size: cover
-        height: 100%
+        overflow: hidden
         width: 130px
+        height: 100%
+        margin: 0
         float: left
         z-index: 1
+        display: none
+        @media #{$large-up}
+          display: block
         @media #{$small-only}
-          height: 80px
           width: 80px
+          height: 80px
+      .img
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-position: center
+        background-size: cover
+        +transition(0.2s)
       .text
         border-top: 1px solid rgba(0,0,0,0.3)
         float: left
@@ -152,6 +167,8 @@
           height: 20px
           +transition(0.2s)
       &:hover
+        .img
+          +scale(1.1)
         p
           color: $red
         svg

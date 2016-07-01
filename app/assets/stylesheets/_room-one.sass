@@ -69,6 +69,11 @@
 			.carousel-slider-prev, .carousel-slider-next
 				background-color: transparent
 				background: none
+				svg
+					+transition(0.1s)
+				&:hover
+					svg
+						fill: $red
 			.slider-number
 				display: inline-block
 				color: $red
@@ -107,17 +112,25 @@
 		@media #{$small-only}
 			height: 80px
 			width: 50%
-		.img
+		.img-container
 			position: relative
-			background-position: center
-			background-size: cover
-			height: 100%
+			overflow: hidden
 			width: 130px
+			height: 100%
 			float: left
 			z-index: 1
 			display: none
 			@media #{$large-up}
 				display: block
+		.img
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background-position: center
+			background-size: cover
+			+transition(0.2s)
 		.button
 			background: url(#{asset_path('png/find-room-texture.png')})
 			border: 1px solid rgba(255,255,255,0.3)
@@ -147,6 +160,8 @@
 					margin: 0 10px
 					+transition(0.2s)
 		&:hover
+			.img
+				+scale(1.1)
 			.button
 				border: 1px solid $red
 				p

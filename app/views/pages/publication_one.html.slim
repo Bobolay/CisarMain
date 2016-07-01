@@ -21,15 +21,15 @@
       .columns
         .breadcrumbs
           .block
-            p Головна
+            a href=root_path Головна
           .block
             = inline_svg "icons/arrow-down.svg"
           .block
-            p Публікації
+            a href=publications_path Публікації
           .block
             = inline_svg "icons/arrow-down.svg"
           .block.current
-            p Історія розвитку готельного бізнесу у Львові
+            a Історія розвитку готельного бізнесу у Львові
         .row
           .large-7.medium-12.columns
             p.bigger-italic Історія розвитку готельної справи нерозривно пов'язана з подорожами. Подорожуючи з різною метою та намірами (відвідування святих місць і храмів, олімпійських ігор тощо) люди мали потребу в притулку, харчуван­ні та відпочинку. Найдавніші згадки про місця для розміщення подорож­ніх можна знайти в писемних джерелах Стародавнього Єгипту.
@@ -71,12 +71,16 @@
                   = inline_svg "icons/social-play.svg"
               p.regular Схожі публікації:
               ul
-                li У США побудують перший в світі підводний пересувний...
-                li Престижна мережа Regis відкриє розкішний...
-                li У США побудують перший в світі підводний пересувний...
+                li
+                  a href="#" У США побудують перший в світі підводний пересувний...
+                li
+                  a href="#" Престижна мережа Regis відкриє розкішний...
+                li
+                  a href="#" У США побудують перший в світі підводний пересувний...
   .nav-button-wrapper
     .left-nav-button
-      .img style="background-image: url(#{asset_path('photos/publication-nav-1.jpg')})"
+      .img-container
+        .img style="background-image: url(#{asset_path('photos/publication-nav-1.jpg')})"
       .text
         p у сша побудуються перший у світі підводний пересувний готель
         = inline_svg "icons/arrow-left.svg"
@@ -84,7 +88,8 @@
       .text
         p престижна мережа regis відкриє розкішний готель в дубаї
         = inline_svg "icons/arrow-right.svg"
-      .img style="background-image: url(#{asset_path('photos/publication-nav-2.png')})"
+      .img-container
+        .img style="background-image: url(#{asset_path('photos/publication-nav-2.png')})"
   .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
     = render "reserve"
   = render "map"

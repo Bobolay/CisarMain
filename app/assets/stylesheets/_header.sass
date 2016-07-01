@@ -15,10 +15,8 @@
 		+translate(0,0)
 	&.scrolled
 		background: url(#{asset_path('png/find-room-texture.png')})
-		background-color: rgba(61,38,34,0.7)
-		// padding: 20px 30px
+		background-color: rgba(61,38,34,0.9)
 	@media #{$small-only}
-		// padding: 20px
 	.left-part
 		float: left
 		.main-logo
@@ -35,6 +33,8 @@
 			display: inline-block
 			vertical-align: middle
 			margin-left: 30px
+			@media #{$small-only}
+				margin-left: 0
 			@media #{$medium-only}
 				margin-left: 20px
 		.temperature

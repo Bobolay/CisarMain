@@ -35,7 +35,7 @@ function initialize() {
         streetViewControl:false,
         overviewMapControl:false,
         rotateControl:false,
-        draggable: isDraggable,
+        draggable: true,
         scrollwheel: false,
         mapTypeControlOptions:{
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, "map_style"]

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "publications", action: "publications"
     get "publication_one", action: "publication_one"
     get "contacts", action: "contacts"
+    get "not_found", action: "not_found"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

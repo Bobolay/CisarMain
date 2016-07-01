@@ -15,7 +15,7 @@
 								sup від 
 								| &#8372;2400
 						.text
-							a
+							a href="#reserve"
 								| забронювати
 	.main-background.first-background
 		.row
@@ -85,7 +85,7 @@
 						.carousel-slider-prev
 							.svg = inline_svg "icons/arrow-left.svg"
 						.slider-number
-							p 12
+							p 12 фото
 						.carousel-slider-next 
 							.svg = inline_svg "icons/arrow-right.svg"
 	.main-background
@@ -151,7 +151,8 @@
 									p.description ABF &mdash; більш ситний, ніж CBF + вам дадуть ще нарізку, салат, гаряче.
 	.nav-button-wrapper
 		.left-nav-button
-			.img style="background-image: url(#{asset_path('photos/room-1.jpg')})"
+			.img-container
+				.img style="background-image: url(#{asset_path('photos/room-1.jpg')})"
 			.button
 				p 
 					span = inline_svg "icons/arrow-left.svg"
@@ -161,7 +162,8 @@
 				p 
 					| трьохмісний
 					span = inline_svg "icons/arrow-right.svg"
-			.img style="background-image: url(#{asset_path('photos/room-2.jpg')})"
+			.img-container
+				.img style="background-image: url(#{asset_path('photos/room-2.jpg')})"
 	.reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
 		= render "reserve"
 	= render "map"
