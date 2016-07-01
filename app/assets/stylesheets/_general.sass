@@ -120,7 +120,7 @@ a
 	position: absolute
 	bottom: -26px
 	right: 10px
-	.slider-prev, .slider-next
+	.slider-prev, .slider-next, .carousel-slider-prev, .carousel-slider-next
 		width: 52px
 		height: 52px
 		background: url(#{asset_path('png/find-room-texture.png')})
@@ -176,6 +176,7 @@ a
 		padding-right: 50px
 		margin-bottom: 30px
 		line-height: 36px
+		padding-bottom: 5px
 		@media #{$small-only}
 			max-width: 90%
 			font-size: 2.25em
@@ -243,6 +244,7 @@ a
 	left: 50%
 	+translate(-50%,0)
 	bottom: 30px
+	z-index: 1
 	@media #{$small-only}
 		bottom: 20px
 	a
@@ -516,3 +518,13 @@ a
 			position: relative
 			top: 50%
 			+translate(0,-50%)
+.expand-field
+	height: 0
+	+transition(1s)
+	&.expand
+		height: auto
+	p
+		opacity: 0
+		+transition(0.25s)
+		&.show-it
+			opacity: 1

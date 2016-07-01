@@ -25,10 +25,10 @@ $(document).ready ->
     infiniteLoop: true
     onSlideBefore: (element, oldIndex, newIndex)->
       change_slide(newIndex)
-  $('.slider-prev').click ->
+  $('.main-slider-prev').click ->
     current = slider1.getCurrentSlide()
     slider1.goToPrevSlide(current)
-  $('.slider-next').click ->
+  $('.main-slider-next').click ->
     current = slider1.getCurrentSlide()
     slider1.goToNextSlide(current)
 
@@ -91,9 +91,9 @@ $(document).ready ->
     maxSlides: 6
     slideWidth: 200
     slideMargin: 2
-  $('.slider-prev').click ->
+  $('.carousel-slider-prev').click ->
     current = slider5.getCurrentSlide()
     slider5.goToPrevSlide(current) - 1
-  $('.slider-next').click ->
+  $('.carousel-slider-next').click ->
     current = slider5.getCurrentSlide()
     slider5.goToNextSlide(current) + 1

@@ -6,6 +6,11 @@ $("a[href^='#']").on "click", (e)->
   $("body").animate({scrollTop: target_top})
 
 $("body").on "click", ".info-wrapper .navigation-container .block", ()->
-    $button = $(this)
-    $(this).parent().children().removeClass('active')
-    $(this).addClass('active')
+  $button = $(this)
+  $(this).parent().children().removeClass('active')
+  $(this).addClass('active')
+
+$("body").on "click", ".expand-it", ()->
+  $('.expand-it span').toggleClass('rotate')
+  $('.expand-field').toggleClass('expand')
+  $('.expand-field .regular').toggleClass('show-it')
