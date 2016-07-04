@@ -13,7 +13,7 @@ html
     - if @render_header != false
         = render "header"
     = yield
-    - if @render_header != false
-        = render "header"
+    - if @render_footer != false
+        = render "footer"
     script src="http://maps.googleapis.com/maps/api/js"
     = javascript_include_tag "home.build", 'data-turbolinks-track' => true
