@@ -1,0 +1,61 @@
+.about-us-info
+  .row
+    .columns
+      .row
+        .large-11.large-centered.medium-10.medium-centered.small-12.columns
+          .reserve-container
+            .top
+              p.reserve-header = t("booking-form.title")
+              p.under-header = t("booking-form.sub-title")
+              a href="#reserve" = inline_svg "icons/cross.svg"
+            .main-field
+              .row
+                .large-4.medium-4.small-12.columns
+                  p.uppear-date = t("booking-form.checkin-date")
+                  form
+                    input#datepicker-1
+                    .icon = inline_svg "icons/choose-date.svg"
+                .large-4.medium-4.small-12.columns
+                  p.uppear-date = t("booking-form.checkout-date")
+                  form
+                    input#datepicker-2
+                    .icon = inline_svg "icons/choose-date.svg"
+                .large-4.medium-4.small-12.columns
+                  .button-find-room
+                    p
+                      = t("book-room")
+              hr
+              span.temperature +24&deg;
+              span.sun = inline_svg "icons/sun.svg"
+              span.after-sun &mdash; Прогноз погоди на 28 березня
+      .row
+        .large-7.medium-12.small-12.columns
+          .chapter-container
+            p.subtitle
+              = t("pages.home.hotel-block.sub-title")
+            p.title
+              = t("pages.home.hotel-block.title")
+            span.line
+            span.red-square
+            span.crown = inline_svg "icons/crown.svg"
+          = raw t("pages.home.hotel-block.intro-1")
+          = raw t("pages.home.hotel-block.intro-2")
+          .hotem-room-wrapper
+            .hotel-room-container
+              p.rooms-quantity 4
+              p.rooms-type Одномісні
+            .hotel-room-container
+              p.rooms-quantity 6
+              p.rooms-type Двомісних
+            .hotel-room-container
+              p.rooms-quantity 5
+              p.rooms-type Трьохмісних
+          p.details.expand-it
+            | детальніше
+            span = inline_svg "icons/arrow-down.svg"
+          .expand-field
+            = raw t("pages.home.hotel-block.content")
+        .large-5.medium-12.small-12.columns
+          = render "small_slider", slides: @home_hotel_images, slider_number: 2
+
+

@@ -1,0 +1,28 @@
+- if @featured_articles.try(:any?)
+  .news
+    .row
+      .columns
+        .chapter-container
+          p.title новини
+          p.subtitle та публікації
+          span.line
+          span.red-square
+        .news-block-wrapper
+          .row
+            - @featured_articles.each do |article|
+              .large-4.medium-4.small-12.columns
+                .news-block
+                  .img-container
+                    .img style="background-image: url(#{article.avatar.url})"
+                    .red-frame
+                  .text
+                    p.date
+                      = article.formatted_released_on
+                    p.news-title
+                      = raw article.name
+                    p.regular
+                      = raw article.short_description
+                    a.details href=article.url детальніше
+
+        a.underlined href="publications_path" переглянути всі
+        = render "reserve"

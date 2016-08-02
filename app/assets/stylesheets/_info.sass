@@ -1,4 +1,9 @@
 .info-wrapper
+  .article
+    float: left !important
+
+    &.hide
+      display: none !important
   .left-side
     svg
       width: 30px
@@ -26,7 +31,7 @@
           font-weight: bold
   .tag-container
     +clearfix
-    .tag
+    .tags-label
       float: left
       font-size: 1.125em
       margin-right: 10px
@@ -43,6 +48,10 @@
         color: #fff
         font-style: italic
         font-size: 0.875em
+
+    .tag
+      &.checked
+        background-color: $red
   .main-background
     padding: 100px 0
     @media #{$small-only}

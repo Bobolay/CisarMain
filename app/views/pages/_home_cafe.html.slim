@@ -1,0 +1,33 @@
+.cafe
+  .row
+    .columns
+      .chapter-container
+        p.title
+          = t("pages.home.cafe-block.title")
+        p.subtitle
+          = t("pages.home.cafe-block.sub-title")
+        span.line
+        span.red-square
+      .row
+        .large-6.medium-12.small-12.columns
+          = render "small_slider", slides: @home_cafe_images, slider_number: 3
+          p.bigger-italic Ми раді вітати Вас в кафе готелю &#171;ЦісаR&#187;, розташованому в самому центрі Львова.
+          p.regular До Ваших послуг комфортабельні, сучасні, затишні номера, обладнані усім необхідним (в кожному номері є телевізор, безкоштовний інтернет Wi-Fi, душова кабіна, туалетна кімната). Цілодобово гаряча вода  та автономне опалення.
+          a.underlined href=cafe_path детальніше
+        .large-6.medium-12.small-12.columns
+          - if @featured_dishes.try(:any?)
+            p.cafe-propositions Пропозиції нашого кафе
+            - @featured_dishes.each do |dish|
+              .dish-container
+                .dish-img style="background-image: url(#{dish.image.url})"
+                  .dish-price
+                    p &#8372;#{dish.price}
+                .inner-block
+                  .dish
+                    .name
+                      p
+                        = raw dish.name
+                      span.line
+                      span.red-square
+                    p.description
+                      = raw dish.short_description

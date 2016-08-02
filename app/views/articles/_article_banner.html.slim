@@ -1,0 +1,18 @@
+.half-banner
+  .background-img style="background-image: url(#{@banner[:image_url]})"
+  .row
+    .columns
+      .section-info
+        p.header
+          = @banner[:title]
+          span.line
+          span.red-square
+        p.under-header
+          = @banner[:description]
+        - if info_header = @banner[:info_header]
+          .red-head
+            .left-side
+              = inline_svg info_header[:icon]
+            .text
+              p
+                = raw info_header[:text]

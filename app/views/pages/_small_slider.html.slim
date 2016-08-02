@@ -1,0 +1,15 @@
+.slider-container
+  ul class="bxslider-#{slider_number}"
+    - slides.each do |slide|
+      li
+        .img-container style="background-image: url(#{slide[:image_url]})"
+
+  .slider-selectors
+    div class="slider-prev-#{slider_number}"
+      .svg = inline_svg "icons/arrow-left.svg"
+    div class="slider-next-#{slider_number}"
+      .svg = inline_svg "icons/arrow-right.svg"
+
+- slides.each do |slide|
+  p.under-slider
+    = slide[:name]

@@ -63,58 +63,21 @@
 						span &#47;
 						| нашого кафе
 				.row
-					.large-6.medium-12.columns
-						.dish-container
-							.dish-img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
-								.dish-price
-									p &#8372;40
-							.inner-block
-								.dish
-									.name
-										p cbf
-										p Континентальний сніданок
-										span.line
-										span.red-square
-									p.description Той сніданок, який найменше люблять наші туристи &mdash; складається з кави &#47; чаю, соку, булочки, масла і джему.
-					.large-6.medium-12.columns
-						.dish-container
-							.dish-img style="background-image: url(#{asset_path('photos/dish-2.jpg')})"
-								.dish-price
-									p &#8372;50
-							.inner-block
-								.dish
-									.name
-										p ebf
-										p Англійський сніданок
-										span.line
-										span.red-square
-									p.description Повний сніданок, до якого входять фруктовий сік, вівсяна каша або яєшня з шинкою, грінки, масло, джем і кава.
-					.large-6.medium-12.columns
-						.dish-container
-							.dish-img style="background-image: url(#{asset_path('photos/dish-3.jpg')})"
-								.dish-price
-									p &#8372;85
-							.inner-block
-								.dish
-									.name
-										p abf
-										p Американський сніданок
-										span.line
-										span.red-square
-									p.description ABF - більш ситний, ніж CBF + вам дадуть ще нарізка, салат, гаряче.
-					.large-6.medium-12.columns
-						.dish-container
-							.dish-img style="background-image: url(#{asset_path('photos/dish-4.jpg')})"
-								.dish-price
-									p &#8372;65
-							.inner-block
-								.dish
-									.name
-										p
-										p Комплексний обід &#171;Великий&#187;
-										span.line
-										span.red-square
-									p.description Всім клієнтам надаємо послуги бронювання наших номерів, наперед за довільними вказаними датами.
+                    - @dishes.each do |dish|
+                        .large-6.medium-12.columns
+                            .dish-container
+                                .dish-img style="background-image: url(#{dish.image.url})"
+                                    .dish-price
+                                        p &#8372;#{dish.price}
+                                .inner-block
+                                    .dish
+                                        .name
+                                            p = dish.label
+                                            p = raw dish.name
+                                            span.line
+                                            span.red-square
+                                        p.description = raw dish.short_description
+
 	.main-background
 		.horizontal-container
 			.row.collapse

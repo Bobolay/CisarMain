@@ -26,3 +26,5 @@
 #= require fancybox
 
 #= require main
+
+#= require blog

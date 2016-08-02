@@ -1,0 +1,35 @@
+.info-wrapper
+  .half-banner
+    .background-img style="background-image: url(#{asset_path('photos/banner-cafe.jpg')})"
+    .row
+      .columns
+        .section-info
+          p.header
+            | корисна інформація
+            span.line
+            span.red-square
+          p.under-header Події які відбудуться найближчим часом, замовлення екскурсій, та місця відпочинкуу Львові та області.
+          .red-head
+            .left-side
+              = inline_svg "icons/excursion.svg"
+            .text
+              p
+                span працюємо цілодобово
+  .main-background
+    .row
+      .columns
+
+        .navigation-container
+          - categories.each do |c|
+            - active = c == category
+            .block class=("active" if active)
+              p
+                = c.name
+        .news-block-wrapper
+          .row
+            - @articles.each do |article|
+              = render "article", article: article
+
+  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+    = render "reserve"
+  = render "map"

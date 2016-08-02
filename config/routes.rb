@@ -1,23 +1,37 @@
 Rails.application.routes.draw do
-  root to: "pages#index"
+  root as: "root_without_locale", to: "application#root_without_locale"
+
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
+  scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
 
   controller :pages do
-    get "about-us", action: "about_us"
-    get "rooms", action: "rooms"
-    get "room_one", action: "room_one"
-    get "services", action: "services"
-    get "cafe", action: "cafe"
-    get "info", action: "info"
-    get "publications", action: "publications"
-    get "publication_one", action: "publication_one"
+    root action: "index"
+    get "services", action: "services", as: :services
+    get "cafe", action: "cafe", as: :cafe
     get "contacts", action: "contacts"
-    get "not_found", action: "not_found"
   end
+
+  resources :events, only: [:index, :show]
+  resources :excursions, only: [:index, :show]
+  resources :fun_articles, only: [:index, :show]
+  scope "blog", controller: "blog" do
+    root action: "index", as: :blog
+    get ":id", action: :show, as: :blog_article
+  end
+
+  scope "rooms", controller: "rooms" do
+    root action: "index", as: :rooms
+    get ":id", action: "show", as: :room
+  end
+
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # mount Ckeditor::Engine => '/ckeditor'
   #devise_for :users
-
+  end
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
 end

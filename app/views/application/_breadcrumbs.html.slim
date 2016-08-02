@@ -1,0 +1,16 @@
+.breadcrumbs
+  - @_breadcrumbs.each_with_index do |b, i|
+    - last_item = @_breadcrumbs.length - 1 == i
+
+    - if i > 0
+      .block
+        = inline_svg "icons/arrow-down.svg"
+
+    .block class=("current" if last_item)
+      - if !last_item
+        a href=b[:url]
+          = b[:name]
+      - else
+        span
+          = b[:name]
+

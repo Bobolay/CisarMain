@@ -1,0 +1,19 @@
+.half-banner
+  .background-img style="background-image: url(#{asset_path('photos/banner-room-one.jpg')})"
+  .row
+    .columns
+      .section-info
+        p.header
+          = @banner[:title]
+          span.line
+          span.red-square
+        p.under-header
+          = @banner[:description]
+        .red-head
+          .left-side
+            p
+              sup від
+              | &#8372;#{@room.price}
+          .text
+            a href="#reserve"
+              | забронювати

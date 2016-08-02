@@ -1,0 +1,34 @@
+.room-horizontal-container style="background-image: url(#{asset_path('png/texture-2.png')})"
+  .row.collapse
+    .columns
+      .row.collapse
+        .large-6.medium-12.columns.go-right
+          .slider-container
+            - slider_images = room.slider_images
+            - if slider_images.any?
+              ul.bxslider-2
+                - slider_images.each do |image|
+                  li
+                    .img-container style="background-image: url(#{image.url(:xxl)})"
+              .squares#bx-pager-2
+                - slider_images.each_with_index do |image, index|
+                  a data-slide-index=index href=""
+            span.room-price
+              span &#8372;#{room.price}
+        .large-6.medium-12.columns.go-left
+          .room-container
+            p.above-room-type Тип номеру
+            p.room-type
+              | одномісний
+              span.line
+              span.red-square
+              span.room-price
+                span &#8372;#{room.price}
+            .icon-container
+              - room.room_tags.published.sort_by_sorting_position.each do |room_tag|
+                .icon title=room_tag.name
+                  = embedded_svg_from_absolute_path(room_tag.icon.path)
+
+            p.description
+              = room.short_description
+            a.underlined href=room.url = t("read-more")

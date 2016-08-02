@@ -1,0 +1,69 @@
+interior_components:
+  -
+    translations:
+      uk:
+        name: "Робочий стіл"
+      en:
+        name: ""
+
+  -
+    translations:
+      uk:
+        name: "Кондиціонер"
+      en:
+        name: ""
+
+  -
+    translations:
+      uk:
+        name: "Настінна плазмова панель та кабельне телебачення"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Безкоштовний швидкісний Інтернет Wi-Fi"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Персональний сейф"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Телефон"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Міні-бар"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Ванна кімната з душовою кабінкою"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Банний халат, тапочки та рушники"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Фен"
+      en:
+        name: ""
+  -
+    translations:
+      uk:
+        name: "Цілодобовий Room-service"
+      en:
+        name: ""

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    = seo_tags
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag    "home.build", media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    - if @render_header != false
+        = render "header"
+    = yield
+    - if @render_footer != false
+        = render "footer"
+    script src="http://maps.googleapis.com/maps/api/js"
+    = javascript_include_tag "home.build", 'data-turbolinks-track' => true

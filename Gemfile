@@ -83,12 +83,18 @@ gem 'rack-page_caching'
 
 #gem 'paperclip-optimizer'
 
-#gem 'attachable', github: "VoroninNick/attachable"
+gem 'attachable', github: "VoroninNick/attachable"
 #gem 'attachable', path:"/media/data/pasha/gems/attachable"
 #gem 'cms', path: "/media/data/pasha/gems/cms"
 
-#gem 'cms', github: "pkorenev/cms"
+gem 'cms', github: "pkorenev/cms"
 
 gem 'require_reloader'
 
-gem 'thin'
+gem 'puma'
+
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+gem 'rails_admin_nestable'
+
+gem 'russian'

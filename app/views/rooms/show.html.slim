@@ -1,0 +1,122 @@
+.room-one-wrapper
+  = render "room_banner"
+  .main-background.first-background
+    .row
+      .columns
+        .row
+          .large-7.medium-12.columns
+            p.title-slash
+              | номер
+              sub
+                span &#47;
+                | короткий опис
+
+            .room-description
+              = raw @room.description
+          .large-5.medium-12.columns
+            .row
+              - @room.room_tags.published.sort_by_sorting_position.each do |room_tag|
+                .large-6.medium-3.small-6.columns.room-tag-icon
+                  .block-frame
+                    = embedded_svg_from_absolute_path(room_tag.icon.path)
+                    p
+                      = room_tag.name
+
+  .dark-background
+    .row
+      .columns
+        p.title-slash
+          | галерея
+          sub
+            span &#47;
+            | інтер'єр номеру
+        - gallery_images = @room.gallery_images
+        - if gallery_images.any?
+          .carousel-container
+            ul.carousel
+              - gallery_images.each do |image|
+                li
+                  a.fancybox.img-container rel="group" href=image.url(:large) style="background-image: url(#{image.url(:site_thumb)})"
+
+            .slider-selectors
+              .carousel-slider-prev
+                .svg = inline_svg "icons/arrow-left.svg"
+              .slider-number
+                p #{gallery_images.length} фото
+              .carousel-slider-next
+                .svg = inline_svg "icons/arrow-right.svg"
+  .main-background
+    - interior_components = @room.interior_components
+    - services = @room.services
+    .row
+      .columns
+        .row
+          .large-6.medium-12.columns
+            - if interior_components.any?
+              p.title-slash
+                | у номері
+                sub
+                  span &#47;
+                  | сервіси та техніка
+
+              ul.room-service-list
+                - interior_components.each do |interior_component|
+                  li
+                    = "#{interior_component.name};"
+
+            - if services.any?
+              p.title-slash
+                | послуги
+                sub
+                  span &#47;
+                  | які надаються у номері
+              ul.room-service-list
+                - services.each do |service|
+                  li
+                    = "#{service.name};"
+          .large-6.medium-12.columns
+            - dishes = @room.dishes
+            - if dishes.any?
+              p.title-slash
+                | пропозиції
+                sub
+                  span &#47;
+                  | нашого кафе
+              - dishes.each do |dish|
+                .dish-container
+                  .dish-img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
+                    .dish-price
+                      p &#8372;#{dish.price}
+                  .inner-block
+                    .dish
+                      .name
+                        p #{dish.label}
+                        p #{dish.name}
+                        span.line
+                        span.red-square
+                      p.description
+                        = raw dish.short_description
+
+  .nav-button-wrapper
+    - prev_room = @room.prev(@rooms)
+    - next_room = @room.next(@rooms)
+    - if prev_room
+      .left-nav-button
+        .img-container
+          .img style="background-image: url(#{prev_room.list_image.url(:avatar)})"
+        .button
+          p
+            span = inline_svg "icons/arrow-left.svg"
+            = prev_room.name
+    - if next_room
+      .right-nav-button
+        .button
+          p
+            = next_room.name
+            span = inline_svg "icons/arrow-right.svg"
+        .img-container
+          .img style="background-image: url(#{next_room.list_image.url(:avatar)})"
+
+  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+    = render "reserve"
+  = render "map"

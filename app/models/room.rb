@@ -1,0 +1,28 @@
+class Room < ActiveRecord::Base
+  attr_accessible *attribute_names
+  globalize :name, :banner_description, :url_fragment, :short_description, :description
+
+  scope :published, -> { where(published: 't') }
+  scope :sort_by_sorting_position, -> { order("sorting_position asc") }
+
+  image :banner_image, styles: {xxl: "2000x600#", thumb: "200x60#"}
+  image :list_image, styles: { xxl: "650x433#", thumb: "130x86#", avatar: "150x150#" }
+  has_images :slider_images, styles: {xxl: "1000x1000#", thumb: "100x100#"}
+  has_images :gallery_images, styles: { thumb: "100x100#", site_thumb: "200x200#", large: "2000x1000>" }
+
+
+
+
+  has_and_belongs_to_many :dishes
+  has_and_belongs_to_many :interior_components
+  has_and_belongs_to_many :services
+  has_and_belongs_to_many :room_tags
+
+  attr_accessible :dish_ids, :room_tag_ids, :service_ids, :interior_component_ids
+
+  has_cache
+  has_seo_tags
+  has_sitemap_record
+
+
+end

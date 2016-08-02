@@ -1,0 +1,3 @@
+class FunArticlesController < InfoArticlesController
+
+end

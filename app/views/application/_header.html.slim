@@ -27,6 +27,17 @@
 	.menu-button = inline_svg "icons/cross.svg"
 	.top-part
 		.text
+            .locales-bar
+                - Cms.config.provided_locales.each do |locale|
+                    - url = @page_instance.try{|p| p.url(locale) }
+
+                    - active = locale == I18n.locale
+                    - if active
+                        span.locale-link class="active"
+                            = Cms.config.locale_names[locale]
+                    - else
+                        a.locale-link href=url
+                            = Cms.config.locale_names[locale]
 			.header
 				a href=root_path головна
 				span.red-square
@@ -34,14 +45,11 @@
 				a href=rooms_path номера
 				span.red-square
 			ul.rooms
-				li
-					a href=room_one_path Стандарт
-				li
-					a href=room_one_path Покращений
-				li
-					a href=room_one_path Комфорт
-				li
-					a href=room_one_path Суперіор
+                - @rooms.each do |room|
+                    li
+                        a href=room.url
+                            = room.name
+
 			.header
 				a href=services_path послуги
 				span.red-square
@@ -49,10 +57,10 @@
 				a href=cafe_path кафе
 				span.red-square
 			.header
-				a href=info_path корисна інформація
+				a href=events_path корисна інформація
 				span.red-square
 			.header
-				a href=publications_path блог
+				a href=blog_path блог
 				span.red-square
 			.header
 				a href=contacts_path контакти

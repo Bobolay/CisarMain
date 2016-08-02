@@ -1,0 +1,31 @@
+.main-banner-wrapper
+  ul.bxslider-main-banner
+    - @home_banners.each do |banner|
+      li
+        .img-container style="background-image: url(#{banner.image.url})"
+
+  .info-on-banner
+    #bx-pager
+      - @home_banners.each_with_index do |b, i|
+        a data-slide-index="#{i}"
+          = i + 1
+
+    .info-container
+      - @home_banners.each_with_index do |b, i|
+        div class="text#{i + 1} #{'visible' if i == 0}"
+          p.special-offer
+            = b.label
+          p.header
+            = b.name
+            span.line
+            span.red-square
+          p.regular
+            = b.short_description
+          a.details href=events_path
+            = t("read-more")
+
+
+      .main-slider-prev
+        .svg = inline_svg "icons/arrow-left.svg"
+      .main-slider-next
+        .svg = inline_svg "icons/arrow-right.svg"

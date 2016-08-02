@@ -1,0 +1,62 @@
+.our-services
+  .row
+    .columns
+      .chapter-container
+        p.title послуги
+        p.subtitle які ми надаємо
+        span.line
+        span.red-square
+      .services-container
+        .row
+          .large-4.medium-12.columns
+            .service-container
+              .red-icon
+                .svg = inline_svg "icons/booking.svg"
+              .background-img style="background-image: url(#{asset_path('photos/reception.jpg')})"
+              .description
+                .short-description Швидка реєстрація
+                .extended-description Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами.
+          .large-4.medium-12.columns
+            .service-container
+              .red-icon
+                .svg = inline_svg "icons/connection.svg"
+              .background-img style="background-image: url(#{asset_path('photos/free-wifi.jpg')})"
+              .description
+                .short-description Безкоштовний Wi-Fi
+                .extended-description Безкоштовне покриття Wi-fi швидкого достопу до мережі інтернет по всій території готелю.
+          .large-4.medium-12.columns
+            .service-container
+              .red-icon
+                .svg = inline_svg "icons/excursion.svg"
+              .background-img style="background-image: url(#{asset_path('photos/tourist-map.jpg')})"
+              .description
+                .short-description Організація екскурсій
+                .extended-description Організація цікавих екскурсій зf доступними цінами Львовом та поза його межами.
+      .services-container-small
+        .row
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-1.svg"
+              p.text Послуги консьєржа;
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-2.svg"
+              p.text Room-service (цілодобово);
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-3.svg"
+              p.text Організація проведення прийомів, банкетів, весіль;
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-4.svg"
+              p.text Надання у номер дитячого ліжечка (колиска);
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-5.svg"
+              p.text Кабельне телебачення;
+          .large-4.medium-12.columns
+            .service-container-small
+              .svg = inline_svg "icons/services-icon-6.svg"
+              .text
+                p Трансфер (зустріч та проводи в аеропорту та на залізничному вокзалі);
+      a.underlined href=services_path всі послуги

@@ -1,0 +1,25 @@
+.rooms-wrapper
+  .half-banner
+    .background-img style="background-image: url(#{asset_path('photos/banner-rooms.jpg')})"
+    .row
+      .columns
+        .section-info
+          p.header
+            | номерний фонд
+            span.line
+            span.red-square
+          p.under-header Текстовий опис під категорією, невеликий опис наявних типів номерів
+  .red-navigation
+    .row
+      .large-3.medium-9.large-12.columns
+        ul
+          - @rooms.each do |room|
+            li
+              a href=room.url = room.name
+
+  - @rooms.each do |room|
+    = render "room", room: room
+
+  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+    = render "reserve"
+  = render "map"

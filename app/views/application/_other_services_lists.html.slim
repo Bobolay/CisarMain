@@ -1,0 +1,8 @@
+- service_strings = services.map{|s| s.name if !s.image.exists? }.select(&:present?)
+- groups = service_strings.in_groups_of((service_strings.count.to_f / 3).ceil, false)
+- groups.each_with_index do |group, group_index|
+  .large-4.medium-12.columns
+    ul
+      - group.each_with_index do |item, i|
+        li
+          = "#{item}#{';' if i < group.count - 1 || group_index < groups.count - 1}"

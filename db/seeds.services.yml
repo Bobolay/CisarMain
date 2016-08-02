@@ -1,0 +1,390 @@
+services:
+  -
+    featured: 't'
+    translations:
+      uk:
+        name: "Швидка реєстрація"
+        short_description: "Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами."
+      en: 
+        name: "Please translate me"
+
+  -
+    featured: 't'
+    translations:
+      uk:
+        name: "Безкоштовний Wi-Fi"
+        short_description: "Безкоштовне покриття Wi-fi швидкого достопу до мережі інтернет по всій території готелю."
+      en:
+        name: "Please translate me"
+        short_description: "Please translate me"
+
+  -
+    featured: 't'
+    translations:
+      uk:
+        name: "Кабельне телебачення"
+        short_description: "Переглядайте улюблені канали на плазмовому телевізорі, встановленому в кожному номері."
+      en:
+        name: "Please translate me"
+        short_description: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Швидка реєстрація під час заїзду та виїзду"
+      en:
+        name: "Please translate me"
+  -
+    translations:
+      uk:
+        name: "Бронювання номерів"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Виклик таксі"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Зберігання цінностей в сейфі готелю"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Прибирання номеру"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Чищення взуття"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Швидка реєстрація під час заїзду та виїзду"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Бронювання номерів"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Виклик таксі"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Зберігання цінностей в сейфі готелю"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Прибирання номеру"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Швидка реєстрація під час заїзду та виїзду"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Бронювання номерів"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Виклик таксі"
+      en:
+        name: "Please translate me"
+
+  -
+    translations:
+      uk:
+        name: "Зберігання цінностей в сейфі готелю"
+      en:
+        name: "Please translate me"
+  -
+    translations:
+      uk:
+        name: "Прибирання номеру"
+      en:
+        name: "Please translate me"
+  -
+    translations:
+      uk:
+        name: "Чищення взуття"
+      en:
+        name: "Please translate me"
+        
+        
+        
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Кафе"
+        short_description: "Короткий опис категорії. Короткий опис категорії. Короткий опис категорії."
+
+      en:
+        name: "Оренда авто з водієм"
+        short_description: "Короткий опис категорії. Короткий опис категорії. Короткий опис категорії."
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Організація екскурсій"
+        short_description: "Короткий опис категорії. Короткий опис категорії. Короткий опис категорії."
+
+      en:
+        name: "Please translate me"
+        short_description: ""
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Розпакування та пакування багажу"
+        short_description: ""
+
+      en:
+        name: "Піднесення багажу"
+        short_description: ""
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Зберігання багажу"
+
+      en:
+        name: "Please translate me"
+
+  -
+    featured: "t"
+    category: "paid"
+    translations:
+      uk:
+        name: "Послуги консьєржа"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Організація"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Ресторан"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Бар (цілодобово)"
+
+      en:
+        name: "Please translate me"
+
+  -
+    featured: "t"
+    category: "paid"
+    translations:
+      uk:
+        name: "Room-service (цілодобово)"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Кейтерінг"
+
+      en:
+        name: "Please translate me"
+
+  -
+    featured: "t"
+    category: "paid"
+    translations:
+      uk:
+        name: "Трансфер (зустріч та проводив аеропорту та на залізничному вокзалі)"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Оренда автомобіля з водієм"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Замовлення і продаж авіаквитків"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Стоянка автотранспорту"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Телефонні послуги (міжміський та міжнародний зв'язок)"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Послуги гіда - перекладача, секретаря"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Замовлення та доставка квитків у музеї та театри"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Хімчистка"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Прання речей"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Послуги бізнес-центру (ксерокс, факс, інтернет)"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Оренда автомобілів"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Замовлення квітів та подарунків"
+
+      en:
+        name: "Please translate me"
+
+  -
+    featured: "t"
+    category: "paid"
+    translations:
+      uk:
+        name: "Організація проведення прийомів, бенкетів, весіль, фуршетів та урочистих подій"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Додаткове ліжко в номері"
+
+      en:
+        name: "Please translate me"
+
+  -
+    category: "paid"
+    translations:
+      uk:
+        name: "Проживання з домашніми улюбленцями (500грн/доба)"
+
+      en:
+        name: "Please translate me"
+  -
+    featured: "t"
+    category: "paid"
+    translations:
+      uk:
+        name: "Надання у номер дитячого ліжечка (колиска);"
+      en:
+        name: "Please translate me"

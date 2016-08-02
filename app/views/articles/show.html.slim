@@ -1,0 +1,41 @@
+.publication-one-wrapper
+  = render "article_banner"
+  .main-background
+    .row
+      .columns
+        = render "breadcrumbs"
+        .row
+          .large-7.medium-12.columns
+            = raw @article.content
+          .large-5.medium-12.columns
+            .right-side
+              - if (tags = @article.tags).any?
+                .tag-container
+                  p.tags-label Теги:
+                  - tags.each do |tag|
+                    .block.tag
+                      p
+                        = tag.name
+
+              p.regular Поділитись:
+              .social-container
+                .social
+                  = inline_svg "icons/social-owl.svg"
+                .social
+                  = inline_svg "icons/social-fb.svg"
+                .social
+                  = inline_svg "icons/social-google.svg"
+                .social
+                  = inline_svg "icons/social-play.svg"
+              - if @article.related_articles.any?
+                p.regular Схожі публікації:
+                ul
+                  - @article.related_articles.each do |article|
+                    li
+                      a href=article.url
+                        = article.name
+
+  = render "articles_navigation"
+  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+    = render "reserve"
+  = render "map"

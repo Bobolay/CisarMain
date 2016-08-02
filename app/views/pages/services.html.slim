@@ -1,147 +1,57 @@
 .services-wrapper
-	.half-banner
-		.background-img style="background-image: url(#{asset_path('photos/banner-services.jpg')})"
-		.row
-			.columns
-				.section-info
-					p.header
-						| послуги
-						span.line
-						span.red-square
-					p.under-header
-						| Послуги, які ми надаємо на безоплатній та платній основі
-					br
-					.red-head
-						.left-side
-							= inline_svg "icons/clock.svg"
-						.text
-							a
-								span надаємо 
-								| 42 
-								span послуги
-	.main-background
-		.row
-			.columns
-				p.title-slash
-					| безкоштовні
-					sub
-						span &#47;
-						| послуги
-				.services-container
-					.row
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/booking.svg"
-								.background-img style="background-image: url(#{asset_path('photos/reception.jpg')})"
-								.description
-									.short-description Швидка реєстрація
-									.extended-description Всім клієнтам надаємо послуги бронювання наших ноомерів, наперед за довільними вказаними датами.
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/connection.svg"
-								.background-img style="background-image: url(#{asset_path('photos/free-wifi.jpg')})"
-								.description
-									.short-description Безкоштовний Wi-Fi
-									.extended-description Безкоштовне покриття Wi-fi швидкого достопу до мережі інтернет по всій території готелю.
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/services-icon-5.svg"
-								.background-img style="background-image: url(#{asset_path('photos/free-wifi.jpg')})"
-								.description
-									.short-description Кабельне телебачення
-									.extended-description Переглядайте улюблені канали на плазмовому телевізорі, встановленому в кожному номері.
-				.services-list-container
-					.large-4.medium-12.columns
-						ul
-							li Швидка реєстрація під час заїзду та виїзду;
-							li Бронювання номерів;
-							li Виклик таксі;
-							li Зберігання цінностей в сейфі готелю;
-							li Прибирання номеру;
-							li Чищення взуття;
-					.large-4.medium-12.columns
-						ul
-							li Швидка реєстрація під час заїзду та виїзду;
-							li Бронювання номерів;
-							li Виклик таксі;
-							li Зберігання цінностей в сейфі готелю;
-							li Прибирання номеру;
-					.large-4.medium-12.columns
-						ul
-							li Швидка реєстрація під час заїзду та виїзду;
-							li Бронювання номерів;
-							li Виклик таксі;
-							li Зберігання цінностей в сейфі готелю;
-							li Прибирання номеру;
-							li Чищення взуття;
-	.dark-background
-		.row
-			.columns
-				p.title-slash
-					| платні
-					sub
-						span &#47;
-						| послуги
-				.services-container
-					.row
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/services-icon-3.svg"
-								.background-img style="background-image: url(#{asset_path('photos/cafe-1.jpg')})"
-								.description
-									.short-description Кафе
-									.extended-description Короткий опис категорії. Короткий опис категорії. Короткий опис категорії.
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/services-icon-6.svg"
-								.background-img style="background-image: url(#{asset_path('photos/taxi.jpg')})"
-								.description
-									.short-description Оренда авто з водієм
-									.extended-description Короткий опис категорії. Короткий опис категорії. Короткий опис категорії.
-						.large-4.medium-12.columns
-							.service-container
-								.red-icon
-									.svg = inline_svg "icons/excursion.svg"
-								.background-img style="background-image: url(#{asset_path('photos/tourist-map.jpg')})"
-								.description
-									.short-description Організація екскурсій
-									.extended-description Короткий опис категорії. Короткий опис категорії. Короткий опис категорії.
-				.services-list-container
-					.large-4.medium-12.columns
-						ul
-							li Розпакування та пакування багажу;
-							li Піднесення багажу;
-							li Зберігання багажу;
-							li Послуги консьєржа;
-							li Організація;
-							li Ресторан;
-							li Бар (цілодобово);
-							li Room-service (цілодобово);
-							li Кейтерінг;
-					.large-4.medium-12.columns
-						ul
-							li Трансфер (зустріч та проводив аеропорту та на залізничному вокзалі);
-							li Оренда автомобіля з водієм;
-							li Замовлення і продаж авіаквитків;
-							li Стоянка автотранспорту;
-							li Телефонні послуги (міжміський та міжнародний зв'язок);
-							li Послуги гіда - перекладача, секретаря;
-							li Замовлення та доставка квитків у музеї та театри;
-					.large-4.medium-12.columns
-						ul
-							li Хімчистка;
-							li Прання речей;
-							li Послуги бізнес-центру (ксерокс, факс, інтернет);
-							li Оренда автомобілів;
-							li Замовлення квітів та подарунків;
-							li Організація проведення прийомів, бенкетів, весіль, фуршетів та урочистих подій;
-							li Додаткове ліжко в номері;
-							li Проживання з домашніми улюбленцями (500грн/доба);
-	.reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
-		= render "reserve"
-	= render "map"
+  .half-banner
+    .background-img style="background-image: url(#{asset_path('photos/banner-services.jpg')})"
+    .row
+      .columns
+        .section-info
+          p.header
+            | послуги
+            span.line
+            span.red-square
+          p.under-header
+            | Послуги, які ми надаємо на безоплатній та платній основі
+          br
+          .red-head
+            .left-side
+              = inline_svg "icons/clock.svg"
+            .text
+              a
+                = raw "<span>надаємо</span> #{@services_count} <span>послуги</span>"
+
+  .main-background
+    .row
+      .columns
+        p.title-slash
+          | безкоштовні
+          sub
+            span &#47;
+            | послуги
+        .services-container
+          .row
+            - @free_services.each do |service|
+              = render "service", service: service
+
+
+
+        .services-list-container
+          = render "other_services_lists", services: @free_services
+
+
+  .dark-background
+    .row
+      .columns
+        p.title-slash
+          | платні
+          sub
+            span &#47;
+            | послуги
+        .services-container
+          .row
+            - @paid_services.each do |service|
+              = render "service", service: service
+
+        .services-list-container
+          = render "other_services_lists", services: @paid_services
+  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
+    = render "reserve"
+  = render "map"

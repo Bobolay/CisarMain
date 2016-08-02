@@ -1,0 +1,13 @@
+.large-4.medium-4.small-12.columns.article data-tag-ids=article.tags.map(&:id).join(",")
+  .news-block
+    .img-container
+      .img style="background-image: url(#{article.avatar.url(:list)})"
+      .red-frame
+    .text
+      p.date
+        = article.formatted_released_on
+      p.news-title
+        = article.name
+      p.regular
+        = article.short_description
+      a.details href=article.url детальніше

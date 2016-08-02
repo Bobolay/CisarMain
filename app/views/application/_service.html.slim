@@ -1,0 +1,13 @@
+- if service.image.exists?
+  .large-4.medium-12.columns
+    .service-container
+      - if service.icon.exists?
+        .red-icon
+          .svg
+            = embedded_svg_from_absolute_path service.icon.path
+      .background-img style="background-image: url(#{service.image.url})"
+      .description
+        .short-description
+          = service.name
+        .extended-description
+          = service.short_description

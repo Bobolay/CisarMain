@@ -1,0 +1,20 @@
+- prev_article = @article.prev(@articles)
+- next_article = @article.next(@articles)
+.nav-button-wrapper
+  - if prev_article
+    .left-nav-button
+      .img-container
+        .img style="background-image: url(#{prev_article.avatar.url(:avatar)})"
+      .text
+        p
+          = prev_article.name
+        = inline_svg "icons/arrow-left.svg"
+
+  - if next_article
+    .right-nav-button
+      .text
+        p
+          = next_article.name
+        = inline_svg "icons/arrow-right.svg"
+      .img-container
+        .img style="background-image: url(#{next_article.avatar.url(:avatar)})"
