@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale, unless: :admin_panel?
   before_action :set_admin_locale, if: :admin_panel?
-  before_action :initialize_rooms
+  before_action :initialize_rooms, unless: :admin_panel?
 
   def set_admin_locale
     I18n.locale = :uk

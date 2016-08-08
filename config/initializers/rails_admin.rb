@@ -301,9 +301,7 @@ RailsAdmin.config do |config|
   config.model Article do
     edit do
       field :type, :enum do
-        enum do
-          Article.descendants.map{|m| model_key = m.name.underscore; model_label =  || (I18n.t("activerecord.models.#{model_key}", raise: true) rescue m.name);  [model_label, m.name]  }
-        end
+        enum_method :get_available_types
       end
       field :published
       field :featured

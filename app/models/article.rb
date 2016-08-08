@@ -53,4 +53,21 @@ class Article < ActiveRecord::Base
 
     "#{category_name} -> #{name}"
   end
+
+  before_save do
+    types = get_available_types(true)
+    self_type = self['type']
+    if self_type.blank? || !types.include?(self_type)
+      self['type'] = types.first
+    end
+  end
+
+  def get_available_types(value_only = false)
+    classes = Article.descendants
+    if value_only
+      return classes.map(&:name)
+    end
+
+    classes.map{|m| model_key = m.name.underscore; model_label = (I18n.t("activerecord.models.#{model_key}.one", raise: true) rescue nil)  || (I18n.t("activerecord.models.#{model_key}", raise: true) rescue m.name);  [model_label, m.name]  }
+  end
 end

@@ -14,8 +14,8 @@ uk:
         one: "Екскурсія"
         other: "Екскурсії"
       fun_article:
-        one: "цікава стаття"
-        other: "цікаві статті"
+        one: "Цікава стаття"
+        other: "Цікаві статті"
       dish:
         one: "Страва"
         other: "Страви"
@@ -56,8 +56,8 @@ uk:
         other: "Екскурсії"
 
       pages/fun_article:
-        one: "цікаві статті"
-        other: "цікаві статті"
+        one: "Цікаві статті"
+        other: "Цікаві статті"
 
       pages/rooms:
         one: "Номери"
@@ -66,9 +66,11 @@ uk:
 
 
     attributes:
+      type: "Тип"
       name: "Назва"
       url_fragment: "url-фрагмент"
       short_description: "Короткий опис"
+      description: "Опис"
       content: "Контент"
       banner_image: "Баннер -> картинка"
       banner_title: "Баннер -> заголовок"
@@ -77,3 +79,5 @@ uk:
       released_on: "Дата релізу"
       related_articles: "схожі статті"
       published: "Опуліковано"
+      translations: "Локалізації"
+      tags: "Теги"
