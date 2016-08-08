@@ -1,8 +1,8 @@
 class HomeBanner < ActiveRecord::Base
   attr_accessible *attribute_names
 
-  #belongs_to :article
-  #attr_accessible :article, :article_id
+  belongs_to :article
+  attr_accessible :article, :article_id
 
   image :image, styles: { slide: "1920x1080#", thumb: "192x108#" }
 
@@ -11,6 +11,12 @@ class HomeBanner < ActiveRecord::Base
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }
 
   globalize :label, :name, :short_description
+
+  has_link
+
+
+
+
 
 
   def self.load_data_defaults(associations = {})

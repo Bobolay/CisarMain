@@ -1,0 +1,9 @@
+ru:
+  devise_forms:
+    sign_in:
+      header: "Вход в админ-панель"
+      fields:
+        email: "E-mail"
+        password: "Пароль"
+      buttons:
+        go: "Войти"

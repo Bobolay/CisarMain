@@ -1,0 +1,9 @@
+uk:
+  devise_forms:
+    sign_in:
+      header: "Вхід в адмін-панель"
+      fields:
+        email: "E-mail"
+        password: "Пароль"
+      buttons:
+        go: "Увйти"

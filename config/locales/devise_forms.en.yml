@@ -1,0 +1,9 @@
+en:
+  devise_forms:
+    sign_in:
+      header: "Admin panel"
+      fields:
+        email: "E-mail"
+        password: "Password"
+      buttons:
+        go: "Enter"

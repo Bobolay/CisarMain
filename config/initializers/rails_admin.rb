@@ -1,5 +1,9 @@
 #require 'globalize_extension'
+
+
+
 RailsAdmin.config do |config|
+
 
   ### Popular gems integration
 
@@ -54,6 +58,7 @@ RailsAdmin.config do |config|
   config.include_models Cms::Tag
 
   config.model Cms::MetaTags do
+    visible false
     field :translations, :globalize_tabs
   end
 
@@ -65,6 +70,7 @@ RailsAdmin.config do |config|
   end
 
   config.model PageBanner do
+    visible false
     field :image
     field :info_header_icon
     field :translations, :globalize_tabs
@@ -89,6 +95,7 @@ RailsAdmin.config do |config|
   end
 
   config.model Attachable::Asset do
+    visible false
     nested do
       field :data
       field :translations, :globalize_tabs
@@ -100,7 +107,7 @@ RailsAdmin.config do |config|
     field :data_alt
   end
 
-  %w(blog cafe contacts services rooms not_found fun_articles events excursions).each do |m|
+  %w(blog cafe contacts services rooms fun_articles events excursions).each do |m|
     m = "Pages::#{m.classify}"
     config.model m do
       field :banner
@@ -108,6 +115,15 @@ RailsAdmin.config do |config|
       field :sitemap_record
     end
   end
+
+  %w(not_found).each do |m|
+    m = "Pages::#{m.classify}"
+    config.model m do
+      field :seo_tags
+      field :sitemap_record
+    end
+  end
+
   config.model Pages::Home do
     edit do
       field :home_hotel_images
@@ -130,6 +146,7 @@ RailsAdmin.config do |config|
     field :published
     field :translations, :globalize_tabs
     field :image
+    linkable_field([Article, Room, Cms::Page])
   end
 
   config.model_translation HomeBanner do
@@ -233,7 +250,27 @@ RailsAdmin.config do |config|
     field :name
   end
 
-  [BlogArticle].each do |m|
+  def related_articles_field()
+    field :related_articles do
+      # help do
+      #   bindings[:object].inspect
+      # end
+      associated_collection_scope do
+        obj = bindings[:object]
+        obj_id = obj.id
+        rel = obj.class.all
+        proc do
+          if obj_id.blank?
+            rel
+          else
+            rel.where.not(id: obj_id)
+          end
+        end
+      end
+    end
+  end
+
+  [BlogArticle, FunArticle, Event, Excursion].each do |m|
     config.model m do
       edit do
         field :published
@@ -243,29 +280,14 @@ RailsAdmin.config do |config|
         field :banner_image
         field :released_on
         field :tags
-        field :related_articles do
-          # help do
-          #   bindings[:object].inspect
-          # end
-          associated_collection_scope do
-            obj = bindings[:object]
-            obj_id = obj.id
-            rel = obj.class.all
-            proc do
-              if obj_id.blank?
-                rel
-              else
-                rel.where.not(id: obj_id)
-              end
-            end
-          end
-        end
+        related_articles_field
       end
     end
-
-
-
   end
+
+
+
+
 
   config.model_translation Article do
     edit do
@@ -273,6 +295,24 @@ RailsAdmin.config do |config|
       fields :name, :url_fragment, :short_description
       field :content, :ck_editor
       fields :banner_description, :banner_title
+    end
+  end
+
+  config.model Article do
+    edit do
+      field :type, :enum do
+        enum do
+          Article.descendants.map{|m| model_key = m.name.underscore; model_label =  || (I18n.t("activerecord.models.#{model_key}", raise: true) rescue m.name);  [model_label, m.name]  }
+        end
+      end
+      field :published
+      field :featured
+      field :translations, :globalize_tabs
+      field :avatar
+      field :banner_image
+      field :released_on
+      field :tags
+      related_articles_field
     end
   end
 

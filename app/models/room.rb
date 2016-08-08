@@ -24,5 +24,14 @@ class Room < ActiveRecord::Base
   has_seo_tags
   has_sitemap_record
 
+  def linkable_path
+    name = self.name
+    name = "##{self.id}"
+    #category_key = self.class.name.underscore
+    category_name = "Номери"
+
+    "#{category_name} -> #{name}"
+  end
+
 
 end

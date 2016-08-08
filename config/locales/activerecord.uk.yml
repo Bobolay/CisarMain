@@ -1,0 +1,79 @@
+uk:
+  activerecord:
+    models:
+      article:
+        one: "Стаття"
+        other: "Статті"
+      blog_article:
+        one: "Стаття для блогу"
+        other: "Статті для блогу"
+      event:
+        one: "Подія"
+        other: "Події"
+      excursion:
+        one: "Екскурсія"
+        other: "Екскурсії"
+      fun_article:
+        one: "цікава стаття"
+        other: "цікаві статті"
+      dish:
+        one: "Страва"
+        other: "Страви"
+      home_banner:
+        one: "Баннер для головної"
+        other: "Баннери для головної"
+      interior_component:
+        one: "Компонент інтер'єру"
+        other: "Компоненти інтер'єру"
+      room:
+        one: "Номер"
+        other: "Номери"
+      room_tag:
+        one: "тег для номерів"
+        other: "теги для номерів"
+      service:
+        one: "Послуга"
+        other: "Послуги"
+      user:
+        one: "Користувач"
+        other: "Користувачі"
+      pages/blog:
+        one: "Блог"
+        other: "Блог"
+      pages/fun_articles:
+        one: "цікаві статті"
+        other: "цікаві статті"
+      pages/cafe:
+        one: "Кафе"
+        other: "Кафе"
+
+      pages/events:
+        one: "Події"
+        other: "Події"
+
+      pages/excursions:
+        one: "Екскурсії"
+        other: "Екскурсії"
+
+      pages/fun_article:
+        one: "цікаві статті"
+        other: "цікаві статті"
+
+      pages/rooms:
+        one: "Номери"
+        other: "Номери"
+
+
+
+    attributes:
+      name: "Назва"
+      url_fragment: "url-фрагмент"
+      short_description: "Короткий опис"
+      content: "Контент"
+      banner_image: "Баннер -> картинка"
+      banner_title: "Баннер -> заголовок"
+      banner_description: "Баннер -> опис"
+      avatar: "Аватар"
+      released_on: "Дата релізу"
+      related_articles: "схожі статті"
+      published: "Опуліковано"

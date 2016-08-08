@@ -52,9 +52,12 @@ gem 'bower-rails'
 gem "protected_attributes"
 
 gem 'rails_admin'
+gem 'rails_admin-i18n'
 gem 'rails_admin_nestable'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'rails-i18n'
 
 gem 'enumerize'
 

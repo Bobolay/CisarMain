@@ -34,3 +34,8 @@ uk:
       info-header:
         text: "%{count} публікацій"
     services:
+  article_categories:
+    blog_article: "Новини"
+    excursion: "Екскурсії"
+    event: "Події"
+    fun_article: "Цікаві статті"

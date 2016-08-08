@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   before_action :initialize_rooms
 
   def set_admin_locale
-    I18n.locale = :en
+    I18n.locale = :uk
   end
 
   def set_locale
@@ -39,10 +39,17 @@ class ApplicationController < ActionController::Base
     set_page_metadata("not_found")
 
     render template: "errors/not_found.html.slim", layout: "application"
+
+
   end
 
   def default_url_options
-    {locale: I18n.locale}
+    if admin_panel?
+      {}
+    else
+      {locale: I18n.locale}
+    end
+
   end
 
   def root_without_locale

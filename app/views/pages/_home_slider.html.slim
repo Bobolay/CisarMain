@@ -21,8 +21,9 @@
             span.red-square
           p.regular
             = b.short_description
-          a.details href=events_path
-            = t("read-more")
+          - if linkable = b.linkable
+            a.details href=linkable.url
+              = t("read-more")
 
 
       .main-slider-prev

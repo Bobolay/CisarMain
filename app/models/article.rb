@@ -44,4 +44,13 @@ class Article < ActiveRecord::Base
       {day: day, month_name: month_name, year: year}
     end
   end
+
+  def linkable_path
+    name = self.name
+    name = "##{self.id}"
+    category_key = self.class.name.underscore
+    category_name = I18n.t("article_categories.#{category_key}", raise: true) rescue "test"
+
+    "#{category_name} -> #{name}"
+  end
 end
