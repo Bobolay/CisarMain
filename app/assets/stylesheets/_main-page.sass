@@ -136,81 +136,85 @@
 			@media #{$small-only}
 				bottom: -20px
 				right: -10px
-.about-us-info
-	background: url(#{asset_path('png/main-background.png')})
-	padding-bottom: 70px
-	.reserve-container
-		position: relative
-		top: -82px
-		max-width: 900px
-		margin: auto
-		@media #{$small-only}
-			top: -41px
-		.top
-			background-color: $red
-			text-align: center
-			padding: 10px
-			position: relative
-			a
-				position: absolute
-				right: 25px
-				top: 25px
-				display: none
-				@media #{$small-only}
-					display: block
-			svg
-				fill: #fff
-				width: 15px
-				height: 15px
-				+rotate(45deg)
-		.reserve-header
-			font-size: 1.62em
-			color: #fff
-			text-transform: uppercase
-		.under-header
-			color: $yellow
-			font-style: italic
-		.main-field
-			background: url(#{asset_path('png/texture.png')})
-			padding: 30px 50px
-			border-left: 1px solid rgba(61,38,34,0.5)
-			border-right: 1px solid rgba(61,38,34,0.5)
-			border-bottom: 1px solid rgba(61,38,34,0.5)
+
+.red-bg-header
+	background-color: $red
+	text-align: center
+	padding: 10px
+	position: relative
+
+.reserve-container
+	position: relative
+	top: -82px
+	max-width: 900px
+	margin: auto
+	@media #{$small-only}
+		top: -41px
+	.top
+
+		a
+			position: absolute
+			right: 25px
+			top: 25px
+			display: none
 			@media #{$small-only}
-				display: none
-			@media #{$medium-only}
-				padding: 30px
-			.uppear-date
-				color: $brown
-				font-style: italic
-			.button-find-room
-				@media #{$medium-only}
-		hr
-			border-bottom: none
-			border-top: 1px solid rgba(0,0,0,0.3)
-			margin: 15px 0
-		.temperature
-			font-size: 1.5em
-			color: #000
-			opacity: 0.3
-		.sun
-			display: inline-block
-			width: 30px
-			height: 30px
-			position: relative
-			top: 5px
-			+rotate(25deg)
-			margin-left: 5px
-			svg
-				fill: #FFD500
-		.after-sun
-			font-size: 0.875em
+				display: block
+		svg
+			fill: #fff
+			width: 15px
+			height: 15px
+			+rotate(45deg)
+	.reserve-header
+		font-size: 1.62em
+		color: #fff
+		text-transform: uppercase
+	.under-header
+		color: $yellow
+		font-style: italic
+	.main-field
+		background: url(#{asset_path('png/texture.png')})
+		padding: 30px 50px
+		border-left: 1px solid rgba(61,38,34,0.5)
+		border-right: 1px solid rgba(61,38,34,0.5)
+		border-bottom: 1px solid rgba(61,38,34,0.5)
+		@media #{$small-only}
+			display: none
+		@media #{$medium-only}
+			padding: 30px
+		.input-label
+			color: $brown
 			font-style: italic
-			color: #000
-			opacity: 0.3
-			position: relative
-			margin-left: 10px
-			top: -5px
+
+	hr
+		border-bottom: none
+		border-top: 1px solid rgba(0,0,0,0.3)
+		margin: 15px 0
+	.temperature
+		font-size: 1.5em
+		color: #000
+		opacity: 0.3
+	.sun
+		display: inline-block
+		width: 30px
+		height: 30px
+		position: relative
+		top: 5px
+		+rotate(25deg)
+		margin-left: 5px
+		svg
+			fill: #FFD500
+	.after-sun
+		font-size: 0.875em
+		font-style: italic
+		color: #000
+		opacity: 0.3
+		position: relative
+		margin-left: 10px
+		top: -5px
+.about-us-info
+	background: image_url("png/main-background.png")
+	padding-bottom: 70px
+
 	.crown
 		position: absolute
 		bottom: -6px

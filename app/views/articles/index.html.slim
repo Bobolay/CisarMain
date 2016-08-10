@@ -30,6 +30,5 @@
             - @articles.each do |article|
               = render "article", article: article
 
-  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
-    = render "reserve"
+  = render "reserve"
   = render "map"

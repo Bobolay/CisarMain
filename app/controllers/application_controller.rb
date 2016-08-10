@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, unless: :admin_panel?
   before_action :set_admin_locale, if: :admin_panel?
   before_action :initialize_rooms, unless: :admin_panel?
+  before_action :initialize_social_networks, unless: :admin_panel?
 
   def set_admin_locale
     I18n.locale = :uk
@@ -39,8 +40,6 @@ class ApplicationController < ActionController::Base
     set_page_metadata("not_found")
 
     render template: "errors/not_found.html.slim", layout: "application"
-
-
   end
 
   def default_url_options
@@ -49,7 +48,6 @@ class ApplicationController < ActionController::Base
     else
       {locale: I18n.locale}
     end
-
   end
 
   def root_without_locale
@@ -78,6 +76,10 @@ class ApplicationController < ActionController::Base
 
   def initialize_page_banner
     @banner = @page_instance
+  end
+
+  def initialize_social_networks
+    @social_networks = SocialNetwork.published.sort_by_sorting_position
   end
 
 end

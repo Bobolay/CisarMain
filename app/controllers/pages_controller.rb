@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
+  before_action :set_page_banner, only: [:cafe]
 
   def index
     @home_banners = HomeBanner.published.sort_by_sorting_position
@@ -24,10 +25,6 @@ class PagesController < ApplicationController
     @featured_dishes = Dish.published.featured.order("id desc").limit(3)
   end
 
-  def about_us
-
-  end
-
   def services
     @free_services = Service.published.free.sort_by_sorting_position
     @paid_services = Service.published.paid.sort_by_sorting_position
@@ -36,6 +33,7 @@ class PagesController < ApplicationController
 
   def cafe
     @dishes = Dish.published.order("id desc")
+    #Cms::Page.first
   end
 
   def contacts
@@ -46,5 +44,15 @@ class PagesController < ApplicationController
 
   def set_page_instance
     set_page_metadata(action_name)
+  end
+
+  def set_page_banner
+    ar_banner = @page_instance.try(:banner)
+    if ar_banner
+      banner = { image_url: ar_banner.image.url(:xxl), info_header_icon: ar_banner.info_header_icon.path, info_header_text: ar_banner.info_header_text, header: ar_banner.title, description: ar_banner.description }
+    else
+      banner = {}
+    end
+    @banner = banner
   end
 end

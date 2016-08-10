@@ -83,19 +83,7 @@
                   span &#47;
                   | нашого кафе
               - dishes.each do |dish|
-                .dish-container
-                  .dish-img style="background-image: url(#{asset_path('photos/dish-1.jpg')})"
-                    .dish-price
-                      p &#8372;#{dish.price}
-                  .inner-block
-                    .dish
-                      .name
-                        p #{dish.label}
-                        p #{dish.name}
-                        span.line
-                        span.red-square
-                      p.description
-                        = raw dish.short_description
+                = render "dish", dish: dish
 
   .nav-button-wrapper
     - prev_room = @room.prev(@rooms)
@@ -117,6 +105,6 @@
         .img-container
           .img style="background-image: url(#{next_room.list_image.url(:avatar)})"
 
-  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
-    = render "reserve"
+
+  = render "reserve"
   = render "map"

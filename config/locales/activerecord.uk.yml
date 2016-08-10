@@ -1,6 +1,9 @@
 uk:
   activerecord:
     models:
+      social_network:
+        one: "Соціальна мережа"
+        other: "Соціальні мережі"
       article:
         one: "Стаття"
         other: "Статті"

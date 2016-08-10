@@ -1,0 +1,12 @@
+.dish-container
+  .dish-img style="background-image: url(#{dish.image.url})"
+    .dish-price
+      p &#8372;#{dish.price}
+  .inner-block
+    .dish
+      .name
+        p = dish.label
+        p = raw dish.name
+        span.line
+        span.red-square
+      p.description = raw dish.short_description

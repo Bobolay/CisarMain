@@ -40,7 +40,7 @@ RailsAdmin.config do |config|
     # history_show
 
     nestable do
-      only [HomeBanner, Service, Room, Dish, InteriorComponent, RoomTag]
+      only [HomeBanner, Service, Room, Dish, InteriorComponent, RoomTag, SocialNetwork]
     end
   end
 
@@ -56,6 +56,7 @@ RailsAdmin.config do |config|
   config.include_models Article, FunArticle, Excursion, Event, BlogArticle
 
   config.include_models Cms::Tag
+  config.include_models SocialNetwork
 
   config.model Cms::MetaTags do
     visible false
@@ -77,6 +78,7 @@ RailsAdmin.config do |config|
   end
 
   config.model_translation PageBanner do
+    field :locale, :hidden
     field :title
     field :description
     field :info_header_text
@@ -108,7 +110,7 @@ RailsAdmin.config do |config|
   end
 
   %w(blog cafe contacts services rooms fun_articles events excursions).each do |m|
-    m = "Pages::#{m.classify}"
+    m = "Pages::#{m.camelize}"
     config.model m do
       field :banner
       field :seo_tags
@@ -312,6 +314,21 @@ RailsAdmin.config do |config|
       field :tags
       related_articles_field
     end
+  end
+
+  config.model SocialNetwork do
+    nestable_list({position_field: :sorting_position})
+
+    field :published
+    field :key
+    field :icon
+    field :profile_url
+    field :translations, :globalize_tabs
+  end
+
+  config.model_translation SocialNetwork do
+    field :locale, :hidden
+    fields :profile_tooltip, :share_tooltip
   end
 
 

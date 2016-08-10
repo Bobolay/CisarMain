@@ -31,4 +31,5 @@
 
             p.description
               = room.short_description
-            a.underlined href=room.url = t("read-more")
+            a.underlined href=room.url data-test=room.url
+              = t("read-more")

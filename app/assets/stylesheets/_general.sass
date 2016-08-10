@@ -51,17 +51,23 @@ $yellow: #FFD500
 =grey-border
 	border: 1px solid rgba(0,0,0,0.3)
 
-.button-find-room
-	background: url(#{asset_path('png/find-room-texture.png')})
+.btn
+	display: block
+	width: 100%
+	position: relative
+	background: image_url('png/find-room-texture.png')
 	text-align: center
 	margin-top: 34px
 	height: 50px
 	background-color: $brown
 	cursor: pointer
-	p
-		position: relative
-		top: 50%
-		+translate(0,-50%)
+
+	span
+		line-height: 50px
+		display: block
+		//position: relative
+		//top: 50%
+		//+translate(0,-50%)
 		font-size: 1em
 		text-transform: uppercase
 		color: $yellow

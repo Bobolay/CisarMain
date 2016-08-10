@@ -9,6 +9,7 @@ html
   body
     - if @render_header != false
         = render "header"
+        = render "menu"
     = yield
     - if @render_footer != false
         = render "footer"

@@ -15,11 +15,12 @@
         ul
           - @rooms.each do |room|
             li
-              a href=room.url = room.name
+              a href=room.url
+                = room.name
 
   - @rooms.each do |room|
     = render "room", room: room
 
-  .reserve-container style="background-image: url(#{asset_path('png/main-background.png')})"
-    = render "reserve"
+
+  = render "reserve"
   = render "map"

@@ -1,0 +1,20 @@
+.half-banner
+  .background-img style="background-image: url(#{banner[:image_url]})"
+  .row
+    .columns
+      .section-info
+        p.header
+          = raw banner[:header]
+          span.line
+          span.red-square
+        - if (desc = raw(banner[:description])).present?
+          p.under-header
+            = desc
+        - if banner[:info_header] || banner[:info_header_text]
+          .red-head
+            .left-side
+              = embedded_svg_from_absolute_path banner[:info_header_icon]
+            .text
+              p
+                span
+                  = banner[:info_header_text]

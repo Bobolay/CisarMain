@@ -1,88 +1,25 @@
 .header-container
-	a.left-part href=root_path
-		.main-logo = inline_svg "icons/logo.svg"
-		p.under-logo городоцька 65, львів
-	ul.right-part
-		li
-			p.temperature
-				| +24&deg;
-				span = inline_svg "icons/sun.svg"
-		li
-			p.exchange-rate
-				| 1 
-				sup usd 
-				= 26.5
-				sup  uah
-			p.exchange-rate
-				| 1 
-				sup eur 
-				= 28.2
-				sup  uah
-		li
-			a.reserve href="#reserve" забронювати
-		li
-			.menu-button
-				.menu-button-lines
-.menu
-	.menu-button = inline_svg "icons/cross.svg"
-	.top-part
-		.text
-            .locales-bar
-                - Cms.config.provided_locales.each do |locale|
-                    - url = @page_instance.try{|p| p.url(locale) }
-
-                    - active = locale == I18n.locale
-                    - if active
-                        span.locale-link class="active"
-                            = Cms.config.locale_names[locale]
-                    - else
-                        a.locale-link href=url
-                            = Cms.config.locale_names[locale]
-			.header
-				a href=root_path головна
-				span.red-square
-			.header
-				a href=rooms_path номера
-				span.red-square
-			ul.rooms
-                - @rooms.each do |room|
-                    li
-                        a href=room.url
-                            = room.name
-
-			.header
-				a href=services_path послуги
-				span.red-square
-			.header
-				a href=cafe_path кафе
-				span.red-square
-			.header
-				a href=events_path корисна інформація
-				span.red-square
-			.header
-				a href=blog_path блог
-				span.red-square
-			.header
-				a href=contacts_path контакти
-				span.red-square
-	.bottom-part
-		.row.collapse
-			.large-6.medium-6.small-6.columns
-				.contact-block
-					.svg = inline_svg "icons/contacts-phone.svg"
-					p.contact-way Телефони
-					p.contact-info 032 235 8228
-					p.contact-info 032 458 4827
-			.large-6.medium-6.small-6.columns
-				.contact-block
-					.svg = inline_svg "icons/contacts-planet.svg"
-					p.contact-way Соціальні мережі
-					.social-container
-						.social
-							= inline_svg "icons/social-owl.svg"
-						.social
-							= inline_svg "icons/social-fb.svg"
-						.social
-							= inline_svg "icons/social-google.svg"
-						.social
-							= inline_svg "icons/social-play.svg"
+  a.left-part href=root_path
+    .main-logo = inline_svg "icons/logo.svg"
+    p.under-logo городоцька 65, львів
+  ul.right-part
+    li
+      p.temperature
+        | +24&deg;
+        span = inline_svg "icons/sun.svg"
+    li
+      p.exchange-rate
+        | 1 
+        sup usd 
+        = 26.5
+        sup  uah
+      p.exchange-rate
+        | 1 
+        sup eur 
+        = 28.2
+        sup  uah
+    li
+      a.reserve href="#reserve" забронювати
+    li
+      .menu-button
+        .menu-button-lines

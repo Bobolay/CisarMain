@@ -1,0 +1,34 @@
+.devise.sessions-new
+  = render "page_banner", banner: {image_url: asset_path('photos/banner-cafe.jpg'), header: "Кафе", description: "Завжди смачні страви та хороші пропозиції для наших постійних клієнтів та просто відвідувачів."}
+
+  .reserve-container.panel
+    .top.red-bg-header
+      p.reserve-header = t("devise_forms.sign_in.header")
+      /p.under-header = t("booking-form.sub-title")
+      /a href="#reserve" = inline_svg "icons/cross.svg"
+    .main-field
+      .row
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label
+                = t("devise_forms.sign_in.fields.email")
+              = f.email_field :email, autofocus: true
+
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("devise_forms.sign_in.fields.password")
+              = f.password_field :password, autocomplete: "off"
+
+
+
+
+
+          .large-4.medium-4.small-12.columns
+            button.btn type="submit"
+              span
+                = t("devise_forms.sign_in.buttons.go")
+      /hr
+      /span.temperature +24&deg;
+      /span.sun = inline_svg "icons/sun.svg"
+      /span.after-sun &mdash; Прогноз погоди на 28 березня
