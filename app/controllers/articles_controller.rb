@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     set_page_metadata(index_page_key)
+    set_page_banner
   end
 
   def show

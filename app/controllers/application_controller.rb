@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   before_action :set_admin_locale, if: :admin_panel?
   before_action :initialize_rooms, unless: :admin_panel?
   before_action :initialize_social_networks, unless: :admin_panel?
+  before_action :initialize_map, unless: :admin_panel?
 
   def set_admin_locale
     I18n.locale = :uk
@@ -80,6 +81,21 @@ class ApplicationController < ActionController::Base
 
   def initialize_social_networks
     @social_networks = SocialNetwork.published.sort_by_sorting_position
+  end
+
+  def initialize_map
+    @contact_info = ContactInfo.first
+  end
+
+  protected
+  def set_page_banner
+    ar_banner = @page_instance.try(:banner)
+    if ar_banner
+      banner = { image_url: ar_banner.image.url(:xxl), info_header_icon: ar_banner.info_header_icon.path, info_header_text: ar_banner.info_header_text, header: ar_banner.title, description: ar_banner.description }
+    else
+      banner = {}
+    end
+    @banner = banner
   end
 
 end

@@ -1,4 +1,5 @@
 .contacts-wrapper
+  = render "page_banner", banner: @banner
   .half-banner
     .background-img style="background-image: url(#{asset_path('photos/banner-contact.jpg')})"
     .row
@@ -13,9 +14,9 @@
             .left-side
               = inline_svg "icons/contacts-phone.svg"
             .text
-              a href="tel:+380322353565"
-                | +38032
-                span 235 3565
+              - phone = @contact_info.phones.first
+              a href=phone_url(phone)
+                = raw formatted_phone_number(phone)
   .main-background
     .row
       .columns
@@ -25,24 +26,27 @@
               .contacts-block
                 = inline_svg "icons/contacts-geo.svg"
                 p Адреса:
-              p.under-block Україна, м. Львів, вул. Городоцька, 65
+              p.under-block
+                = @contact_info.address
           .large-3.medium-6.small-6.columns
             .contact-block-container
               .contacts-block
                 = inline_svg "icons/contacts-phone.svg"
                 p Телефони:
               p.under-block
-                | 032 253 3565
-                br
-                | 094 993 5565
-                br
-                | 067 193 2444
+                - @contact_info.phones.each do |phone|
+                  a.phone-number href=phone_url(phone)
+                    = phone
+
           .large-3.medium-6.small-6.columns
             .contact-block-container
               .contacts-block
                 = inline_svg "icons/contacts-mail.svg"
                 p E-mail:
-              p.under-block cisar.lviv@gmail.com
+              p.under-block
+                - @contact_info.emails.each do |email|
+                  a.email href=email_url(email)
+                    = email
           .large-3.medium-6.small-6.columns
             .contact-block-container
               .contacts-block

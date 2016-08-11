@@ -1,20 +1,27 @@
-.half-banner
-  .background-img style="background-image: url(#{banner[:image_url]})"
-  .row
-    .columns
-      .section-info
-        p.header
-          = raw banner[:header]
-          span.line
-          span.red-square
-        - if (desc = raw(banner[:description])).present?
-          p.under-header
-            = desc
-        - if banner[:info_header] || banner[:info_header_text]
-          .red-head
-            .left-side
-              = embedded_svg_from_absolute_path banner[:info_header_icon]
-            .text
-              p
-                span
-                  = banner[:info_header_text]
+- if defined?(banner) && banner.present?
+  - banner[:info_header_text] = info_header_text if defined?(info_header_text)
+  - banner[:info_header_icon] = info_header_icon if defined?(info_header_icon)
+  - if banner[:info_header_icon].present? && !File.exists?(banner[:info_header_icon]) && File.exists?(abs_asset_path = Rails.root.join("app/assets/images", banner[:info_header_icon]).to_s)
+    - banner[:info_header_icon] = abs_asset_path
+  .half-banner
+    .background-img style="background-image: url(#{banner[:image_url]})"
+    - if banner[:header].present? || (desc = raw(banner[:description])).present? || banner[:info_header].present? || banner[:info_header_text].present?
+      .row
+        .columns
+          .section-info
+            - if banner[:header].present?
+              p.header
+                = raw banner[:header]
+                span.line
+                span.red-square
+            - if (desc ||= raw(banner[:description])).present?
+              p.under-header
+                = desc
+            - if banner[:info_header].present? || banner[:info_header_text].present?
+              .red-head
+                .left-side
+                  = embedded_svg_from_absolute_path banner[:info_header_icon]
+                .text
+                  p
+                    span
+                      = banner[:info_header_text]

@@ -1,4 +1,4 @@
-div style="background-image: url(#{asset_path('png/main-background.png')})"
+div style="background-image: url(#{asset_path('texture-yellow.gif')})"
   .reserve-container
     .reservation-wrapper
       .row
@@ -7,33 +7,49 @@ div style="background-image: url(#{asset_path('png/main-background.png')})"
             .large-5.medium-12.small-12.columns
               .reservation-container#reserve
                 .text
-                  p.header бронювання
-                  p.under-header номеру у готелі
+                  p.header
+                    = t("booking-form.title")
+                  p.under-header
+                    = t("booking-form.sub-title")
                   .square
                     span
 
                   form
                     - if @room
                       .input
-                        p.input-label Дата заїзду
+                        p.input-label
+                          = t("booking-form.checkin-date")
                         input#datepicker-3
                         .icon = inline_svg "icons/choose-date.svg"
                       .input
-                        p.input-label Дата виїзду
+                        p.input-label
+                          = t("booking-form.checkout-date")
                         input#datepicker-4
                         .icon = inline_svg "icons/choose-date.svg"
                     - else
                       .input
-                        input#datepicker-3
+                        input#datepicker-3 placeholder=t("booking-form.checkin-date")
                         .icon = inline_svg "icons/choose-date.svg"
 
-                    .btn
-                      span знайти номер
+                      .input
+                        input#datepicker-4 placeholder=t("booking-form.checkout-date")
+                        .icon = inline_svg "icons/choose-date.svg"
+
+                      .input.select
+                        select
+                          - @rooms.each_with_index do |room, index|
+                            option value="room-#{room.id}"
+                              = room.name
+                    button.btn type="submit"
+                      span
+                        = t("book-room")
             .large-7.medium-12.small-12.columns
               .contacts-container
                 .text
-                  p.header контакти
-                  p.under-header та адреса
+                  p.header
+                    = t("contacts-block.title")
+                  p.under-header
+                    = t("contacts-block.sub-title")
                   .square
                     span
                   .row
@@ -41,27 +57,27 @@ div style="background-image: url(#{asset_path('png/main-background.png')})"
                       .contact-block
                         .svg = inline_svg "icons/contacts-geo.svg"
                         p.contact-way Адреса
-                        p.contact-info Україна м. Львів, вул. Котлярська, 3
+                        p.contact-info
+                          = @contact_info.address
                       .contact-block
                         .svg = inline_svg "icons/contacts-phone.svg"
                         p.contact-way Телефони
-                        p.contact-info 032 235 8228
-                        p.contact-info 032 458 4827
-                        p.contact-info 032 458 4827
+                        - @contact_info.phones.each do |phone|
+                          a.phone-number.contact-info href=phone_url(phone)
+                            = phone
+
                     .large-6.medium-6.small-12.columns
                       .contact-block
                         .svg = inline_svg "icons/contacts-mail.svg"
                         p.contact-way E-mail:
-                        p.contact-info cisar@hotel-cisar.com
+                        p.contact-info
+                          - @contact_info.emails.each do |email|
+                            a.email href=email_url(email)
+                              = email
                       .contact-block.last
                         .svg = inline_svg "icons/contacts-planet.svg"
                         p.contact-way Соціальні мережі
                         .social-container
-                          .social
-                            = inline_svg "icons/social-owl.svg"
-                          .social
-                            = inline_svg "icons/social-fb.svg"
-                          .social
-                            = inline_svg "icons/social-google.svg"
-                          .social
-                            = inline_svg "icons/social-play.svg"
+                          - @social_networks.limit(3).each do |social_network|
+                            a.social href=social_network.profile_url title=social_network.profile_tooltip
+                              = embedded_svg_from_absolute_path social_network.icon.path

@@ -2,7 +2,7 @@
 	position: relative
 	width: 100vw
 	height: 100vh
-	background: url(#{asset_path('png/main-background.png')})
+	background: $texture-yellow-bg
 	max-width: 100%
 	.bxslider-main-banner
 		position: absolute
@@ -142,7 +142,10 @@
 	text-align: center
 	padding: 10px
 	position: relative
-
+.panel
+	.red-bg-header
+		.under-header
+			color: $yellow
 .reserve-container
 	position: relative
 	top: -82px
@@ -169,7 +172,7 @@
 		color: #fff
 		text-transform: uppercase
 	.under-header
-		color: $yellow
+		//color: $yellow
 		font-style: italic
 	.main-field
 		background: url(#{asset_path('png/texture.png')})
@@ -212,7 +215,7 @@
 		margin-left: 10px
 		top: -5px
 .about-us-info
-	background: image_url("png/main-background.png")
+	background: $texture-yellow-bg
 	padding-bottom: 70px
 
 	.crown
@@ -257,7 +260,7 @@
 			left: 25px
 			bottom: 5px
 			font-style: italic
-			background: url(#{asset_path('png/main-background.png')})
+			background: $texture-yellow-bg
 	.details
 		color: $red
 		text-transform: uppercase
@@ -289,7 +292,7 @@
 		margin-top: 10px
 
 .our-services
-	background: url(#{asset_path('png/dark-texture.png')})
+	background: $texture-dark-bg
 	padding: 70px 0
 	@media #{$small-only}
 		padding: 50px 0
@@ -342,7 +345,7 @@
 			left: 50%
 			+translate(-50%,0)
 .cafe
-	background: url(#{asset_path('png/main-background.png')})
+	background: $texture-yellow-bg
 	padding: 70px 0
 	@media #{$small-only}
 		padding: 50px 0 0 0
@@ -443,7 +446,7 @@
 			fill: #fff
 			fill-opacity: 0.7
 .news
-	background: url(#{asset_path('png/main-background.png')})
+	background: $texture-yellow-bg
 	padding-top: 70px
 	.chapter-container
 		.line

@@ -1,5 +1,6 @@
 .info-wrapper
-  .half-banner
+  = render "page_banner", banner: @banner, info_header_text: "#{@articles.count} публікацій", info_header_icon: "icons/pen.svg"
+  /.half-banner
     .background-img style="background-image: url(#{asset_path('photos/banner-cafe.jpg')})"
     .row
       .columns

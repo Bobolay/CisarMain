@@ -1,20 +1,6 @@
 .info-wrapper
-  .half-banner
-    .background-img style="background-image: url(#{asset_path('photos/banner-cafe.jpg')})"
-    .row
-      .columns
-        .section-info
-          p.header
-            | корисна інформація
-            span.line
-            span.red-square
-          p.under-header Події які відбудуться найближчим часом, замовлення екскурсій, та місця відпочинкуу Львові та області.
-          .red-head
-            .left-side
-              = inline_svg "icons/excursion.svg"
-            .text
-              p
-                span працюємо цілодобово
+  = render "page_banner", banner: @banner, info_header_text: raw("працюємо цілодобово"), info_header_icon: "icons/excursion.svg"
+
   .main-background
     .row
       .columns

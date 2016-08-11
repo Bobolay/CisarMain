@@ -1,5 +1,6 @@
 .rooms-wrapper
-  .half-banner
+  = render "page_banner", banner: @banner
+  /.half-banner
     .background-img style="background-image: url(#{asset_path('photos/banner-rooms.jpg')})"
     .row
       .columns
@@ -18,8 +19,9 @@
               a href=room.url
                 = room.name
 
-  - @rooms.each do |room|
-    = render "room", room: room
+  - 4.times do
+    - [@rooms.first].each do |room|
+      = render "room", room: room
 
 
   = render "reserve"

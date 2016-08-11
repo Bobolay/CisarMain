@@ -1,4 +1,6 @@
 function initialize() {
+    var $map = $("#googleMap")
+    var data_lat_lng = $map.attr("data-center").split(",").map(function(a){return parseInt(a)})
     var styles = [
       {
         stylers: [
@@ -27,7 +29,7 @@ function initialize() {
 
     var mapOptions = {
         zoom: zoomZoom,
-        center: new google.maps.LatLng(49.8450756, 24.0213671),
+        center: new google.maps.LatLng(data_lat_lng[0], data_lat_lng[1]),
         panControl:false,
         zoomControl:true,
         mapTypeControl:false,
@@ -41,7 +43,7 @@ function initialize() {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, "map_style"]
         }
     };
-    var map = new google.maps.Map(document.getElementById('googleMap'),
+    var map = new google.maps.Map($map[0],
         mapOptions);
     var image = '/assets/icons/map-marker.svg'
     var marker = new google.maps.Marker({

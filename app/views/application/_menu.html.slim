@@ -13,31 +13,47 @@
           - else
             a.locale-link href=url
               = Cms.config.locale_names[locale]
-      .header
-        a href=root_path головна
-        span.red-square
-      .header
+      /h1
+        = raw main_menu_items[1][:children][0].class.name
+      - main_menu_items.each do |menu_item|
+
+
+        .header class=("active" if menu_item[:active]) class=("has-active" if menu_item[:has_active])
+          a href=(menu_item[:url] || "#")
+            = menu_item[:name]
+          span.red-square
+        /- if menu_item[:children]
+          /h1
+            = menu_item[:children]
+        - if menu_item[:children].present?
+          ul.rooms
+            - menu_item[:children].each do |item|
+              li
+                a href=item[:url] class=("active" if item[:active])
+                  = item[:name]
+
+      /.header
         a href=rooms_path номера
         span.red-square
-      ul.rooms
+      /ul.rooms
         - @rooms.each do |room|
           li
             a href=room.url
               = room.name
 
-      .header
+      /.header
         a href=services_path послуги
         span.red-square
-      .header
+      /.header
         a href=cafe_path кафе
         span.red-square
-      .header
+      /.header
         a href=events_path корисна інформація
         span.red-square
-      .header
+      /.header
         a href=blog_path блог
         span.red-square
-      .header
+      /.header
         a href=contacts_path контакти
         span.red-square
   .bottom-part
@@ -46,18 +62,22 @@
         .contact-block
           .svg = inline_svg "icons/contacts-phone.svg"
           p.contact-way Телефони
-          p.contact-info 032 235 8228
-          p.contact-info 032 458 4827
+          - @contact_info.phones.each do |phone|
+            a.phone-number.contact-info href=phone_url(phone)
+              = phone
       .large-6.medium-6.small-6.columns
         .contact-block
           .svg = inline_svg "icons/contacts-planet.svg"
           p.contact-way Соціальні мережі
           .social-container
-            .social
+            - @social_networks.limit(4).each do |social_network|
+              a.social href=social_network.profile_url title=social_network.profile_tooltip
+                = embedded_svg_from_absolute_path social_network.icon.path
+            /.social
               = inline_svg "icons/social-owl.svg"
-            .social
+            /.social
               = inline_svg "icons/social-fb.svg"
-            .social
+            /.social
               = inline_svg "icons/social-google.svg"
-            .social
+            /.social
               = inline_svg "icons/social-play.svg"

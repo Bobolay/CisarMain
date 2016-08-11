@@ -51,6 +51,9 @@ $yellow: #FFD500
 =grey-border
 	border: 1px solid rgba(0,0,0,0.3)
 
+.phone-number
+	display: block
+
 .btn
 	display: block
 	width: 100%
@@ -236,12 +239,12 @@ a
 				text-transform: uppercase
 
 .main-background
-	background: url(#{asset_path('png/main-background.png')})
+	background: $texture-yellow-bg
 	padding: 100px 0 50px
 	overflow: hidden
 
 .dark-background
-	background: url(#{asset_path('png/dark-texture.png')})
+	background: $texture-dark-bg
 	padding: 100px 0 50px
 	overflow: hidden
 
