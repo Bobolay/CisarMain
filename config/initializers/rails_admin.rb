@@ -109,7 +109,13 @@ RailsAdmin.config do |config|
     field :data_alt
   end
 
-  %w(blog cafe contacts services rooms fun_articles events excursions).each do |m|
+  config.model Pages::Contacts do
+    field :banner
+    field :seo_tags
+    field :sitemap_record
+  end
+
+  %w(blog cafe services rooms fun_articles events excursions terms_of_use site_map).each do |m|
     m = "Pages::#{m.camelize}"
     config.model m do
       field :banner
@@ -336,4 +342,21 @@ RailsAdmin.config do |config|
   # [BlogArticle].each do |m|
   #
   # end
+
+  config.include_models ContactInfo
+
+  config.model ContactInfo do
+    fields :lat_lg
+    fields :emails, :phones do
+      def value
+        bindings[:object][name]
+      end
+    end
+    field :translations, :globalize_tabs
+  end
+
+  config.model_translation ContactInfo do
+    field :locale, :hidden
+    field :address
+  end
 end

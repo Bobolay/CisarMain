@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get "services", action: "services", as: :services
     get "cafe", action: "cafe", as: :cafe
     get "contacts", action: "contacts"
+    get "sitemap", action: "site_map"
+    get "terms-of-use", action: "terms_of_use"
   end
 
   resources :events, only: [:index, :show]

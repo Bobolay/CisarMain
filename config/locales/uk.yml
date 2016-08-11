@@ -1,17 +1,33 @@
 uk:
-
+  developed-by: "Розроблено в студії М.Вороніна в %{year} році"
   read-more: "детальніше"
-  book-room: "знайти номер"
+  book-room: "забронювати номер"
   booking-form:
     title: "бронювання"
     sub-title: "номеру у готелі"
     checkin-date: "Дата заїзду"
     checkout-date: "Дата виїзду"
+    name: "Ім'я"
+    phone: "Телефон"
+    email: "Електронна скринька"
+    room: "Номер"
+  contacts-block:
+    title: "контакти"
+    sub-title: "та адреса"
   breadcrumbs:
     home: "Головна"
     blog: "Блог"
     events: "Події"
 
+  menu:
+    home: "Головна"
+    root: "Головна"
+    rooms: "Номери"
+    services: "Послуги"
+    cafe: "Кафе"
+    events: "Корисна інформація"
+    blog: "Блог"
+    contacts: "Контакти"
   banners:
     contacts:
       title: "контакти та адреса"

@@ -1,6 +1,9 @@
 uk:
   activerecord:
     models:
+      contact_info:
+        one: "Контактна інформація"
+        other: "Контактна інформація"
       social_network:
         one: "Соціальна мережа"
         other: "Соціальні мережі"
@@ -84,3 +87,7 @@ uk:
       published: "Опуліковано"
       translations: "Локалізації"
       tags: "Теги"
+      lat_lg: "Координати карти"
+      phones: "Телефони"
+      emails: "Email'и"
+      address: "Адреса"
