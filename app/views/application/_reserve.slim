@@ -3,81 +3,48 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
     .reservation-wrapper
       .row
         .large-12.medium-12.small-12.columns
-          .row.collapse
-            .large-5.medium-12.small-12.columns
-              .reservation-container#reserve
-                .text
-                  p.header
-                    = t("booking-form.title")
-                  p.under-header
-                    = t("booking-form.sub-title")
-                  .square
-                    span
+          .contacts-container
+            .text
+              p.header
+                = t("contacts-block.title")
+              p.under-header
+                = t("contacts-block.sub-title")
+              .square
+                span
+              .row
+                .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
+                  .contact-block
+                    .svg = inline_svg "icons/contacts-geo.svg"
+                    p.contact-way Адреса
+                    p.contact-info
+                      = @contact_info.address
+                .large-6.large-push-3.medium-6.small-12.columns.contact-block-column
+                  .contact-block
+                    .svg = inline_svg "icons/contacts-phone.svg"
+                    p.contact-way Телефони
+                    - @contact_info.phones.each do |phone|
+                      a.phone-number.contact-info href=phone_url(phone)
+                        = phone
 
-                  form
-                    - if @room
-                      .input
-                        p.input-label
-                          = t("booking-form.checkin-date")
-                        input#datepicker-3
-                        .icon = inline_svg "icons/choose-date.svg"
-                      .input
-                        p.input-label
-                          = t("booking-form.checkout-date")
-                        input#datepicker-4
-                        .icon = inline_svg "icons/choose-date.svg"
-                    - else
-                      .input
-                        input#datepicker-3 placeholder=t("booking-form.checkin-date")
-                        .icon = inline_svg "icons/choose-date.svg"
+                .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
+                  .contact-block
+                    .svg = inline_svg "icons/contacts-mail.svg"
+                    p.contact-way E-mail:
+                    p.contact-info
+                      - @contact_info.emails.each do |email|
+                        a.email href=email_url(email)
+                          = email
+                .large-6.large-push-3.medium-6.small-12.columns.left.contact-block-column
+                  .contact-block.last
+                    .svg = inline_svg "icons/contacts-planet.svg"
+                    p.contact-way Соціальні мережі
+                    .social-container
+                      - @social_networks.limit(3).each do |social_network|
+                        a.social href=social_network.profile_url title=social_network.profile_tooltip
+                          = embedded_svg_from_absolute_path social_network.icon.path
 
-                      .input
-                        input#datepicker-4 placeholder=t("booking-form.checkout-date")
-                        .icon = inline_svg "icons/choose-date.svg"
+            .button-wrap
+              .btn open-popup="reservation"
+                span
+                  = t("book-room")
 
-                      .input.select
-                        select
-                          - @rooms.each_with_index do |room, index|
-                            option value="room-#{room.id}"
-                              = room.name
-                    button.btn type="submit"
-                      span
-                        = t("book-room")
-            .large-7.medium-12.small-12.columns
-              .contacts-container
-                .text
-                  p.header
-                    = t("contacts-block.title")
-                  p.under-header
-                    = t("contacts-block.sub-title")
-                  .square
-                    span
-                  .row
-                    .large-6.medium-6.small-12.columns
-                      .contact-block
-                        .svg = inline_svg "icons/contacts-geo.svg"
-                        p.contact-way Адреса
-                        p.contact-info
-                          = @contact_info.address
-                      .contact-block
-                        .svg = inline_svg "icons/contacts-phone.svg"
-                        p.contact-way Телефони
-                        - @contact_info.phones.each do |phone|
-                          a.phone-number.contact-info href=phone_url(phone)
-                            = phone
-
-                    .large-6.medium-6.small-12.columns
-                      .contact-block
-                        .svg = inline_svg "icons/contacts-mail.svg"
-                        p.contact-way E-mail:
-                        p.contact-info
-                          - @contact_info.emails.each do |email|
-                            a.email href=email_url(email)
-                              = email
-                      .contact-block.last
-                        .svg = inline_svg "icons/contacts-planet.svg"
-                        p.contact-way Соціальні мережі
-                        .social-container
-                          - @social_networks.limit(3).each do |social_network|
-                            a.social href=social_network.profile_url title=social_network.profile_tooltip
-                              = embedded_svg_from_absolute_path social_network.icon.path

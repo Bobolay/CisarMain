@@ -14,3 +14,19 @@ $("body").on "click", ".expand-it", ()->
   $('.expand-it span').toggleClass('rotate')
   $('.expand-field').toggleClass('expand')
   $('.expand-field .regular').toggleClass('show-it')
+
+  
+$document.on "click", "[open-popup]", ()->
+  popup_key = $(this).attr("open-popup")
+  $(".#{popup_key}-popup").addClass("visible")
+  $("body").addClass("has-opened-popup")
+
+$document.on "click", ".overlay", ()->
+  $overlay = $(this)
+  $popup = $overlay.next()
+  $popup.removeClass("visible")
+  $("body").removeClass("has-opened-popup")
+
+
+$document.on "ready", ()->
+  $('.input.select select').niceSelect()

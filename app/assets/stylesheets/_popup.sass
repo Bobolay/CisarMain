@@ -1,0 +1,160 @@
+.overlay
+	display: none
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	position: fixed
+	z-index: $zindex-overlay
+	background: rgba(0,0,0,0.3)
+
+
+body.has-opened-popup
+	.overlay
+		display: block
+
+
+.popup
+	$popup-width: calc(100% - 120px)
+	$popup-max-width: 900px
+	$popup-small-breakpoint: 900px
+
+	display: none
+	position: fixed
+	top: 50%
+	left: 50%
+	+transform(translate(-50%, -50%))
+	//width: 100%
+	width: $popup-width
+
+	max-width: $popup-max-width
+	z-index: $zindex-popup
+	background: white
+	//+box-shadow-popup
+	+transition-duration(1s)
+	+transition-property(all)
+
+
+	//&.allow-transition
+		display: block
+
+
+
+	//> .header
+		height: 90px
+		background-color: $header-bg-color
+		padding: 20px 40px 0 40px
+		position: relative
+
+		.title
+			+ubuntu
+			+font-22
+			color: white
+			margin-bottom: 5px
+		.sub-title
+			color: $input-border-color
+			+ubuntu
+			+font-12
+			+semi-bold
+		.close-button
+			position: absolute
+			display: block
+			top: 0
+			right: 0
+			width: 90px
+			height: 90px
+			+transition-duration(0.2s)
+			+transition-property(all)
+			cursor: pointer
+
+			svg
+				display: block
+				width: 30px
+				height: 30px
+				fill: #FFF
+				top: 30px
+				position: relative
+				left: 30px
+
+			&:hover
+				background: $light-green-color
+
+	&.visible
+		display: block
+
+
+
+
+	@media (max-width: $popup-small-breakpoint)
+
+		top: 0
+		//padding-top: 75px
+		+transform(none)
+		left: 60px
+		overflow: auto
+		max-height: 100vh
+		position: absolute
+
+
+
+//.popups-navigation
+	+transform(translate(-50%))
+	top: 50%
+	left: 50%
+	width: 800px
+	max-width: $popup-width
+	position: fixed
+	z-index: $z-index-popups-navigation
+
+	.prev, .next
+		display: none
+
+		width: 40px
+		height: 40px
+		position: absolute
+
+		border: 1px solid white
+		background: rgba(0, 0, 0, 0.35)
+		+transition-duration(0.2s)
+		+transition-property(all)
+		cursor: pointer
+
+
+
+		svg
+			width: 16px
+			top: 10px
+			position: relative
+
+
+			*
+				fill: white
+
+		&:not(.disabled)
+			&:hover, &:focus
+				background: lighten($light-green-color, 5)
+
+		&.disabled
+			opacity: 0.3
+			//cursor: pointer
+			cursor: default
+
+
+
+	.prev
+		left: -60px
+		svg
+			left: 10px
+	.next
+		right: -60px
+		svg
+			left: 13px
+
+//body.has-open-popup
+	.popups-navigation
+		.prev
+			display: block
+		.next
+			display: block
+
+

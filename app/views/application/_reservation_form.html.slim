@@ -1,0 +1,54 @@
+.reserve-container.panel
+  .top.red-bg-header
+    p.reserve-header = t("booking-form.title")
+    p.under-header = t("booking-form.sub-title")
+    a href="#reserve" = inline_svg "icons/cross.svg"
+  .main-field
+    form
+      .row
+        .large-4.medium-4.small-12.columns
+          .input
+            p.input-label = t("booking-form.name")
+            input#datepicker-2
+        .large-4.medium-4.small-12.columns
+          .input
+            p.input-label = t("booking-form.phone")
+            input#datepicker-2
+        .large-4.medium-4.small-12.columns
+          .input
+            p.input-label = t("booking-form.email")
+            input#datepicker-2
+        .large-4.medium-4.small-12.columns
+          .input.select
+            p.input-label = t("booking-form.room")
+            select
+
+              /option
+                |item 1
+              /optgroup name="group 2"
+                option
+                  |item 2
+              - @rooms.each_with_index do |room, index|
+
+                option value="room-#{room.id}"
+                  = room.name
+        .large-4.medium-4.small-12.columns
+          .input
+            p.input-label = t("booking-form.checkin-date")
+            input#datepicker-1
+            .icon = inline_svg "icons/choose-date.svg"
+        .large-4.medium-4.small-12.columns
+          .input
+            p.input-label = t("booking-form.checkout-date")
+            input#datepicker-2
+            .icon = inline_svg "icons/choose-date.svg"
+
+
+        .large-4.medium-4.small-12.columns
+          .btn
+            span
+              = t("book-room")
+    hr
+    span.temperature +24&deg;
+    span.sun = inline_svg "icons/sun.svg"
+    span.after-sun &mdash; Прогноз погоди на 28 березня
