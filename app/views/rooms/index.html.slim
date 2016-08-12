@@ -19,8 +19,13 @@
               a href=room.url
                 = room.name
 
-  - 4.times do
-    - [@rooms.first].each do |room|
+  .rooms
+
+    - [@rooms.first].each_with_index do |room, i|
+      /- if i % 2 == 0
+        = render "room_left", room: room
+      /- else
+        = render "room_right", room: room
       = render "room", room: room
 
 

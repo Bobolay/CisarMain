@@ -2,7 +2,7 @@
   .row.collapse
     .columns
       .row.collapse
-        .large-6.medium-12.columns.go-right
+        .large-6.medium-12.columns.slider-column.go-right
           .slider-container
             - slider_images = room.slider_images
             - if slider_images.any?
@@ -15,7 +15,7 @@
                   a data-slide-index=index href=""
             span.room-price
               span &#8372;#{room.price}
-        .large-6.medium-12.columns.go-left
+        .large-6.medium-12.columns.info-column.go-left
           .room-container
             p.above-room-type Тип номеру
             p.room-type
