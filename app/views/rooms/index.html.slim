@@ -21,7 +21,7 @@
 
   .rooms
 
-    - [@rooms.first].each_with_index do |room, i|
+    - @rooms.each_with_index do |room, i|
       /- if i % 2 == 0
         = render "room_left", room: room
       /- else
