@@ -34,6 +34,9 @@ uk:
       room:
         one: "Номер"
         other: "Номери"
+      room_version:
+        one: "Підвид номерів"
+        other: "Підвиди номерів"
       room_tag:
         one: "тег для номерів"
         other: "теги для номерів"

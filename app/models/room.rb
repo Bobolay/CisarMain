@@ -1,6 +1,9 @@
 class Room < ActiveRecord::Base
   attr_accessible *attribute_names
   globalize :name, :banner_description, :url_fragment, :short_description, :description
+  has_many :room_versions
+  accepts_nested_attributes_for :room_versions
+  attr_accessible :room_versions, :room_version_ids, :room_versions_attributes
 
   scope :published, -> { where(published: 't') }
   scope :sort_by_sorting_position, -> { order("sorting_position asc") }

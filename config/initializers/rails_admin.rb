@@ -48,7 +48,7 @@ RailsAdmin.config do |config|
 
   config.include_models PageBanner
 
-  config.include_models HomeBanner, User, Service, Room, Dish, RoomTag, InteriorComponent
+  config.include_models HomeBanner, User, Service, Room, RoomVersion, Dish, RoomTag, InteriorComponent
 
   config.include_models Pages::Home, Pages::Blog, Pages::Cafe, Pages::Contacts, Pages::Events, Pages::Excursions, Pages::FunArticles, Pages::NotFound, Pages::Rooms, Pages::Services
 
@@ -193,6 +193,7 @@ RailsAdmin.config do |config|
     field :gallery_images
     field :price
     field :translations, :globalize_tabs
+    field :room_versions
     field :dishes
     field :room_tags
     field :interior_components
@@ -209,6 +210,16 @@ RailsAdmin.config do |config|
     field :short_description
     field :banner_description
     field :description, :ck_editor
+
+  end
+
+  config.model RoomVersion do
+    field :translations, :globalize_tabs
+  end
+
+  config.model_translation RoomVersion do
+    field :locale, :hidden
+    field :name
   end
 
   config.model Dish do
