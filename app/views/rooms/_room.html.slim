@@ -19,7 +19,8 @@
           .room-container
             p.above-room-type Тип номеру
             p.room-type
-              = room.name
+              a href=room.url
+                = room.name
               span.line
               span.red-square
               span.room-price
@@ -31,5 +32,5 @@
 
             p.description
               = room.short_description
-            a.underlined href=room.url data-test=room.url
+            a.underlined href=room.url
               = t("read-more")
