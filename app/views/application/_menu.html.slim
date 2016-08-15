@@ -29,7 +29,7 @@
           ul.rooms
             - menu_item[:children].each do |item|
               li
-                a href=item[:url] class=("active" if item[:active])
+                a href=item[:url] class=("active" if item[:active] rescue false)
                   = item[:name]
 
       /.header
