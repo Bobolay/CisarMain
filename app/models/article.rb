@@ -30,7 +30,9 @@ class Article < ActiveRecord::Base
   def formatted_released_on(return_string = true, locale = I18n.locale)
     month_names = { uk: %w(січня лютого березня квітня травня червня липня серпня вересня жовтня листопада грудня),
       ru: %w(января февраля марта апреля мая июня июля августа сентября октября ноября декабря),
-      en: %w(january february march april may june jule august september october november december)
+      en: %w(january february march april may june jule august september october november december),
+      pl: %w(styczego lutego mar kwietnia maj czerw lip sierp wrzes pazdzier listopad grud)
+
     }
     date_time = self.released_on
 
