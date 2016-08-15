@@ -32,8 +32,6 @@ $document.on "ready", ()->
   $('.input.select select').niceSelect()
 
 
-$document.on "submit", "form.request-form", submit_form
-#$document.on "submit", "form.request-form", submit_form
 
 submit_form = (e)->
   e.preventDefault()
@@ -48,4 +46,9 @@ submit_form = (e)->
     dataType: "json"
   )
 
-  alert("дякуємо")
+  $form.addClass("sending")
+
+
+
+$document.on "submit", "form.request-form", submit_form
+#$document.on "submit", "form.request-form", submit_form

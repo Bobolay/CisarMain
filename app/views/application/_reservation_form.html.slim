@@ -5,49 +5,64 @@
     a href="#reserve" = inline_svg "icons/cross.svg"
   .main-field
     form.request-form action=reservation_request_path method="post"
-      .row
-        .large-4.medium-4.small-12.columns
-          .input
-            p.input-label = t("booking-form.name")
-            input name="reservation_request[name]"
-        .large-4.medium-4.small-12.columns
-          .input
-            p.input-label = t("booking-form.phone")
-            input name="reservation_request[phone]"
-        .large-4.medium-4.small-12.columns
-          .input
-            p.input-label = t("booking-form.email")
-            input name="reservation_request[email]"
-        .large-4.medium-4.small-12.columns
-          .input.select
-            p.input-label = t("booking-form.room")
-            select name="reservation_request[room_version_id]"
+      .form-content
+        .row
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("booking-form.name")
+              input name="reservation_request[name]"
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("booking-form.phone")
+              input name="reservation_request[phone]"
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("booking-form.email")
+              input name="reservation_request[email]"
+          .large-4.medium-4.small-12.columns
+            .input.select
+              p.input-label = t("booking-form.room")
+              select name="reservation_request[room_node]"
 
-              /option
-                |item 1
-              /optgroup name="group 2"
-                option
-                  |item 2
-              - @rooms.each_with_index do |room, index|
-
-                option value="room-#{room.id}"
-                  = room.name
-        .large-4.medium-4.small-12.columns
-          .input
-            p.input-label = t("booking-form.checkin-date")
-            input.datepicker id="#{form_context}-datepicker-1" name="reservation_request[checkin_date]"
-            .icon = inline_svg "icons/choose-date.svg"
-        .large-4.medium-4.small-12.columns
-          .input
-            p.input-label = t("booking-form.checkout-date")
-            input.datepicker id="#{form_context}-datepicker-2" name="reservation_request[checkout_date]"
-            .icon = inline_svg "icons/choose-date.svg"
+                /option
+                  |item 1
+                /optgroup name="group 2"
+                  option
+                    |item 2
+                - @rooms.each_with_index do |room, index|
+                  - if room.room_versions.any?
+                    optgroup name="room"
+                      - room.room_versions.each do |room_version|
+                        option value="room_version-#{room_version.id}"
+                          = room_version.name
+                  - else
+                    option value="room-#{room.id}"
+                      = room.name
 
 
-        .large-4.medium-4.small-12.columns
-          button.btn type="submit"
-            span
-              = t("book-room")
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("booking-form.checkin-date")
+              input.datepicker id="#{form_context}-datepicker-1" name="reservation_request[checkin_date]"
+              .icon = inline_svg "icons/choose-date.svg"
+          .large-4.medium-4.small-12.columns
+            .input
+              p.input-label = t("booking-form.checkout-date")
+              input.datepicker id="#{form_context}-datepicker-2" name="reservation_request[checkout_date]"
+              .icon = inline_svg "icons/choose-date.svg"
+
+
+          .large-4.medium-4.small-12.columns
+            button.btn type="submit"
+              span
+                = t("book-room")
+
+      .sending-message
+        .inner
+          .h1
+            = t("booking-form.sending-message.title")
+          p.bigger-italic
+            = t("booking-form.sending-message.description")
     hr
     span.temperature +24&deg;
     span.sun = inline_svg "icons/sun.svg"

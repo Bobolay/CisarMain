@@ -37,4 +37,8 @@ class Room < ActiveRecord::Base
   end
 
 
+  def full_name
+    name
+  end
+
 end

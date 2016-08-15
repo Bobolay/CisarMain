@@ -11,6 +11,9 @@ uk:
     phone: "Телефон"
     email: "Електронна скринька"
     room: "Номер"
+    sending-message:
+      title: "Дякуємо за замовлення"
+      description: "Наш менеджер зв'яжеться з вами"
   contacts-block:
     title: "контакти"
     sub-title: "та адреса"

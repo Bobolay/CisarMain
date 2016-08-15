@@ -113,3 +113,35 @@
 	.last
 		@media #{$medium-up}
 			//margin-top: 75px
+
+
+
+form
+	.sending-message
+		display: none
+	&.sending
+		.form-content
+			opacity: 0
+		.sending-message
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			text-align: center
+			display: block
+
+			.inner
+				position: absolute
+				top: 50%
+				width: 100%
+				+transform(translateY(-50%))
+
+				.h1
+					font-size: 1.3rem
+					color: $red
+					text-transform: uppercase
+					line-height: 46px
+				p
+					font-size: 1.2rem
+					margin: 0

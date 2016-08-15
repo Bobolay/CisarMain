@@ -6,7 +6,7 @@ class CreateReservationRequests < ActiveRecord::Migration
       t.string :name
       t.string :phone
       t.string :email
-      t.belongs_to :room_version
+      t.belongs_to :room_node, polymorphic: true
       t.date :checkin_date
       t.date :checkout_date
 

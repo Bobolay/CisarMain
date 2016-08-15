@@ -1,10 +1,15 @@
 /- data = [:name, :phone, :email, :room, :checkin_date, :checkout_date]
 table
-  = table_field(:name, @request_resource.name)
-  = table_field(:phone, @request_resource.phone)
-  = table_field(:email, @request_resource.email)
-  = table_field(:checkin_date, @request_resource.checkin_date.to_s)
-  = table_field(:checkout_date, @request_resource.checkout_date.to_s)
+  = table_field(:name, @request_resource.name) if @request_resource.name.present?
+  = table_field(:phone, @request_resource.phone) if @request_resource.phone.present?
+  = table_field(:email, @request_resource.email) if @request_resource.email.present?
+  - if @request_resource.room_node
+    = table_field_label @request_resource.room_node_type.try(:humanize)
+    tr
+      td
+        = @request_resource.room_node.full_name
+  = table_field(:checkin_date, @request_resource.checkin_date.to_s) if @request_resource.checkin_date.present?
+  = table_field(:checkout_date, @request_resource.checkout_date.to_s) if @request_resource.checkout_date.present?
 
   /tr
     td

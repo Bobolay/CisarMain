@@ -3,4 +3,13 @@ class RoomVersion < ActiveRecord::Base
   globalize :name
   belongs_to :room
   attr_accessible :room
+
+  def full_name
+    if self.room
+      "#{self.room.name} -> #{name}"
+    else
+      name
+    end
+
+  end
 end
