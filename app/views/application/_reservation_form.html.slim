@@ -4,24 +4,24 @@
     p.under-header = t("booking-form.sub-title")
     a href="#reserve" = inline_svg "icons/cross.svg"
   .main-field
-    form
+    form.request-form action=reservation_request_path method="post"
       .row
         .large-4.medium-4.small-12.columns
           .input
             p.input-label = t("booking-form.name")
-            input#datepicker-2
+            input name="reservation_request[name]"
         .large-4.medium-4.small-12.columns
           .input
             p.input-label = t("booking-form.phone")
-            input#datepicker-2
+            input name="reservation_request[phone]"
         .large-4.medium-4.small-12.columns
           .input
             p.input-label = t("booking-form.email")
-            input#datepicker-2
+            input name="reservation_request[email]"
         .large-4.medium-4.small-12.columns
           .input.select
             p.input-label = t("booking-form.room")
-            select
+            select name="reservation_request[room_version_id]"
 
               /option
                 |item 1
@@ -35,17 +35,17 @@
         .large-4.medium-4.small-12.columns
           .input
             p.input-label = t("booking-form.checkin-date")
-            input#datepicker-1
+            input.datepicker id="#{form_context}-datepicker-1" name="reservation_request[checkin_date]"
             .icon = inline_svg "icons/choose-date.svg"
         .large-4.medium-4.small-12.columns
           .input
             p.input-label = t("booking-form.checkout-date")
-            input#datepicker-2
+            input.datepicker id="#{form_context}-datepicker-2" name="reservation_request[checkout_date]"
             .icon = inline_svg "icons/choose-date.svg"
 
 
         .large-4.medium-4.small-12.columns
-          .btn
+          button.btn type="submit"
             span
               = t("book-room")
     hr

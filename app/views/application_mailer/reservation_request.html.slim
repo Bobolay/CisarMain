@@ -1,0 +1,30 @@
+/- data = [:name, :phone, :email, :room, :checkin_date, :checkout_date]
+table
+  = table_field(:name, @request_resource.name)
+  = table_field(:phone, @request_resource.phone)
+  = table_field(:email, @request_resource.email)
+  = table_field(:checkin_date, @request_resource.checkin_date.to_s)
+  = table_field(:checkout_date, @request_resource.checkout_date.to_s)
+
+  /tr
+    td
+      b
+        |requested at:
+  /tr
+    td
+      = @request_resource.created_at
+  /tr
+    td
+      b
+        |referer:
+  /tr
+    td
+      = @request_resource.referer
+
+  /tr
+    td
+      b
+        |session id:
+  /tr
+    td
+      = @request_resource.session_id

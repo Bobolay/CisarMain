@@ -30,3 +30,22 @@ $document.on "click", ".overlay", ()->
 
 $document.on "ready", ()->
   $('.input.select select').niceSelect()
+
+
+$document.on "submit", "form.request-form", submit_form
+#$document.on "submit", "form.request-form", submit_form
+
+submit_form = (e)->
+  e.preventDefault()
+  $form = $(this)
+  data = $form.serializeArray()
+  url = $form.attr("action")
+  method = $form.attr("method")
+  $.ajax(
+    type: method
+    url: url
+    data: data
+    dataType: "json"
+  )
+
+  alert("дякуємо")

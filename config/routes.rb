@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root as: "root_without_locale", to: "application#root_without_locale"
   get "admin", to: redirect("/#{I18n.default_locale}/admin")
 
+  post "reservation_request", to: "rooms#reservation_request", as: :reservation_request
+
 
 
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do

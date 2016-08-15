@@ -101,3 +101,5 @@ gem 'rails_admin_globalize_field'
 gem 'rails_admin_nestable'
 
 gem 'russian'
+
+gem "figaro"

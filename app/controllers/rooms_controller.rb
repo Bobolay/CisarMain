@@ -18,6 +18,20 @@ class RoomsController < ApplicationController
     end
   end
 
+  def reservation_request
+    call_request_params = params[:reservation_request] || {}
+
+    call_request = ReservationRequest.new(call_request_params)
+    call_request.referer = request.referer
+    call_request.session_id = session.id
+    call_request.save
+
+    ApplicationMailer.reservation_request(call_request).deliver_now
+
+    data = {}
+    render json: data, status: 201
+  end
+
   def set_room
     @room = Room.published.joins(:translations).where(room_translations: { locale: I18n.locale, url_fragment: params[:id] }).first
   end

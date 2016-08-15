@@ -370,4 +370,24 @@ RailsAdmin.config do |config|
     field :locale, :hidden
     field :address
   end
+
+  config.include_models ReservationRequest, FormConfigs::ReservationRequest
+  config.model ReservationRequest do
+    group :common do
+      field :name
+      field :phone
+      field :email
+      field :room_version
+      field :checkin_date
+      field :checkout_date
+    end
+    group :technical do
+      field :referer
+      field :session_id
+    end
+  end
+
+  config.model FormConfigs::ReservationRequest do
+    field :email_receivers, :text
+  end
 end
