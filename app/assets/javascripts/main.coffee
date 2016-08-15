@@ -5,7 +5,7 @@ $("a[href^='#']").on "click", (e)->
   target_top = $(href).offset().top
   $("body").animate({scrollTop: target_top})
 
-$("body").on "click", ".info-wrapper .navigation-container .block", ()->
+$("body").on "click", ".info-wrapper .navigation-container .block", (e)->
   $button = $(this)
   $(this).parent().children().removeClass('active')
   $(this).addClass('active')

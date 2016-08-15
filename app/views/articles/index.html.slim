@@ -8,9 +8,8 @@
         .navigation-container
           - categories.each do |c|
             - active = c == category
-            .block class=("active" if active)
-              p
-                = c.name
+            a.block class=("active" if active) href=send("#{c.name.underscore.pluralize}_path")
+              = c.name
         .news-block-wrapper
           .row
             - @articles.each do |article|
