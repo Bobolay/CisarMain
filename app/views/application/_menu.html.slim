@@ -18,7 +18,7 @@
       - main_menu_items.each do |menu_item|
 
 
-        .header class=("active" if menu_item[:active]) class=("has-active" if menu_item[:has_active])
+        .header class=("active" if menu_item[:active] rescue false ) class=("has-active" if menu_item[:has_active] rescue false)
           a href=(menu_item[:url] || "#")
             = menu_item[:name]
           span.red-square
