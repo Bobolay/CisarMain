@@ -29,6 +29,8 @@
           ul.rooms
             - menu_item[:children].each do |item|
               li
+                span style="display: none"
+                  = item.inspect
                 a href=(item[:url] rescue nil) class=("active" if item[:active] rescue false)
                   = (item[:name] rescue nil)
 
