@@ -13,14 +13,17 @@
     .info-container
       - @home_banners.each_with_index do |b, i|
         div class="text#{i + 1} #{'visible' if i == 0}"
-          p.special-offer
-            = b.label
-          p.header
-            = b.name
-            span.line
-            span.red-square
-          p.regular
-            = b.short_description
+          - if b.label.present?
+            p.special-offer
+              = b.label
+          - if b.name.present?
+            p.header
+              = b.name
+              span.line
+              span.red-square
+          - if b.short_description.present?
+            p.regular
+              = b.short_description
           - if linkable = b.linkable
             a.details href=linkable.url
               = t("read-more")
