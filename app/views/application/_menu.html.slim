@@ -29,8 +29,8 @@
           ul.rooms
             - menu_item[:children].each do |item|
               li
-                a href=item[:url] class=("active" if item[:active] rescue false)
-                  = item[:name]
+                a href=(item[:url] rescue nil) class=("active" if item[:active] rescue false)
+                  = (item[:name] rescue nil)
 
       /.header
         a href=rooms_path номера
