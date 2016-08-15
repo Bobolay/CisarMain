@@ -9,11 +9,11 @@
           span.red-square
         p.under-header
           = @banner[:description]
-        .red-head
+        .red-head open-popup="reservation"
           .left-side
             p
               sup від
               | &#8372;#{@room.price}
           .text
-            a href="#reserve"
-              | забронювати
+            span
+              = t("book")

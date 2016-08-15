@@ -2,6 +2,7 @@ uk:
   developed-by: "Розроблено в студії М.Вороніна в %{year} році"
   read-more: "детальніше"
   book-room: "забронювати номер"
+  book: "забронювати"
   booking-form:
     title: "бронювання"
     sub-title: "номеру у готелі"
