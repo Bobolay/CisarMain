@@ -19,7 +19,7 @@ uk:
     sub-title: "та адреса"
   breadcrumbs:
     home: "Головна"
-    blog: "Блог"
+    blog: "Новини"
     events: "Події"
 
   menu:
@@ -29,7 +29,7 @@ uk:
     services: "Послуги"
     cafe: "Кафе"
     events: "Корисна інформація"
-    blog: "Блог"
+    blog: "Новини"
     contacts: "Контакти"
   banners:
     contacts:

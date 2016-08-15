@@ -11,8 +11,8 @@ uk:
         one: "Стаття"
         other: "Статті"
       blog_article:
-        one: "Стаття для блогу"
-        other: "Статті для блогу"
+        one: "Новина"
+        other: "Новини"
       event:
         one: "Подія"
         other: "Події"
@@ -47,8 +47,8 @@ uk:
         one: "Користувач"
         other: "Користувачі"
       pages/blog:
-        one: "Блог"
-        other: "Блог"
+        one: "Новини"
+        other: "Новини"
       pages/fun_articles:
         one: "цікаві статті"
         other: "цікаві статті"

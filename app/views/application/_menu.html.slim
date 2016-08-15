@@ -13,10 +13,7 @@
           - else
             a.locale-link href=url
               = Cms.config.locale_names[locale]
-      /h1
-        = raw main_menu_items[1][:children][0].class.name
-      /p style="color: white"
-        = main_menu_items.inspect
+
       - main_menu_items.each do |menu_item|
 
 
@@ -36,30 +33,7 @@
                 a href=(item[:url] rescue nil) class=("active" if item[:active] rescue false)
                   = (item[:name] rescue nil)
 
-      /.header
-        a href=rooms_path номера
-        span.red-square
-      /ul.rooms
-        - @rooms.each do |room|
-          li
-            a href=room.url
-              = room.name
 
-      /.header
-        a href=services_path послуги
-        span.red-square
-      /.header
-        a href=cafe_path кафе
-        span.red-square
-      /.header
-        a href=events_path корисна інформація
-        span.red-square
-      /.header
-        a href=blog_path блог
-        span.red-square
-      /.header
-        a href=contacts_path контакти
-        span.red-square
   .bottom-part
     .row.collapse
       .large-6.medium-6.small-6.columns
@@ -77,11 +51,3 @@
             - @social_networks.limit(4).each do |social_network|
               a.social href=social_network.profile_url title=social_network.profile_tooltip
                 = embedded_svg_from_absolute_path social_network.icon.path
-            /.social
-              = inline_svg "icons/social-owl.svg"
-            /.social
-              = inline_svg "icons/social-fb.svg"
-            /.social
-              = inline_svg "icons/social-google.svg"
-            /.social
-              = inline_svg "icons/social-play.svg"
