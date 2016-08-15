@@ -87,6 +87,32 @@ class ApplicationController < ActionController::Base
     @contact_info = ContactInfo.first
   end
 
+  def weather_and_exchange_rates
+    rate = Cms::ExchangeRate.actual(:private_bank)
+    rate.save if !rate.persisted?
+    rates = rate.result
+
+    weather_data = Cms::WeatherData.actual(ENV["openweathermap_app_id"])
+    weather_data.save if !weather_data.persisted?
+    weather_data = weather_data.result
+
+
+    json_response = { usd: rate.convert(1, :usd), eur: rate.convert(1, :eur), weather_data:
+        {id: weather_data['weather'][0]["id"], temperature: weather_data["main"]["temp"]}
+        #weather_data
+    }
+
+    @usd = json_response[:usd]
+    @eur = json_response[:eur]
+    @temperature = json_response[:weather_data][:temperature]
+    @weather_id = json_response[:weather_data][:id]
+    @weather_icon = "icons/weather/#{@weather_id}.svg"
+
+    render template: "application/_weather_and_exchange_rates.html.slim", layout: false
+
+    #render json: json_response, status: 200
+  end
+
   protected
   def set_page_banner
     ar_banner = @page_instance.try(:banner)
@@ -97,5 +123,6 @@ class ApplicationController < ActionController::Base
     end
     @banner = banner
   end
+
 
 end

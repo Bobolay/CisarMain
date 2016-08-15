@@ -103,3 +103,5 @@ gem 'rails_admin_nestable'
 gem 'russian'
 
 gem "figaro"
+
+gem 'httparty'

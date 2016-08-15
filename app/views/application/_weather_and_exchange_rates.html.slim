@@ -1,0 +1,20 @@
+li
+  p.temperature
+    | +#{@temperature}&deg;
+    span
+      - if @weather_id == 800
+        = inline_svg @weather_icon
+      - else
+        = @weather_id
+li
+  .exchange-rates
+    p.exchange-rate
+      | 1
+      sup usd
+      = @usd
+      sup  uah
+    p.exchange-rate
+      | 1
+      sup eur
+      = @eur
+      sup  uah

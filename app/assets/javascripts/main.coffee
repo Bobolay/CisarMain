@@ -52,3 +52,14 @@ submit_form = (e)->
 
 $document.on "submit", "form.request-form", submit_form
 #$document.on "submit", "form.request-form", submit_form
+
+window.WEATHER_INITIALIZED = false
+
+$document.on "ready", ()->
+  if !WEATHER_INITIALIZED
+    $.ajax(
+      url: "/weather_and_exchange_rates"
+      success: (res)->
+        window.WEATHER_INITIALIZED = true
+        $(".header-container .right-part").prepend(res)
+    )

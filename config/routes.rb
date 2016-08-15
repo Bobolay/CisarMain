@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "weather_and_exchange_rates", to: "application#weather_and_exchange_rates"
   root as: "root_without_locale", to: "application#root_without_locale"
   get "admin", to: redirect("/#{I18n.default_locale}/admin")
 
