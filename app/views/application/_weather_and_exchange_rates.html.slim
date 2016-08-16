@@ -1,11 +1,12 @@
 li
   p.temperature
-    | +#{@temperature}&deg;
+    | +#{@temperature.to_i}&deg;
     span
-      - if @weather_id == 800
+      /- if @weather_id == 800
         = inline_svg @weather_icon
-      - else
+      /- else
         = @weather_id
+      img src=@weather_png_icon title=@weather_description
 li
   .exchange-rates
     p.exchange-rate

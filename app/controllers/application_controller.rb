@@ -97,8 +97,8 @@ class ApplicationController < ActionController::Base
     weather_data = weather_data.result
 
 
-    json_response = { usd: rate.convert(1, :usd), eur: rate.convert(1, :eur), weather_data:
-        {id: weather_data['weather'][0]["id"], temperature: weather_data["main"]["temp"]}
+    json_response = { usd: rate.convert(1, :usd, :uah, :buy), eur: rate.convert(1, :eur, :uah, :buy), weather_data:
+        {id: weather_data['weather'][0]["id"], temperature: weather_data["main"]["temp"], icon: weather_data['weather'][0]['icon'], description: weather_data['weather'][0]['description']}
         #weather_data
     }
 
@@ -106,7 +106,10 @@ class ApplicationController < ActionController::Base
     @eur = json_response[:eur]
     @temperature = json_response[:weather_data][:temperature]
     @weather_id = json_response[:weather_data][:id]
-    @weather_icon = "icons/weather/#{@weather_id}.svg"
+    #@weather_icon = "icons/weather/#{@weather_id}.svg"
+    @weather_png_icon = asset_path("icons/weather_png/#{json_response[:weather_data][:icon]}.png")
+    @weather_png_icon = "http://openweathermap.org/img/w/#{json_response[:weather_data][:icon]}.png"
+    @weather_description = json_response[:weather_data][:description]
 
     render template: "application/_weather_and_exchange_rates.html.slim", layout: false
 
