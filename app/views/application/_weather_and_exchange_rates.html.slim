@@ -6,7 +6,7 @@ li
         = inline_svg @weather_icon
       /- else
         = @weather_id
-      img src=@weather_png_icon title=@weather_description
+      img src=asset_path(@weather_png_icon_relative_path) title=@weather_description
 li
   .exchange-rates
     p.exchange-rate

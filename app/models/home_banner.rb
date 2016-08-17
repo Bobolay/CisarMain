@@ -14,11 +14,6 @@ class HomeBanner < ActiveRecord::Base
 
   has_link
 
-
-
-
-
-
   def self.load_data_defaults(associations = {})
     defaults = 5.times.map do |i|
       item_defaults = {}

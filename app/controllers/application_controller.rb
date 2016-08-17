@@ -107,8 +107,10 @@ class ApplicationController < ActionController::Base
     @temperature = json_response[:weather_data][:temperature]
     @weather_id = json_response[:weather_data][:id]
     #@weather_icon = "icons/weather/#{@weather_id}.svg"
-    @weather_png_icon = asset_path("icons/weather_png/#{json_response[:weather_data][:icon]}.png")
-    @weather_png_icon = "http://openweathermap.org/img/w/#{json_response[:weather_data][:icon]}.png"
+
+    @weather_png_icon_relative_path = "icons/weather_png2/#{json_response[:weather_data][:icon]}.png"
+    #@weather_png_icon = image_path(@weather_png_icon_relative_path)
+    #@weather_png_icon = "http://openweathermap.org/img/w/#{json_response[:weather_data][:icon]}.png"
     @weather_description = json_response[:weather_data][:description]
 
     render template: "application/_weather_and_exchange_rates.html.slim", layout: false
