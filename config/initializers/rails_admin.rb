@@ -70,6 +70,10 @@ RailsAdmin.config do |config|
     field :description
   end
 
+  config.model Pages::SitemapXml do
+    field :content
+  end
+
   config.model PageBanner do
     visible false
     field :image
