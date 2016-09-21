@@ -74,6 +74,12 @@ RailsAdmin.config do |config|
     field :content
   end
 
+  config.model  Cms::SitemapElement do
+    field :display_on_sitemap
+    field :change_freq
+    field :priority
+  end
+
   config.model PageBanner do
     visible false
     field :image
