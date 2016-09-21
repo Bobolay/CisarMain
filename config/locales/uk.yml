@@ -5,6 +5,8 @@ uk:
     cafe: "kafe-u-lvovi"
     contacts: "kontakty"
     fun_articles: "statti"
+    events: "podii"
+    excursions: "ekskursii"
 
 
   developed-by: "Розроблено в студії М.Вороніна в %{year} році"
