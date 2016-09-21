@@ -8,37 +8,41 @@ Rails.application.routes.draw do
 
 
 
-  scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
+  #scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
+  localized do
     devise_for :users
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  controller :pages do
-    root action: "index"
-    get "services", action: "services", as: :services
-    get "cafe", action: "cafe", as: :cafe
-    get "contacts", action: "contacts"
-    get "sitemap", action: "site_map"
-    get "terms-of-use", action: "terms_of_use"
+    controller :pages do
+      root action: "index"
+
+      get "services", action: "services", as: :services
+      get "cafe", action: "cafe", as: :cafe
+      get "contacts", action: "contacts"
+      get "sitemap", action: "site_map"
+      get "terms-of-use", action: "terms_of_use"
+    end
+
+    scope "info" do
+      resources :events, only: [:index, :show]
+      resources :excursions, only: [:index, :show]
+      resources :fun_articles, only: [:index, :show]
+      scope "blog", controller: "blog" do
+        root action: "index", as: :blog
+        get ":id", action: :show, as: :blog_article
+      end
+    end
+
+
+    get "rooms_index", to: "rooms#index", as: "rooms"
+    scope "rooms", controller: "rooms" do
+      get ":id", action: "show", as: :room
+    end
+
+
+    # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    # mount Ckeditor::Engine => '/ckeditor'
+    #devise_for :users
   end
-
-  resources :events, only: [:index, :show]
-  resources :excursions, only: [:index, :show]
-  resources :fun_articles, only: [:index, :show]
-  scope "blog", controller: "blog" do
-    root action: "index", as: :blog
-    get ":id", action: :show, as: :blog_article
-  end
-
-  scope "rooms", controller: "rooms" do
-    root action: "index", as: :rooms
-    get ":id", action: "show", as: :room
-  end
-
-
-  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # mount Ckeditor::Engine => '/ckeditor'
-  #devise_for :users
-  end
-
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
 end

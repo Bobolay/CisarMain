@@ -3,4 +3,8 @@ class Page < Cms::Page
   accepts_nested_attributes_for :banner
   attr_accessible :banner, :banner_id, :banner_attributes
 
+  def url_from_routes(locale = I18n.locale)
+    Rails.application.routes.url_helpers.send("#{self.class.name.split("::").last.underscore}_#{locale}_path")
+  end
+
 end

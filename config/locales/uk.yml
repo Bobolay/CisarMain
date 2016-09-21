@@ -1,4 +1,12 @@
 uk:
+  routes:
+    services: "gotel-lviv-nedorogo"
+    rooms_index: "gotel-lviv-tciny"
+    cafe: "kafe-u-lvovi"
+    contacts: "kontakty"
+    fun_articles: "statti"
+
+
   developed-by: "Розроблено в студії М.Вороніна в %{year} році"
   read-more: "детальніше"
   book-room: "забронювати номер"

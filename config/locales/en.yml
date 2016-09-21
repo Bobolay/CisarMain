@@ -1,4 +1,6 @@
 en:
+  routes:
+    rooms_index: "rooms"
   read-more: "read more"
   booking-form:
     title: "book"
