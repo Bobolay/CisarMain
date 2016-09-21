@@ -75,9 +75,11 @@ RailsAdmin.config do |config|
   end
 
   config.model  Cms::SitemapElement do
-    field :display_on_sitemap
-    field :changefreq
-    field :priority
+    nested do
+      field :display_on_sitemap
+      field :changefreq
+      field :priority
+    end
   end
 
   config.include_models AdminSettings
