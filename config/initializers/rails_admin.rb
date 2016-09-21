@@ -300,6 +300,8 @@ RailsAdmin.config do |config|
         field :released_on
         field :tags
         related_articles_field
+        field :seo_tags
+        field :sitemap_record
       end
     end
   end
