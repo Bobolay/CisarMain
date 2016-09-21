@@ -44,7 +44,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.include_models Cms::MetaTags
+  config.include_models Cms::MetaTags, Cms::SitemapElement, Pages::SitemapXml
 
   config.include_models PageBanner
 
