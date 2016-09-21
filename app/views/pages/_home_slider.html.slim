@@ -17,8 +17,8 @@
             p.special-offer
               = b.label
           - if b.name.present?
-            p.header
-              = b.name
+            .header
+              = raw b.name
               span.line
               span.red-square
           - if b.short_description.present?
