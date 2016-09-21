@@ -86,7 +86,7 @@ RailsAdmin.config do |config|
     #field :default_priority, :float
     field :default_changefreq, :enum do
       enum do
-        SitemapElement.changefreq.values.select {|k| k.to_sym != :default  }
+        Cms::SitemapElement.changefreq.values.select {|k| k.to_sym != :default  }
       end
     end
   end
