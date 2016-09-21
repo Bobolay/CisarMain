@@ -80,6 +80,17 @@ RailsAdmin.config do |config|
     field :priority
   end
 
+  config.include_models AdminSettings
+
+  config.model AdminSettings do
+    #field :default_priority, :float
+    field :default_changefreq, :enum do
+      enum do
+        SitemapElement.changefreq.values.select {|k| k.to_sym != :default  }
+      end
+    end
+  end
+
   config.model PageBanner do
     visible false
     field :image
