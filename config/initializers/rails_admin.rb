@@ -76,7 +76,7 @@ RailsAdmin.config do |config|
 
   config.model  Cms::SitemapElement do
     field :display_on_sitemap
-    field :change_freq
+    field :change_freq, :enum
     field :priority
   end
 
