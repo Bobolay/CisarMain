@@ -37,18 +37,20 @@
 
   .bottom-part
     .row.collapse
-      .large-6.medium-6.small-6.columns
-        .contact-block
-          .svg = inline_svg "icons/contacts-phone.svg"
-          p.contact-way Телефони
-          - @contact_info.phones.each do |phone|
-            a.phone-number.contact-info href=phone_url(phone)
-              = phone
-      .large-6.medium-6.small-6.columns
-        .contact-block
-          .svg = inline_svg "icons/contacts-planet.svg"
-          p.contact-way Соціальні мережі
-          .social-container
-            - @social_networks.limit(4).each do |social_network|
-              a.social href=social_network.profile_url title=social_network.profile_tooltip
-                = embedded_svg_from_absolute_path social_network.icon.path
+      - if @contact_info
+        .large-6.medium-6.small-6.columns
+          .contact-block
+            .svg = inline_svg "icons/contacts-phone.svg"
+            p.contact-way Телефони
+            - @contact_info.phones.each do |phone|
+              a.phone-number.contact-info href=phone_url(phone)
+                = phone
+      - if @social_networks
+        .large-6.medium-6.small-6.columns
+          .contact-block
+            .svg = inline_svg "icons/contacts-planet.svg"
+            p.contact-way Соціальні мережі
+            .social-container
+              - @social_networks.limit(4).each do |social_network|
+                a.social href=social_network.profile_url title=social_network.profile_tooltip
+                  = embedded_svg_from_absolute_path social_network.icon.path

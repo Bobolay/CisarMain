@@ -6,8 +6,11 @@ class PagesController < ApplicationController
     @home_banners = HomeBanner.published.sort_by_sorting_position
     set_page_metadata(:home)
     ["home_hotel_images", "home_cafe_images"].each do |k|
-      v = @page_instance.try(k.to_sym).map{|image| url = image.url; {image_url: url, name: image.data_alt} }
-      instance_variable_set("@#{k}", v)
+      v = @page_instance.try(k.to_sym)
+      if v
+        v = v.map{|image| url = image.url; {image_url: url, name: image.data_alt} }
+        instance_variable_set("@#{k}", v)
+      end
     end
     @home_gallery_images = @page_instance.try(:home_gallery_images).map.with_index do|image, index|
       if index == 0

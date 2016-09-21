@@ -12,28 +12,30 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
               .square
                 span
               .row
-                .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
-                  .contact-block
-                    .svg = inline_svg "icons/contacts-geo.svg"
-                    p.contact-way Адреса
-                    p.contact-info
-                      = @contact_info.address
-                .large-6.large-push-3.medium-6.small-12.columns.contact-block-column
-                  .contact-block
-                    .svg = inline_svg "icons/contacts-phone.svg"
-                    p.contact-way Телефони
-                    - @contact_info.phones.each do |phone|
-                      a.phone-number.contact-info href=phone_url(phone)
-                        = phone
+                - if @contact_info
+                  .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
+                    - if @contact_info
+                      .contact-block
+                        .svg = inline_svg "icons/contacts-geo.svg"
+                        p.contact-way Адреса
+                        p.contact-info
+                          = @contact_info.address
+                  .large-6.large-push-3.medium-6.small-12.columns.contact-block-column
+                    .contact-block
+                      .svg = inline_svg "icons/contacts-phone.svg"
+                      p.contact-way Телефони
+                      - @contact_info.phones.each do |phone|
+                        a.phone-number.contact-info href=phone_url(phone)
+                          = phone
 
-                .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
-                  .contact-block
-                    .svg = inline_svg "icons/contacts-mail.svg"
-                    p.contact-way E-mail:
-                    p.contact-info
-                      - @contact_info.emails.each do |email|
-                        a.email href=email_url(email)
-                          = email
+                  .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
+                    .contact-block
+                      .svg = inline_svg "icons/contacts-mail.svg"
+                      p.contact-way E-mail:
+                      p.contact-info
+                        - @contact_info.emails.each do |email|
+                          a.email href=email_url(email)
+                            = email
                 .large-6.large-push-3.medium-6.small-12.columns.left.contact-block-column
                   .contact-block.last
                     .svg = inline_svg "icons/contacts-planet.svg"
