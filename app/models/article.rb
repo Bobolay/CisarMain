@@ -21,6 +21,7 @@ class Article < ActiveRecord::Base
   has_cache
   has_tags
   has_seo_tags
+  has_sitemap_record
 
   before_save :initialize_released_on
   def initialize_released_on
