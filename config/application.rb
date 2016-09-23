@@ -24,5 +24,7 @@ module Arazzinni
     config.active_record.raise_in_transactional_callbacks = true
     I18n.available_locales = [:uk, :ru, :en, :pl]
     I18n.default_locale = :uk
+
+    Rails.application.config.action_mailer.default_url_options = {host: ENV["#{Rails.env}.host"]}
   end
 end
