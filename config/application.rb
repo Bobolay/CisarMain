@@ -26,5 +26,7 @@ module Arazzinni
     I18n.default_locale = :uk
 
     Rails.application.config.action_mailer.default_url_options = {host: ENV["#{Rails.env}.host"]}
+
+    config.assets.precompile += Ckeditor.assets
   end
 end
