@@ -28,6 +28,12 @@ class Article < ActiveRecord::Base
     self.released_on = DateTime.now
   end
 
+  def url(locale = I18n.locale)
+    url_fragment = translations_by_locale[locale].url_fragment
+    route_name = self.class.name.underscore.singularize
+    url_helpers.send("#{route_name}_#{locale}_path", locale: locale, id: url_fragment)
+  end
+
   def formatted_released_on(return_string = true, locale = I18n.locale)
     month_names = { uk: %w(січня лютого березня квітня травня червня липня серпня вересня жовтня листопада грудня),
       ru: %w(января февраля марта апреля мая июня июля августа сентября октября ноября декабря),

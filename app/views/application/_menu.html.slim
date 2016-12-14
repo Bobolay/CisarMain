@@ -6,14 +6,15 @@
 
         - Cms.config.provided_locales.each do |locale|
           - url = @page_instance.try{|p| p.url(locale) } || @page_instance.try{|p| p.default_url(locale) }
-
+          - translated = !@page_instance || (@page_instance.respond_to?(:url_fragment) ? @page_instance.translations_by_locale[locale].try(:url_fragment).present? : true)
           - active = locale == I18n.locale
-          - if active
-            span.locale-link class="active"
-              = Cms.config.locale_names[locale] || locale
-          - else
-            a.locale-link href=url
-              = Cms.config.locale_names[locale] || locale
+          - if translated
+            - if active
+              span.locale-link class="active"
+                = Cms.config.locale_names[locale] || locale
+            - else
+              a.locale-link href=url
+                = Cms.config.locale_names[locale] || locale
 
       - main_menu_items.each do |menu_item|
 
