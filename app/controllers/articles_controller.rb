@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
   end
 
   def initialize_articles
-    @articles = resource_class.published
+    @articles = with_translation(resource_class.published)
   end
 end

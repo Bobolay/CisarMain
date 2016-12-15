@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
   end
 
   def initialize_rooms
-    @rooms = Room.published.sort_by_sorting_position
+    @rooms = with_translation(Room.published.sort_by_sorting_position)
   end
 
   def add_breadcrumb(name, url = nil)
@@ -127,6 +127,13 @@ class ApplicationController < ActionController::Base
       banner = {}
     end
     @banner = banner
+  end
+
+  def with_translation(rel)
+    translations_table_name = rel.model.translation_class.table_name
+    rel
+        .joins(:translations)
+        .where("(#{translations_table_name}.url_fragment is not null and #{translations_table_name}.url_fragment<>'') and #{translations_table_name}.locale='#{I18n.locale}'")
   end
 
 

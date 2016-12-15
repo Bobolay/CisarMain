@@ -25,7 +25,7 @@ class PagesController < ApplicationController
       {thumb_url: url, large_url: url}
     end
 
-    @featured_articles = Article.published.featured.order("released_on desc").limit(3)
+    @featured_articles = with_translation(Article.published.featured.order("released_on desc")).limit(3)
     @featured_dishes = Dish.published.featured.order("id desc").limit(3)
   end
 
