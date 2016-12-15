@@ -31,6 +31,9 @@ class Article < ActiveRecord::Base
   def url(locale = I18n.locale)
     url_fragment = translations_by_locale[locale].url_fragment
     route_name = self.class.name.underscore.singularize
+    if url_fragment.blank?
+      return nil
+    end
     url_helpers.send("#{route_name}_#{locale}_path", locale: locale, id: url_fragment)
   end
 

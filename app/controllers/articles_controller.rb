@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :initialize_articles, only: [:index]
   before_action :initialize_article, only: [:show]
   before_action :initialize_breadcrumbs, only: [:show]
+  caches_page :index, :show
 
   def index
     set_page_metadata(index_page_key)

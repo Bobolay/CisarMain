@@ -13,6 +13,25 @@ class HomeBanner < ActiveRecord::Base
   globalize :label, :name, :short_description
 
   has_link
+  #has_cache
+  # has_cache do
+  #   with_locales(:uk, :ru) do
+  #     pages self
+  #     pages(:home, :about, :contacts, Product.published, Article.published) do
+  #       fragments "header", "footer"
+  #     end
+  #
+  #     fragments :mini_cart
+  #   end
+  #
+  #   with_locales(:all) do
+  #     pages(:services, :sitemap) if image.changed?
+  #   end
+  # end
+
+  has_cache do
+    pages :home
+  end
 
   def self.load_data_defaults(associations = {})
     defaults = 5.times.map do |i|

@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show]
+  caches_page :index, :show
   def index
     set_page_metadata(:rooms)
     set_page_banner

@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
   before_action :set_page_banner, except: [:index]
+  caches_page :index, :services, :cafe, :contacts, :terms_of_use, :site_map
 
   def index
     @home_banners = HomeBanner.published.sort_by_sorting_position
