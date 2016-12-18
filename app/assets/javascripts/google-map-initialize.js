@@ -45,7 +45,7 @@ function initialize() {
     };
     var map = new google.maps.Map($map[0],
         mapOptions);
-    var image = '/assets/icons/map-marker.svg'
+    var image = image_paths.map_marker
     var marker = new google.maps.Marker({
         map: map,
         draggable: false,

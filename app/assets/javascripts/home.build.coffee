@@ -2,6 +2,7 @@
 #= require jquery-ui
 #= require jquery_ujs
 #= require global
+#= require images
 
 #= require plugins/jquery.scrolldelta
 
