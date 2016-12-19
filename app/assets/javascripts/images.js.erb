@@ -1,0 +1,3 @@
+window.image_paths = {
+    map_marker: <%= "'" + Dir[Rails.root.join("public/assets/icons/map-marker-*.svg")].first.gsub(Rails.root.join("public").to_s, "") + "'" %>
+}

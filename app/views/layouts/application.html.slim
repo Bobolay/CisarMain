@@ -13,7 +13,7 @@ html
     = yield
     - if @render_footer != false
         = render "footer"
-    script src="http://maps.googleapis.com/maps/api/js"
+    script src="//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"
     = javascript_include_tag "home.build", 'data-turbolinks-track' => true
     = render "reservation_popup"
     = render "ga"
