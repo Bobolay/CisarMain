@@ -29,7 +29,7 @@ class Article < ActiveRecord::Base
   end
 
   def url(locale = I18n.locale)
-    url_fragment = translations_by_locale[locale].url_fragment
+    url_fragment = translations_by_locale[locale].try(:url_fragment)
     route_name = self.class.name.underscore.singularize
     if url_fragment.blank?
       return nil
