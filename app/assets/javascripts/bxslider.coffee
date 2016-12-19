@@ -1,19 +1,22 @@
-$("body").on "click", ".info-on-banner ul li", ()->
+change_slide = (index)->
+  $(".info-container").children().removeClass("visible")
+  setTimeout(
+    ()->
+      $(".info-container .text#{index + 1}").addClass("visible")
+    300
+  )
+
+$document.on "click", ".info-on-banner ul li", ()->
     $button = $(this)
     $(this).parent().children().removeClass('active')
     $(this).addClass('active')
     index = $button.index()
     change_slide(index)
 
-change_slide = (index)->
-    $(".info-container").children().removeClass("visible")
-    setTimeout(
-        ()->
-            $(".info-container .text#{index + 1}").addClass("visible")
-        300
-    )
 
-$(document).ready ->
+
+
+init_bx_sliders = ()->
   slider1 = $('.bxslider-main-banner').bxSlider
     pagerCustom: '#bx-pager'
     controls: false
@@ -32,7 +35,7 @@ $(document).ready ->
     current = slider1.getCurrentSlide()
     slider1.goToNextSlide(current)
 
-$(document).ready ->
+
   slider2 = $('.bxslider-2').bxSlider
       pagerCustom: '#bx-pager-2'
       controls: false
@@ -49,7 +52,7 @@ $(document).ready ->
     current = slider2.getCurrentSlide()
     slider2.goToNextSlide(current) + 1
 
-$(document).ready ->
+
   slider3 = $('.bxslider-3').bxSlider
       pagerCustom: '#bx-pager-3'
       controls: false
@@ -66,7 +69,7 @@ $(document).ready ->
     current = slider3.getCurrentSlide()
     slider3.goToNextSlide(current) + 1
 
-$(document).ready ->
+
   slider4 = $('.bxslider-4').bxSlider
       pagerCustom: '#bx-pager-4'
       controls: false
@@ -83,7 +86,7 @@ $(document).ready ->
     current = slider4.getCurrentSlide()
     slider4.goToNextSlide(current) + 1
 
-$(document).ready ->
+
   slider5 = $('.carousel').bxSlider
     pager: false
     controls: false
@@ -97,3 +100,6 @@ $(document).ready ->
   $('.carousel-slider-next').click ->
     current = slider5.getCurrentSlide()
     slider5.goToNextSlide(current) + 1
+
+init_bx_sliders()
+$document.on("page:load", init_bx_sliders)

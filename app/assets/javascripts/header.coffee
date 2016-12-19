@@ -154,14 +154,14 @@ if use_custom_scroll_speed
 #easing: "easeOutBack"
         })
 
-$(".menu-button").on "click", ()->
+$document.on "click", ".menu-button", ()->
   $('.menu').toggleClass("opened")
   # $('body').addClass("fixed")
   # $('.close-button').addClass("show-it")
   # setTimeout (->
   #     $(".navigation-wrapper, .menu-collection-container").addClass("show-it")
   #   ), 200
-$(".close-button").on "click", ()->
+$document.on "click", ".close-button", ()->
   $('.menu-wrapper').toggleClass("opened")
   # $('body').removeClass("fixed")
   # $('.close-button').removeClass("show-it")

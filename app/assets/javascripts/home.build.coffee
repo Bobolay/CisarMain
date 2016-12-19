@@ -2,6 +2,10 @@
 #= require jquery-ui
 #= require jquery_ujs
 #= require global
+#= require turbolinks
+#= require ga-turbolinks
+#= require nprogress
+#= require nprogress-turbolinks
 
 #= require plugins/jquery.scrolldelta
 

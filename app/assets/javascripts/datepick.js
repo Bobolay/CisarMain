@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on("ready page:load", function(){
 	$(".datepicker").datepicker({
 		dayNamesMin: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
 		monthNames: [ "Січень", "Лютий", "Березень", "Квітень",

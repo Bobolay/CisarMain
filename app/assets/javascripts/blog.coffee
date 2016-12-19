@@ -41,7 +41,7 @@ apply_filter = ()->
 
 
 
-$("body").on "click", ".tag-container .tag", ()->
+$document.on "click", ".tag-container .tag", ()->
   $tag = $(this)
 
   checked = $tag.hasClass("checked")

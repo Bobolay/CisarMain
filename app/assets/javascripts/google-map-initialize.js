@@ -55,5 +55,7 @@ function initialize() {
     map.mapTypes.set('map_style', styledMap);
     map.setMapTypeId('map_style');
 }
-google.maps.event.addDomListener(window, 'resize', initialize);
-google.maps.event.addDomListener(window, 'load', initialize)
+//google.maps.event.addDomListener(window, 'resize', initialize);
+//google.maps.event.addDomListener(window, 'load', initialize)
+$window.on("resize load", initialize)
+$document.on("page:load", initialize)

@@ -1,16 +1,16 @@
-$("a[href^='#']").on "click", (e)->
+$document.on "click", "a[href^='#']", (e)->
   e.preventDefault()
   $link = $(this)
   href = $link.attr("href")
   target_top = $(href).offset().top
   $("body").animate({scrollTop: target_top})
 
-$("body").on "click", ".info-wrapper .navigation-container .block", (e)->
+$document.on "click", ".info-wrapper .navigation-container .block", (e)->
   $button = $(this)
   $(this).parent().children().removeClass('active')
   $(this).addClass('active')
 
-$("body").on "click", ".expand-it", ()->
+$document.on "click", ".expand-it", ()->
   $('.expand-it span').toggleClass('rotate')
   $('.expand-field').toggleClass('expand')
   $('.expand-field .regular').toggleClass('show-it')
@@ -28,7 +28,7 @@ $document.on "click", ".overlay", ()->
   $("body").removeClass("has-opened-popup")
 
 
-$document.on "ready", ()->
+$document.on "ready page:load", ()->
   $('.input.select select').niceSelect()
 
 
@@ -51,11 +51,10 @@ submit_form = (e)->
 
 
 $document.on "submit", "form.request-form", submit_form
-#$document.on "submit", "form.request-form", submit_form
 
 window.WEATHER_INITIALIZED = false
 
-$document.on "ready", ()->
+$document.on "ready page:load", ()->
   if !WEATHER_INITIALIZED
     $.ajax(
       url: "/weather_and_exchange_rates"
