@@ -96,22 +96,29 @@ class ApplicationController < ActionController::Base
     weather_data.save if !weather_data.persisted?
     weather_data = weather_data.result
 
+    weather = weather_data['weather']
+    puts "weather: #{weather.inspect}"
 
     json_response = { usd: rate.convert(1, :usd, :uah, :buy), eur: rate.convert(1, :eur, :uah, :buy), weather_data:
-        {id: weather_data['weather'][0]["id"], temperature: weather_data["main"]["temp"], icon: weather_data['weather'][0]['icon'], description: weather_data['weather'][0]['description']}
+        (weather ? {
+            id: weather[0]["id"],
+            temperature: weather_data["main"]["temp"],
+            icon: weather[0]['icon'],
+            description: weather[0]['description']
+        } : nil)
         #weather_data
     }
 
     @usd = json_response[:usd]
     @eur = json_response[:eur]
-    @temperature = json_response[:weather_data][:temperature]
-    @weather_id = json_response[:weather_data][:id]
+    @temperature = json_response[:weather_data] ? json_response[:weather_data][:temperature] : nil
+    @weather_id = json_response[:weather_data] ? json_response[:weather_data][:id] : nil
     #@weather_icon = "icons/weather/#{@weather_id}.svg"
 
-    @weather_png_icon_relative_path = "icons/weather_png2/#{json_response[:weather_data][:icon]}.png"
+    @weather_png_icon_relative_path = json_response[:weather_data] ? "icons/weather_png2/#{json_response[:weather_data][:icon]}.png" : nil
     #@weather_png_icon = image_path(@weather_png_icon_relative_path)
     #@weather_png_icon = "http://openweathermap.org/img/w/#{json_response[:weather_data][:icon]}.png"
-    @weather_description = json_response[:weather_data][:description]
+    @weather_description = json_response[:weather_data] ? json_response[:weather_data][:description] : nil
 
     render template: "application/_weather_and_exchange_rates.html.slim", layout: false
 
