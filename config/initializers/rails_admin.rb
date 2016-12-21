@@ -207,22 +207,34 @@ RailsAdmin.config do |config|
   config.model Room do
     nestable_list({position_field: :sorting_position})
 
-    field :published
-    field :list_image do
-      label "avatar"
+    list do
+      field :published
+      field :list_image do
+        label "avatar"
+      end
+      field :banner_image
+      field :name
+      field :price
     end
-    field :banner_image
-    field :slider_images
-    field :gallery_images
-    field :price
-    field :translations, :globalize_tabs
-    field :room_versions
-    field :dishes
-    field :room_tags
-    field :interior_components
-    field :services
-    field :seo_tags
-    field :sitemap_record
+
+    edit do
+      field :published
+      field :list_image do
+        label "avatar"
+      end
+      field :banner_image
+      field :slider_images
+      field :gallery_images
+      field :price
+      field :translations, :globalize_tabs
+      field :room_versions
+      field :dishes
+      field :room_tags
+      field :interior_components
+      field :services
+      field :seo_tags
+      field :sitemap_record
+    end
   end
 
   config.model_translation Room do
@@ -402,7 +414,7 @@ RailsAdmin.config do |config|
       field :name
       field :phone
       field :email
-      field :room_version
+      field :room_node
       field :checkin_date
       field :checkout_date
     end
