@@ -2,20 +2,21 @@
   .menu-button = inline_svg "icons/cross.svg"
   .top-part
     .text
-      .locales-bar
+      - if Cms.config.provided_locales.count > 1
+        .locales-bar
 
-        - Cms.config.provided_locales.each do |locale|
-          - url = @page_instance.try{|p| p.url(locale) } || @page_instance.try{|p| p.respond_to?(:default_url) ? p.default_url(locale) : nil }
-          - translated = !@page_instance || (@page_instance.respond_to?(:url_fragment) ? @page_instance.translations_by_locale[locale].try(:url_fragment).present? : true)
-          - active = locale == I18n.locale
-          - if url
-            - if translated
-              - if active
-                span.locale-link class="active"
-                  = Cms.config.locale_names[locale] || locale
-              - else
-                a.locale-link href=url
-                  = Cms.config.locale_names[locale] || locale
+          - Cms.config.provided_locales.each do |locale|
+            - url = @page_instance.try{|p| p.url(locale) } || @page_instance.try{|p| p.respond_to?(:default_url) ? p.default_url(locale) : nil }
+            - translated = !@page_instance || (@page_instance.respond_to?(:url_fragment) ? @page_instance.translations_by_locale[locale].try(:url_fragment).present? : true)
+            - active = locale == I18n.locale
+            - if url
+              - if translated
+                - if active
+                  span.locale-link class="active"
+                    = Cms.config.locale_names[locale] || locale
+                - else
+                  a.locale-link href=url
+                    = Cms.config.locale_names[locale] || locale
 
       - main_menu_items.each do |menu_item|
 
