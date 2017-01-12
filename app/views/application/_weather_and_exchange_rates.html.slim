@@ -1,7 +1,9 @@
 - if @temperature
   li
+    - t = @temperature.to_i
+    - t = "+#{t}" if t >= 0
     p.temperature
-      | +#{@temperature.to_i}&deg;
+      | #{t}&deg;
       span
         /- if @weather_id == 800
           = inline_svg @weather_icon

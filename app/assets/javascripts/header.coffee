@@ -155,14 +155,14 @@ if use_custom_scroll_speed
         })
 
 $document.on "click", ".menu-button", ()->
-  $('.menu').toggleClass("opened")
+  $('.menu').addClass("opened")
   # $('body').addClass("fixed")
   # $('.close-button').addClass("show-it")
   # setTimeout (->
   #     $(".navigation-wrapper, .menu-collection-container").addClass("show-it")
   #   ), 200
 $document.on "click", ".close-button", ()->
-  $('.menu-wrapper').toggleClass("opened")
+  $('.menu-wrapper').removeClass("opened")
   # $('body').removeClass("fixed")
   # $('.close-button').removeClass("show-it")
   # setTimeout (->
