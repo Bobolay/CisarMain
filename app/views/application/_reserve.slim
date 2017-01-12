@@ -41,7 +41,7 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
                     .svg = inline_svg "icons/contacts-planet.svg"
                     p.contact-way Соціальні мережі
                     .social-container
-                      - @social_networks.limit(3).each do |social_network|
+                      - @social_networks.each do |social_network|
                         a.social href=social_network.profile_url title=social_network.profile_tooltip
                           = embedded_svg_from_absolute_path social_network.icon.path
 
