@@ -10,8 +10,9 @@ table
         = @request_resource.room_node.full_name
   = table_field(:checkin_date, @request_resource.checkin_date.to_s) if @request_resource.checkin_date.present?
   = table_field(:checkout_date, @request_resource.checkout_date.to_s) if @request_resource.checkout_date.present?
+  = table_field(:created_at, @request_resource.created_at.to_s)
 
-  /tr
+    /tr
     td
       b
         |requested at:
