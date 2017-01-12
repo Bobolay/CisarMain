@@ -172,6 +172,7 @@ RailsAdmin.config do |config|
   end
 
   config.model HomeBanner do
+    parent Pages::Home
     nestable_list({position_field: :sorting_position})
 
     field :published
@@ -348,9 +349,12 @@ RailsAdmin.config do |config|
   config.model_translation Article do
     edit do
       field :locale, :hidden
-      fields :name, :url_fragment, :short_description
+      field :name
+      field :url_fragment
+      field :short_description
       field :content, :ck_editor
-      fields :banner_description, :banner_title
+      field :banner_description
+      field :banner_title
     end
   end
 
@@ -367,6 +371,8 @@ RailsAdmin.config do |config|
       field :released_on
       field :tags
       related_articles_field
+      field :seo_tags
+      field :sitemap_record
     end
   end
 
@@ -425,6 +431,7 @@ RailsAdmin.config do |config|
   end
 
   config.model FormConfigs::ReservationRequest do
+    navigation_label "Налаштування"
     field :email_receivers, :text
   end
 end
