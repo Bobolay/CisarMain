@@ -2,7 +2,11 @@
   def svg_url(image_rel_path)
     "'" + (Rails.env.pruduction? ? Dir[Rails.root.join("public/assets/#{image_rel_path}-*.svg")].first.gsub(Rails.root.join("public").to_s, "") : "/assets/#{image_rel_path}") + "'"
   end
+
+   def svg_asset_url(image_rel_path)
+    "'" + (asset_path(image_rel_path)) + "'"
+  end
 %>
 window.image_paths = {
-    map_marker: <%= svg_url("icons/map-marker") %>
+    map_marker: <%= svg_asset_url("icons/map-marker") %>
 }
