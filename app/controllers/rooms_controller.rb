@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     call_request.session_id = session.id
     call_request.save
 
-    ApplicationMailer.reservation_request(call_request).deliver_now
+    call_request.notify_admin
 
     data = {}
     render json: data, status: 201

@@ -11,4 +11,12 @@ class ReservationRequest < ActiveRecord::Base
     self.room_node_id = id
     self.room_node_type = class_name
   end
+
+  def notify_admin
+    ApplicationMailer.reservation_request(self).deliver_now
+  end
+
+  def self.notify_admin_about_all
+    self.all.map(&:notify_admin)
+  end
 end
