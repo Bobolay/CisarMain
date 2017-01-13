@@ -1,5 +1,5 @@
 .services-wrapper
-  = render "page_banner", banner: @banner, info_header_text: raw("<span>надаємо</span> #{@services_count} <span>послуги</span>"), info_header_icon: "icons/clock.svg"
+  = render "page_banner", banner: @banner, info_header_text: raw(@services_count_str), info_header_icon: "icons/clock.svg"
   /.half-banner
     .background-img style="background-image: url(#{})"
     .row

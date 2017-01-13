@@ -155,7 +155,15 @@ if use_custom_scroll_speed
         })
 
 $document.on "click", ".menu-button", ()->
-  $('.menu').addClass("opened")
+  delay(
+    "menu"
+    ()->
+      $('.menu').toggleClass("opened")
+    100
+    true
+    false
+  )
+
   # $('body').addClass("fixed")
   # $('.close-button').addClass("show-it")
   # setTimeout (->

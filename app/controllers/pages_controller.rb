@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     @free_services = Service.published.free.sort_by_sorting_position
     @paid_services = Service.published.paid.sort_by_sorting_position
     @services_count = Service.published.count
+
+    @services_count_str = services_count_str(@services_count)
+
+
   end
 
   def cafe
@@ -56,6 +60,25 @@ class PagesController < ApplicationController
 
   def set_page_instance
     set_page_metadata(action_name)
+  end
+
+  def services_count_str(count)
+    c = count
+    return "" if !c
+    part1 = "<span>надаємо</span>"
+    one = "<span>послугу</span>"
+    many = "<span>послуг</span>"
+    few = "<span>послуги</span>"
+
+    res = c % 10
+    str = ""
+    if res == 1
+      "#{part1} #{c} #{one}"
+    elsif res >= 2 && res <= 4
+      "#{part1} #{c} #{few}"
+    else
+      "#{part1} #{c} #{many}"
+    end
   end
 
 

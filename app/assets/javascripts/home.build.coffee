@@ -9,6 +9,7 @@
 #= require nprogress-turbolinks
 
 #= require plugins/jquery.scrolldelta
+#= require plugins/delay
 
 #= require plugins/jquery.appear
 #= require plugins/jquery.bxslider

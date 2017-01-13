@@ -59,6 +59,7 @@ $document.on "ready page:load", ()->
     $.ajax(
       url: "/weather_and_exchange_rates"
       success: (res)->
-        window.WEATHER_INITIALIZED = true
-        $(".header-container .right-part").prepend(res)
+        if !WEATHER_INITIALIZED || !$($(".header-container .right-part .exchange-rates, .header-container .right-part .temperature").length)
+          window.WEATHER_INITIALIZED = true
+          $(".header-container .right-part").prepend(res)
     )
