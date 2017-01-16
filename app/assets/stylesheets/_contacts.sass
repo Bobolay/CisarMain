@@ -1,72 +1,162 @@
 .contacts-wrapper
-	.contact-block-container
-		margin-bottom: 30px
-	.contacts-block
-		position: relative
-		background: url(#{asset_path('png/find-room-texture.png')})
-		border: 1px solid rgba(0,0,0,0.3)
-		width: 80px
-		height: 100px
-		&:before
-			content: ''
-			position: absolute
-			width: 1px
-			height: 30px
-			right: -1px
-			bottom: 10px
-			background: $texture-yellow-bg
-		.svg
-			position: absolute
-			width: 100%
-		svg
-			width: 30px
-			height: 30px
-			fill: $brown
-			position: absolute
-			top: 15px
-			left: 50%
-			+translate(-50%,0)
-		p
-			font-size: 1.375em
-			font-style: italic
-			color: $red
-			position: absolute
-			top: 55px
-			left: 40px
-			width: 200px
-			@media #{$small-only}
-				font-size: 1.25em
-	.social-container
-		padding: 20px 0 0 40px
-		.social
-			width: 40px
-			height: 40px
-			+grey-border
-			text-align: center
-			display: inline-block
-			margin-right: 5px
-			margin-bottom: 5px
-			+transition(0.2s)
-			cursor: pointer
-			svg
-				width: 20px
-				height: 20px
-				fill: $brown
-				position: relative
-				top: 50%
-				+translate(0,-50%)
-			&:hover
-				svg
-					fill: #fff
-	.under-block
-		font-size: 1.125em
-		color: $brown
-		opacity: 0.75
-		line-height: 22px
-		padding: 20px 0 0 40px
-		@media #{$small-only}
-			padding: 10px 0 0 20px
-	#googleMap
-		height: 550px
-		@media #{$small-only}
-			height: 400px
+  .half-banner
+    //.background-img
+    .section-info
+      bottom: 24px
+
+    .red-head
+      display: none !important
+  .contact-block-container
+    margin-bottom: 30px
+  .contacts-block
+    position: relative
+    background: image_url('png/find-room-texture.png')
+    border: 1px solid rgba(0,0,0,0.3)
+    width: 80px
+    height: 100px
+    &:before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 30px
+      right: -1px
+      bottom: 10px
+      background: $texture-yellow-bg
+    .svg
+      position: absolute
+      width: 100%
+    svg
+      width: 30px
+      height: 30px
+      fill: $brown
+      position: absolute
+      top: 15px
+      left: 50%
+      +translate(-50%,0)
+    p
+      font-size: 1.375em
+      font-style: italic
+      color: $red
+      position: absolute
+      top: 55px
+      left: 40px
+      width: 200px
+      @media #{$small-only}
+        font-size: 1.25em
+  .social-container
+    padding: 20px 0 0 40px
+    .social
+      width: 40px
+      height: 40px
+      +grey-border
+      text-align: center
+      display: inline-block
+      margin-right: 5px
+      margin-bottom: 5px
+      +transition(0.2s)
+      cursor: pointer
+      svg
+        width: 20px
+        height: 20px
+        fill: $brown
+        position: relative
+        top: 50%
+        +translate(0,-50%)
+      &:hover
+        svg
+          fill: #fff
+  .under-block
+    font-size: 1.125em
+    color: $brown
+    opacity: 0.75
+    line-height: 22px
+    padding: 20px 0 0 40px
+    @media #{$small-only}
+      padding: 10px 0 0 20px
+  #googleMap
+    height: 550px
+    @media #{$small-only}
+      height: 400px
+
+
+.contacts-panel
+  width: 371px !important
+  padding: 0 !important
+  overflow: hidden
+
+
+
+  .red-head
+    +init-red-head
+
+    .text
+      padding-right: 8px
+      padding-left: 8px
+      p
+        span
+          font-weight: 600
+          font-size: 22px
+
+  .contacts-panel-inner
+    padding: 50px 60px 70px 4rem
+    position: relative
+    width: 371px
+    margin-top: -7px
+    border-top: none
+
+
+    .contact-block
+      &:last-child
+        margin-bottom: 0 !important
+
+    .svg
+      svg
+        fill: $brown-color
+
+    .contact-way
+      color: $red
+
+    .social-container
+      padding-left: 0
+      max-width: 150px
+    .social
+      margin-right: 8px
+      margin-bottom: 8px
+
+
+
+.contacts-items
+  .contact-item-header
+    font-size: 18px
+    text-transform: uppercase
+    margin-bottom: 20px
+    span
+      color: $red
+
+  .contact-block
+    margin-bottom: 12px
+    .contact-way
+      color: $red
+  .contacts-item
+    margin-bottom: 20px
+    float: left !important
+
+@media #{$medium-up}
+  .contacts-panel
+    position: absolute
+    z-index: 1
+
+  .contacts-items
+    position: relative
+    left: 0
+    float: left
+    padding-left: 480px
+    width: 100%
+
+@media #{$small-only}
+  .contacts-panel
+    margin: 0 auto
+    float: none !important
+  .contacts-items
+    max-width: 450px !important
+    margin-top: 80px

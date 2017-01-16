@@ -1,147 +1,147 @@
 .reservation-wrapper
-	position: relative
-	top: 50px
-	z-index: 5
-	.reservation-container
-		background: url(#{asset_path('png/texture-2.png')})
-		+grey-border
-		text-align: center
-		padding: 40px
-		background-color: #fff
-		@media #{$large-up}
-			height: 500px
-	.text
-		margin: 0 auto
-	.header
-		font-size: 2.125em
-		color: $red
-		text-transform: uppercase
-		text-align: center
-	.under-header
-		text-transform: uppercase
-		position: relative
-		top: -10px
-		margin-top: 5px
-		text-align: center
-	.square
-		position: relative
-		width: 10px
-		height: 10px
-		margin: 0 auto 30px
-		@media #{$small-only}
-			margin-bottom: 20px
-		span
-			width: 10px
-			height: 10px
-			background-color: #fff
-			border: 1px solid $red
-			+rotate(45deg)
-			display: block
-		&:before
-			content: ''
-			position: absolute
-			height: 1px
-			width: 50px
-			right: 10px
-			top: 4px
-			background-color: $red
-		&:after
-			content: ''
-			position: absolute
-			height: 1px
-			width: 50px
-			left: 10px
-			top: 4px
-			background-color: $red
-	.input-label
-		margin-top: 20px
-		position: relative
-		top: 5px
-	form, .input-label
-		max-width: 250px
-		margin: 0 auto
-		text-align: left
-	.btn
-		margin: 30px auto 0
-		max-width: 250px
-	.contacts-container
-		background: image_url('png/texture.png')
-		+grey-border
-		position: relative
-		left: -1px
-		.text
-			padding: 40px 40px 0 40px
-		@media #{$small-only}
-			left: 0
-			top: -1px
-		@media #{$medium-only}
-			left: 0
-			top: -1px
-		@media #{$large-up}
-			//height: 500px
-		.contact-block-column
-			float: left
-		.contact-block
-			position: relative
-			margin-left: 30px
-			margin-bottom: 10px
-			@media #{$medium-only}
-				margin-bottom: 30px
-			@media #{$large-up}
-				margin-bottom: 50px
+  position: relative
+  top: 50px
+  z-index: 5
+  .reservation-container
+    background: image_url('png/texture-2.png')
+    +grey-border
+    text-align: center
+    padding: 40px
+    background-color: #fff
+    @media #{$large-up}
+      height: 500px
+  .text
+    margin: 0 auto
+  .header
+    font-size: 2.125em
+    color: $red
+    text-transform: uppercase
+    text-align: center
+  .under-header
+    text-transform: uppercase
+    position: relative
+    top: -10px
+    margin-top: 5px
+    text-align: center
+  .square
+    position: relative
+    width: 10px
+    height: 10px
+    margin: 0 auto 30px
+    @media #{$small-only}
+      margin-bottom: 20px
+    span
+      width: 10px
+      height: 10px
+      background-color: #fff
+      border: 1px solid $red
+      +rotate(45deg)
+      display: block
+    &:before
+      content: ''
+      position: absolute
+      height: 1px
+      width: 50px
+      right: 10px
+      top: 4px
+      background-color: $red
+    &:after
+      content: ''
+      position: absolute
+      height: 1px
+      width: 50px
+      left: 10px
+      top: 4px
+      background-color: $red
+  .input-label
+    margin-top: 20px
+    position: relative
+    top: 5px
+  form, .input-label
+    max-width: 250px
+    margin: 0 auto
+    text-align: left
+  .btn
+    margin: 30px auto 0
+    max-width: 250px
 
-		.button-wrap
-			text-align: center
-			background: image_url("png/texture-2.png")
-			padding: 1px 0 31px 0
-			border-top: 1px solid rgba(0, 0, 0, 0.3)
-		.svg
-			position: absolute
-			left: -35px
-			top: 0
-			svg
-				fill: $red
-				width: 25px
-				height: 25px
-		.contact-way
-			font-size: 1.125em
-			margin-bottom: 10px
-		.contact-info
-			color: $brown
-			opacity: 0.7
-			font-style: italic
-	.last
-		@media #{$medium-up}
-			//margin-top: 75px
+.contacts-container
+  background: image_url('png/texture.png')
+  +grey-border
+  position: relative
+  left: -1px
+  .text
+    padding: 40px 40px 0 40px
+  @media #{$small-only}
+    left: 0
+    top: -1px
+  @media #{$medium-only}
+    left: 0
+    top: -1px
+  @media #{$large-up}
+    //height: 500px
+  .contact-block-column
+    float: left !important
+
+.contacts-container, .contacts-items
+  .contact-block
+    position: relative
+    margin-left: 30px
+    margin-bottom: 10px
+    @media #{$medium-only}
+      margin-bottom: 30px
+    @media #{$large-up}
+      margin-bottom: 50px
+
+  .button-wrap
+    text-align: center
+    background: image_url("png/texture-2.png")
+    padding: 1px 0 31px 0
+    border-top: 1px solid rgba(0, 0, 0, 0.3)
+  .svg
+    position: absolute
+    left: -35px
+    top: 0
+    svg
+      fill: $red
+      width: 25px
+      height: 25px
+  .contact-way
+    font-size: 1.125em
+    margin-bottom: 10px
+  .contact-info
+    color: $brown
+    opacity: 0.7
+    font-style: italic
 
 
 
 form
-	.sending-message
-		display: none
-	&.sending
-		.form-content
-			opacity: 0
-		.sending-message
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			text-align: center
-			display: block
+  .sending-message
+    display: none
+  &.sending
+    .form-content
+      opacity: 0
+    .sending-message
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      text-align: center
+      display: block
 
-			.inner
-				position: absolute
-				top: 50%
-				width: 100%
-				+transform(translateY(-50%))
+      .inner
+        position: absolute
+        top: 50%
+        width: 100%
+        +transform(translateY(-50%))
 
-				.h1
-					font-size: 1.3rem
-					color: $red
-					text-transform: uppercase
-					line-height: 46px
-				p
-					font-size: 1.2rem
-					margin: 0
+        .h1
+          font-size: 1.3rem
+          color: $red
+          text-transform: uppercase
+          line-height: 46px
+        p
+          font-size: 1.2rem
+          margin: 0

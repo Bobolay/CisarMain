@@ -44,4 +44,28 @@ module ApplicationHelper
     #parts = phone.split(/[\(\)]/)
 
   end
+
+
+  def booking_department_phones
+    ["+38 (032) 253 25 65"]
+  end
+
+  def booking_department_emails
+    ["cisar.lviv@gmail.com"]
+  end
+
+  def sales_department_phones
+    ["+38 (094) 993 45 65", "+38 (094) 993 65 65"]
+  end
+
+  def sales_department_emails
+    ["cisar.lviv@gmail.com"]
+  end
+
+  def departments
+    [
+        { name: "Бронювання", phones: booking_department_phones, emails: booking_department_emails },
+        { name: "Продажу", phones: sales_department_phones, emails: sales_department_emails }
+    ]
+  end
 end

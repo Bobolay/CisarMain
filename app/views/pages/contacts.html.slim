@@ -2,42 +2,92 @@
   = render "page_banner", banner: @banner
   .main-background
     .row
-      .columns
-        .row
-          .large-3.medium-6.small-6.columns
-            .contact-block-container
-              .contacts-block
-                = inline_svg "icons/contacts-geo.svg"
-                p Адреса:
-              p.under-block
-                = @contact_info.address
-          .large-3.medium-6.small-6.columns
-            .contact-block-container
-              .contacts-block
-                = inline_svg "icons/contacts-phone.svg"
-                p Телефони:
-              p.under-block
-                - @contact_info.phones.each do |phone|
-                  a.phone-number href=phone_url(phone)
-                    = phone
+      .columns.medium-5.contacts-panel
+        .red-head
+          .left-side
+            = inline_svg "icons/contacts-phone.svg"
+          .text
+            p
+              span
+                = "+38 (032) 253 45 65"
 
-          .large-3.medium-6.small-6.columns
-            .contact-block-container
-              .contacts-block
-                = inline_svg "icons/contacts-mail.svg"
-                p E-mail:
-              p.under-block
+        .contacts-container.contacts-panel-inner
+
+          - if @contact_info
+            .contact-block
+              .svg = inline_svg "icons/contacts-geo.svg"
+              p.contact-way Адреса
+              p.contact-info
+                = @contact_info.address
+
+            .contact-block
+              .svg = inline_svg "icons/contacts-phone.svg"
+              p.contact-way Телефони
+              - @contact_info.phones.each do |phone|
+                a.phone-number.contact-info href=phone_url(phone)
+                  = phone
+
+
+            .contact-block
+              .svg = inline_svg "icons/contacts-mail.svg"
+              p.contact-way E-mail:
+              p.contact-info
                 - @contact_info.emails.each do |email|
                   a.email href=email_url(email)
                     = email
-          .large-3.medium-6.small-6.columns
-            .contact-block-container
-              .contacts-block
-                = inline_svg "icons/contacts-planet.svg"
-                p Соціальні мережі:
-              .social-container
-                - @social_networks.each do |social_network|
-                  a.social href=social_network.profile_url title=social_network.profile_tooltip
-                    = embedded_svg_from_absolute_path social_network.icon.path
+
+
+          .contact-block
+            .svg = inline_svg "icons/contacts-planet.svg"
+            p.contact-way Соціальні мережі
+            .social-container
+              - @social_networks.each do |social_network|
+                a.social href=social_network.profile_url title=social_network.profile_tooltip
+                  = embedded_svg_from_absolute_path social_network.icon.path
+      .columns.medium-7.contacts-items
+        .row
+          - departments.each do |department|
+            .columns.small-6.medium-12.large-6.contacts-item
+              .contact-item-header
+                |Відділ
+                br
+                span
+                  = department[:name]
+
+              .contact-block
+                .svg = inline_svg "icons/contacts-phone.svg"
+                p.contact-way Телефони
+                - department[:phones].each do |phone|
+                  a.phone-number.contact-info href=phone_url(phone)
+                    = phone
+
+
+              .contact-block
+                .svg = inline_svg "icons/contacts-mail.svg"
+                p.contact-way E-mail:
+                p.contact-info
+                  - department[:emails].each do |email|
+                    a.email href=email_url(email)
+                      = email
+
+
+
+          .columns.small-6.medium-12.large-6.contacts-item
+            .contact-item-header
+              |Оплата
+              br
+              span
+                = "Карткою"
+
+            .contact-block
+              .svg = inline_svg "icons/contacts-phone.svg"
+              p.contact-way Реквізити:
+
+              p.contact-info
+                |ВСБ 4567  8797 5464 2313
+                br
+                |ОсПБ Кс 4654879
+
+
 
   = render "map"
