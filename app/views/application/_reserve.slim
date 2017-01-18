@@ -19,7 +19,7 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
                         .svg = inline_svg "icons/contacts-geo.svg"
                         p.contact-way Адреса:
                         p.contact-info
-                          = @contact_info.address
+                          = raw @contact_info.address
                   .large-6.large-push-3.medium-6.small-12.columns.contact-block-column
                     .contact-block
                       .svg = inline_svg "icons/contacts-phone.svg"

@@ -22,7 +22,7 @@
         .group-label
           = t("maps.marker.info-window.address")
         .group-content
-          = @contact_info.address
+          = raw @contact_info.address
       .google-map-link-wrap
         a.google-map-link href="https://www.google.com.ua/maps/place/Horodotska+St,+65,+L'viv,+Lviv+Oblast/@49.841428,24.0145933,17z/data=!3m1!4b1!4m5!3m4!1s0x473add76eac0d697:0x3d4b88de3e5df9ae!8m2!3d49.841428!4d24.016782" rel="nofollow"
           = t("maps.marker.info-window.google-map-link-text")
