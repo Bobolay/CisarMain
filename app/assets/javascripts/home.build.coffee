@@ -20,6 +20,9 @@
 # require jquery-nice-select/js/jquery.nice-select.min
 #= require jquery_nice_select
 
+# require plugins/clickout
+#= require clickout-custom
+#= require plugins/richmarker
 #= require google-map-initialize
 
 #= require header

@@ -38,7 +38,10 @@ module ApplicationHelper
       end
     end
 
-    return phone.gsub(/\+380/, "+38 0").gsub(/[\d]{7}\Z/){" <span>#{$&}</span>"}
+    last7_digits = phone.last(7)
+    formatted_last_digits = "#{last7_digits[0, 3]} #{last7_digits[3, 2]} #{last7_digits[5, 2]}"
+
+    return phone.gsub(/\+38\s?0/, "+38 0").gsub(/[\d]{7}\Z/){" <span>#{$&}</span>"}.gsub(/\s0\d\d\s/){" (#{$&.gsub(/\s/, "")}) "}.gsub(/[\d]{7}/, formatted_last_digits).gsub(/\A\+38\+38\(/, "+38 (")
 
     phone.gsub(/\+38/, "<span class='bracket bracket-open'>(</span>").gsub(/\)/, "<span class='bracket bracket-close'>)</span>").html_safe
     #parts = phone.split(/[\(\)]/)

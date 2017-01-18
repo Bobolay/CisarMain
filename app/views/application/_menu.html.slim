@@ -47,7 +47,7 @@
             p.contact-way Телефони
             - @contact_info.phones.each do |phone|
               a.phone-number.contact-info href=phone_url(phone)
-                = phone
+                = raw formatted_phone_number(phone)
       - if @social_networks
         .large-6.medium-6.small-6.columns
           .contact-block

@@ -1,1 +1,31 @@
-#googleMap data-center=@contact_info.try(:lat_lg)
+#googleMapWrapper.map-wrapper data-center=@contact_info.try(:lat_lg)
+  .marker data-location=@contact_info.try(:lat_lg)
+    .marker-icon.svg-icon.svg-icon-location
+      = inline_svg "icons/map-marker.svg"
+  .info-window
+    .info-window-header
+      .logo
+        = inline_svg("icons/logo-symbol.svg")
+      .title
+        = raw t("maps.marker.info-window.header.title")
+      .line
+      .red-square
+    .info-window-content
+      .group
+        .group-label
+          = t("maps.marker.info-window.phones")
+        .group-content
+          - @contact_info.phones.each do |phone|
+            a.phone href=phone_url(phone)
+              = raw formatted_phone_number(phone)
+      .group
+        .group-label
+          = t("maps.marker.info-window.address")
+        .group-content
+          = @contact_info.address
+      .google-map-link-wrap
+        a.google-map-link href="https://www.google.com.ua/maps/place/Horodotska+St,+65,+L'viv,+Lviv+Oblast/@49.841428,24.0145933,17z/data=!3m1!4b1!4m5!3m4!1s0x473add76eac0d697:0x3d4b88de3e5df9ae!8m2!3d49.841428!4d24.016782" rel="nofollow"
+          = t("maps.marker.info-window.google-map-link-text")
+
+
+  #map-container.map-container

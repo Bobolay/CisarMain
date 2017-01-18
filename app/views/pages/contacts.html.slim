@@ -25,7 +25,7 @@
               p.contact-way Телефони:
               - @contact_info.phones.each do |phone|
                 a.phone-number.contact-info href=phone_url(phone)
-                  = phone
+                  = raw formatted_phone_number(phone)
 
 
             .contact-block
@@ -59,7 +59,7 @@
                 p.contact-way Телефони
                 - department[:phones].each do |phone|
                   a.phone-number.contact-info href=phone_url(phone)
-                    = phone
+                    = raw formatted_phone_number(phone)
 
 
               .contact-block

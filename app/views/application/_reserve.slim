@@ -26,7 +26,7 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
                       p.contact-way Телефони
                       - @contact_info.phones.each do |phone|
                         a.phone-number.contact-info href=phone_url(phone)
-                          = phone
+                          = raw formatted_phone_number(phone)
 
                   .large-4.large-push-1.medium-6.small-12.columns.contact-block-column
                     .contact-block
