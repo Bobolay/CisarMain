@@ -16,13 +16,13 @@
           - if @contact_info
             .contact-block
               .svg = inline_svg "icons/contacts-geo.svg"
-              p.contact-way Адреса
+              p.contact-way Адреса:
               p.contact-info
                 = @contact_info.address
 
             .contact-block
               .svg = inline_svg "icons/contacts-phone.svg"
-              p.contact-way Телефони
+              p.contact-way Телефони:
               - @contact_info.phones.each do |phone|
                 a.phone-number.contact-info href=phone_url(phone)
                   = phone
@@ -39,7 +39,7 @@
 
           .contact-block
             .svg = inline_svg "icons/social.svg"
-            p.contact-way Соціальні мережі
+            p.contact-way Соціальні мережі:
             .social-container
               - @social_networks.each do |social_network|
                 a.social href=social_network.profile_url title=social_network.profile_tooltip
