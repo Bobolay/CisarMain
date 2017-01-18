@@ -69,3 +69,12 @@ uk:
     excursion: "Екскурсії"
     event: "Події"
     fun_article: "Цікаві статті"
+
+  maps:
+    marker:
+      info-window:
+        header:
+          title: "Готель Цісар"
+        phones: "Телефони:"
+        address: "Адреса:"
+        google-map-link-text: "відкрити карту"
