@@ -17,13 +17,13 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
                     - if @contact_info
                       .contact-block
                         .svg = inline_svg "icons/contacts-geo.svg"
-                        p.contact-way Адреса
+                        p.contact-way Адреса:
                         p.contact-info
                           = @contact_info.address
                   .large-6.large-push-3.medium-6.small-12.columns.contact-block-column
                     .contact-block
                       .svg = inline_svg "icons/contacts-phone.svg"
-                      p.contact-way Телефони
+                      p.contact-way Телефони:
                       - @contact_info.phones.each do |phone|
                         a.phone-number.contact-info href=phone_url(phone)
                           = raw formatted_phone_number(phone)
@@ -39,7 +39,7 @@ div style="background-image: url(#{asset_path('texture-yellow.gif')})"
                 .large-6.large-push-3.medium-6.small-12.columns.left.contact-block-column
                   .contact-block.last
                     .svg = inline_svg "icons/social.svg"
-                    p.contact-way Соціальні мережі
+                    p.contact-way Соціальні мережі:
                     .social-container
                       - @social_networks.each do |social_network|
                         a.social href=social_network.profile_url title=social_network.profile_tooltip
