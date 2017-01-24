@@ -138,6 +138,11 @@ RailsAdmin.config do |config|
     field :sitemap_record
   end
 
+  config.model_translation Cms::Page do
+    field :locale, :hidden
+    field :content, :ck_editor
+  end
+
   %w(blog cafe services rooms fun_articles events excursions terms_of_use site_map).each do |m|
     m = "Pages::#{m.camelize}"
     config.model m do
