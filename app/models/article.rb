@@ -20,8 +20,9 @@ class Article < ActiveRecord::Base
 
   has_cache do
     pages :home, :events, :excursions, :fun_articles, :blog
-    pages Article.all
+    pages self, Article.all
   end
+
   has_tags
   has_seo_tags
   has_sitemap_record
