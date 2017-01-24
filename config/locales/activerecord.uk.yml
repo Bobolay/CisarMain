@@ -73,6 +73,5 @@ uk:
         other: "Номери"
 
     attributes:
-      dish:
-        featured: "Показувати на головній"
+      featured: "Показувати на головній"
 
