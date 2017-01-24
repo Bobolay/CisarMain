@@ -9,4 +9,9 @@ class Dish < ActiveRecord::Base
   image :image, styles: { xxl: "650x433#", thumb: "130x86#" }
 
   has_and_belongs_to_many :rooms
+
+  has_cache do
+    pages :home, :cafe
+    pages Room.published
+  end
 end

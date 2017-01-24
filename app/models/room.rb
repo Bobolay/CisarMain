@@ -23,7 +23,10 @@ class Room < ActiveRecord::Base
 
   attr_accessible :dish_ids, :room_tag_ids, :service_ids, :interior_component_ids
 
-  has_cache
+  has_cache do
+    pages :blog, :cafe, :contacts, :events, :excursions, :fun_articles, :home, :not_found, :rooms, :services, :site_map, :sitemap_xml, :terms_of_use
+    pages self, Room.published, Article.published
+  end
   has_seo_tags
   has_sitemap_record
 

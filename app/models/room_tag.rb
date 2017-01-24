@@ -9,4 +9,9 @@ class RoomTag < ActiveRecord::Base
 
 
   has_and_belongs_to_many :rooms
+
+  has_cache do
+    pages Room.published
+    pages :rooms
+  end
 end

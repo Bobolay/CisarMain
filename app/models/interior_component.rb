@@ -13,4 +13,7 @@ class InteriorComponent < ActiveRecord::Base
   end
 
   has_and_belongs_to_many :rooms
+  has_cache do
+    pages Room.published
+  end
 end

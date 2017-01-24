@@ -18,7 +18,10 @@ class Article < ActiveRecord::Base
   image :banner_image, styles: {xxl: "2000x600#", thumb: "200x60"}
 
 
-  has_cache
+  has_cache do
+    pages :home, :events, :excursions, :fun_articles, :blog
+    pages Article.all
+  end
   has_tags
   has_seo_tags
   has_sitemap_record

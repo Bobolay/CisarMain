@@ -9,4 +9,8 @@ class ContactInfo < ActiveRecord::Base
   def emails
     self['emails'].split("\r\n")
   end
+
+  has_cache do
+    pages Room.first
+  end
 end

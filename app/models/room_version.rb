@@ -10,6 +10,10 @@ class RoomVersion < ActiveRecord::Base
     else
       name
     end
-
   end
+
+  has_cache do
+    pages Room.all
+  end
+
 end
