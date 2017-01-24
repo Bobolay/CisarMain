@@ -72,5 +72,7 @@ uk:
         one: "Номери"
         other: "Номери"
 
-
+    attributes:
+      dish:
+        featured: "Показувати на головній"
 
