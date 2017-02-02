@@ -2,7 +2,7 @@
   ul.bxslider-main-banner
     - @home_banners.each do |banner|
       li
-        .img-container style="background-image: url(#{banner.image.url})"
+        .img-container style="background-image: url(#{banner.image.url(:slide)})"
 
   .info-on-banner
     #bx-pager
