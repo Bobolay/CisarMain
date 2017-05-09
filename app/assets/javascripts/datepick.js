@@ -1,5 +1,6 @@
 $(document).on("ready page:load", function(){
 	$(".datepicker").datepicker({
+        firstDay: 1,
 		dayNamesMin: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
 		monthNames: [ "Січень", "Лютий", "Березень", "Квітень",
                    "Травень", "Червень", "Липень", "Серпень", "Вересень",
