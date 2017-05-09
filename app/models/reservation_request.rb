@@ -4,6 +4,8 @@ class ReservationRequest < ActiveRecord::Base
   belongs_to :room_node, polymorphic: true
   attr_accessible :room_node
 
+  validates :email, :phone, presence: true
+
   def room_node=(key)
     parts = key.split("-")
     class_name = parts[0].camelize
