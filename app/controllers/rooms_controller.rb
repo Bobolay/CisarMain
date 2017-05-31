@@ -27,7 +27,9 @@ class RoomsController < ApplicationController
     call_request.session_id = session.id
     call_request.save
 
-    call_request.notify_admin
+    if call_request.valid?
+      call_request.notify_admin
+    end
 
     data = {}
     render json: data, status: 201
