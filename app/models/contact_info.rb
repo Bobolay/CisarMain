@@ -11,6 +11,6 @@ class ContactInfo < ActiveRecord::Base
   end
 
   has_cache do
-    pages Room.first
+    pages :all
   end
 end
